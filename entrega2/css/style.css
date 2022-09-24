@@ -84,3 +84,74 @@
   }
 
 
+  /* info card*/
+
+  section.categoria ul.juego-carrusel .juego-card .card-info{
+    display: grid;
+    grid-template-columns: 1fr 4fr 4fr 1fr;
+    grid-template-areas: ". titulo titulo ."
+                         ". genero . ."
+                         ". precio boton .";
+    padding: 5px 0;
+
+  }
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
+    grid-area: titulo;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 100;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+      
+  }
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
+    grid-area: genero;
+    display: flex;
+    align-items: center;
+    font-weight: 100;
+    font-size: 10px;
+    line-height: 16px;
+    text-transform: capitalize;
+  }
+
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-precio{
+    grid-area: precio;
+    font-size: 15px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+
+
+  /*boton card con sus acciones*/
+ 
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
+
+    background-color: #FF781C;
+    grid-area: boton;
+    height: 23px;
+    width: 70px;
+    border-radius: 15px;
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-boton:hover{
+    background-color: #EF6100;
+  }
+
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-boton:active{
+    background-color: #B84A00;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+  }
+
+  
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
+    color: white;
+  }
+
+
+
