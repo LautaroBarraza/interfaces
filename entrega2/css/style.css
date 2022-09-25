@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
+    /*border:0;*/
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
@@ -13,25 +13,25 @@
     box-sizing: border-box;
   }
 
-  body{
-    background-color: #FAFAFA;
-  }
+body{
+  background-color: #FAFAFA;
+}
 
   /* header*/
-  header{
-    width: 100%;
-    height: 70px;
-    background-color: #ECECEC;
-    box-shadow: 0px 5px 9px rgb(168, 167, 167);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+header{
+  width: 100%;
+  height: 70px;
+  background-color: #ECECEC;
+  box-shadow: 0px 5px 9px rgb(168, 167, 167);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  header .imagen{
-    width: 60px;
-    height: 60px;
-    background-color: rgb(88, 88, 88);
+header .imagen{
+  width: 60px;
+  height: 60px;
+  background-color: rgb(88, 88, 88);
 }
 header .icono-menu{
     margin-left: 20px;
@@ -41,7 +41,65 @@ header .icono-usuario{
     margin-right: 20px;
 }
 
+/* nav */
+.nav{
+  display: flex;
+  flex-direction: column;
+  background-color: #ECECEC;
+  width: 100%;
+  height: 0;
+  box-shadow: 0px 5px 9px rgb(168, 167, 167);
+  overflow: hidden;
+  position: fixed;
+  z-index: 10000;
+  transition: .5s ease-out;
+}
 
+.nav.show{
+  position: absolute;
+  height: 562px;
+  transition: .5s ease-in;
+}
+
+.nav .list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nav .list .list-item{
+  width: 100%;
+  text-align: center;
+}
+
+.nav .list .list-item .list-button{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.nav .list .list-item .list-button .nav-link{
+  color: #000000;
+  display: block;
+  padding: 15px 0;
+}
+
+.list-item:hover{
+  background-color: rgb(216, 216, 216);
+  transition: .35s ease-in;
+}
+
+.nav .menu-social{
+  display: flex;
+  justify-content: center;
+}
+
+.nav .menu-social a{
+  margin: 10px;
+}
 
   /*main */
 
@@ -107,6 +165,8 @@ header .icono-usuario{
     background-color: #ECECEC;
     width: 100%;
     min-height: 800px;
+    display: flex;
+    flex-direction: column;
 }
 
 .footer-container .footer-logo-container{
@@ -121,27 +181,23 @@ header .icono-usuario{
     margin-top: 10px;
 }
 
-.footer-container .footer-links h3{
+.footer-container nav .footer-links h3{
     padding: 6px 0px 0px 18px;
 }
 
-.footer-container .footer-links li{
+.footer-container nav .footer-links li{
     padding: 8px 0px 10px 18px;
 }
 
 .footer-container hr{
     width: 90%;
-    margin-top: 20px;
-    margin-left: 5%;
-    color: #B8B8B8;
+    margin: 20px 5%;
+    color: #dfdfdf;
 }
 
 .footer-container .footer-social{
     width: 100%;
     height: auto;
-}
-
-.footer-container .footer-social{
     display: flex;
     justify-content: center;
     margin-top: 40px;
