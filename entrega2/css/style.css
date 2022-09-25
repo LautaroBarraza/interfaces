@@ -17,12 +17,18 @@ body{
   background-color: #FAFAFA;
 }
 
+a{
+  color: #111111;
+}
+a:hover{
+  color: #4d4d4d;
+}
   /* header*/
 header{
   width: 100%;
   height: 70px;
   background-color: #ECECEC;
-  box-shadow: 0px 5px 9px rgb(168, 167, 167);
+  box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,11 +39,11 @@ header .imagen{
   height: 60px;
   background-color: rgb(88, 88, 88);
 }
-header .icono-menu{
+header .icon-main{
     margin-left: 20px;
 }
 
-header .icono-usuario{
+header .icon-user{
     margin-right: 20px;
 }
 
@@ -48,32 +54,33 @@ header .icono-usuario{
   background-color: #ECECEC;
   width: 100%;
   height: 0;
-  box-shadow: 0px 5px 9px rgb(168, 167, 167);
+  box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   overflow: hidden;
-  position: fixed;
-  z-index: 10000;
+  position:fixed;
+  z-index: 100;
   transition: .5s ease-out;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .nav.show{
   position: absolute;
-  height: 562px;
+  height: 464px;
   transition: .5s ease-in;
 }
 
-.nav .list{
+.list{
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.nav .list .list-item{
+.list .list-item{
   width: 100%;
   text-align: center;
 }
 
-.nav .list .list-item .list-button{
+.list .list-item .list-button{
   display: flex;
   align-items: center;
   gap: 1em;
@@ -81,7 +88,7 @@ header .icono-usuario{
   margin: 0 auto;
 }
 
-.nav .list .list-item .list-button .nav-link{
+.list .list-item .list-button .nav-link{
   color: #000000;
   display: block;
   padding: 15px 0;
@@ -92,15 +99,51 @@ header .icono-usuario{
   transition: .35s ease-in;
 }
 
-.nav .menu-social{
+.nav .main-social{
   display: flex;
   justify-content: center;
 }
 
-.nav .menu-social a{
+.nav .main-social a{
   margin: 10px;
 }
 
+.nav hr, .user-nav hr{
+  color: #dfdfdf;
+}
+
+.user-nav{
+  display: flex;
+  flex-direction: column;
+  background-color: #ECECEC;
+  width: 100%;
+  height: 0;
+  box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+  transition: .5s ease-out;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.user-nav section{
+  display: flex;
+  justify-content: center;
+}
+
+.user-nav section .user-image{
+  width: 150px;
+  height: 150px;
+  background-color: #777777;
+  border-radius: 75px;
+  margin: 10px;
+}
+
+.user-nav.showUser{
+  position: absolute;
+  height: 417px;
+  transition: .5s ease-in;
+}
   /*main */
 
 
@@ -161,12 +204,18 @@ header .icono-usuario{
 
 
 
-  .footer-container{
+.footer-container{
     background-color: #ECECEC;
     width: 100%;
-    min-height: 800px;
+    height: auto;
     display: flex;
     flex-direction: column;
+}
+
+.footer-container .footer-nav{
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
 }
 
 .footer-container .footer-logo-container{
@@ -178,16 +227,20 @@ header .icono-usuario{
     width: 100px;
     height: 100px;
     background-color: rgb(88, 88, 88);
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
-.footer-container nav .footer-links h3{
-    padding: 6px 0px 0px 18px;
+.footer-container .footer-nav .footer-links h3{
+    padding: 16px 0px 10px 18px;
+    letter-spacing: 3px;
+    color: #777777;
 }
 
-.footer-container nav .footer-links li{
-    padding: 8px 0px 10px 18px;
+.footer-container .footer-nav .footer-links li{
+    padding: 4px 0px 10px 18px;
+    font-size: 14px;
 }
+
 
 .footer-container hr{
     width: 90%;
@@ -208,10 +261,55 @@ header .icono-usuario{
     margin: 10px 16px 10px 16px;
 }
 
-.footer-container p{
+.footer-container span{
     text-align: center;
     padding-bottom: 20px;
 }
 
+@media only screen and (min-width:768px){
+    .nav{
+      width: 400px;
+      height: 464px;
+      left: -400px; 
+    }
+    
+    .nav.show{   
+      left: 0;
+    }
+
+    .user-nav{
+      width: 400px;
+      height: 417px;
+      right:-400px; 
+    }
+    
+    .user-nav.showUser{   
+      right: 0;
+    }
+
+    .footer-container .footer-nav{
+      display: grid;
+      width: 80%;
+      margin: 25px 4% 0% 16%;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+    }   
+}
+
+@media only screen and (min-width:1024px){
+
+  .footer-container .footer-grid{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 80%;
+    height: 300px;
+    margin: 20px 10%;
+  }
+  .footer-container .footer-nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 0 0 20%;
+  }  
+}
 
 

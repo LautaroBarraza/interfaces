@@ -9,9 +9,9 @@
 </head>
 <body>
     <header>
-        <a class="icono-menu" href="#"><i class="fa-solid fa-bars fa-xl"></i></a>
+        <a class="icon-main" href="#"><i class="fa-solid fa-bars fa-xl"></i></a>
         <div class="imagen"></div>
-        <a class="icono-usuario" href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+        <a class="icon-user" href="#"><i class="fa-solid fa-user fa-xl"></i></a>
     </header>
     <nav class="nav">
         <ul class="list">
@@ -61,15 +61,47 @@
             <li class="list-item">
                 <div class="list-button">
                     <!--icono-->
+                    <a class="nav-link" href="#">Ayuda</a>
+                </div>                    
+            </li>
+        </ul>
+        <hr>
+        <section class="main-social">
+            <a href="#"><i class="fa-brands fa-instagram fa-3x"></i></a>       
+            <a href="#"><i class="fa-brands fa-twitter fa-3x"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook fa-3x"></i></a>
+        </section>
+    </nav>
+    <nav class="user-nav">
+        <section>
+            <div class="user-image"></div>
+        </section>
+        <ul class="list">
+            <li class="list-item">
+                <div class="list-button">
+                    <!--icono-->
+                    <a class="nav-link" href="#">Mi perfil</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <!--icono-->
+                    <a class="nav-link" href="#">Administrar cuenta</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <!--icono-->
                     <a class="nav-link" href="#">Configuración</a>
                 </div>                    
             </li>
             <li class="list-item">
                 <div class="list-button">
                     <!--icono-->
-                    <a class="nav-link" href="#">Ayuda</a>
+                    <a class="nav-link" href="#">Subscripcion</a>
                 </div>                    
             </li>
+            <hr>
             <li class="list-item">
                 <div class="list-button">
                     <!--icono-->
@@ -77,14 +109,7 @@
                 </div>                    
             </li>
         </ul>
-        <hr>
-        <section class="menu-social">
-            <a href="#"><i class="fa-brands fa-instagram fa-3x"></i></a>       
-            <a href="#"><i class="fa-brands fa-twitter fa-3x"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook fa-3x"></i></a>
-        </section>
     </nav>
-    
     <main>
         <section class="categoria">
             <h2 class="juego-categoria">solo para ti</h2>
@@ -106,47 +131,49 @@
         </section>
     </main>
     <footer class="footer-container">
-        <section class="footer-logo-container">
-            <div class="footer-logo"></div>
-        </section>
-        <nav>
-            <ul class="footer-links">
-                <h3>LINKS</h3>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Explorar</a></li>
-                <li><a href="#">Novedades</a></li>
-                <li><a href="#">Gratuitos</a></li>
-                <li><a href="#">Destacados</a></li>
-                <li><a href="#">Premium</a></li>
-            </ul>
-            <ul class="footer-links">
-                <h3>EMPRESA</h3>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Terminos y condiciones</a></li>
-                <li><a href="#">Política de privacidad</a></li>
-                <li><a href="#">Cookies</a></li>
-            </ul>
-            <ul class="footer-links">
-                <h3>ASISTENCIA</h3>
-                <li><a href="#">Ayuda</a></li>
-                <li><a href="#">Preguntas frecuentes</a></li>
-                <li><a href="#">Acuerdo de subscripcion</a></li>
-                <li><a href="#">Cancelar subscripcion</a></li>
-            </ul>
-            <ul class="footer-links">
-                <h3>CONTACTO</h3>
-                <li>+1141410931</li>
-                <li>Av Epaña 1902</li>
-                <li><a href="#">BestGames@gmail.com</a></li>
-            </ul>
-        </nav> 
+        <div class="footer-grid">
+            <section class="footer-logo-container">
+                <div class="footer-logo"></div>
+            </section>
+            <nav class="footer-nav">
+                <ul class="footer-links">
+                    <h3>LINKS</h3>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Explorar</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Gratuitos</a></li>
+                    <li><a href="#">Destacados</a></li>
+                    <li><a href="#">Premium</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h3>EMPRESA</h3>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h3>ASISTENCIA</h3>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Acuerdo de subscripcion</a></li>
+                    <li><a href="#">Cancelar subscripcion</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h3>CONTACTO</h3>
+                    <li>+1141410931</li>
+                    <li>Av Epaña 1902</li>
+                    <li><a href="#">BestGames@gmail.com</a></li>
+                </ul>
+            </nav> 
+        </div>
         <hr />
         <section class="footer-social">
             <a href="#"><i class="fa-brands fa-instagram fa-4x"></i></a>       
             <a href="#"><i class="fa-brands fa-twitter fa-4x"></i></a>
             <a href="#"><i class="fa-brands fa-facebook fa-4x"></i></a>
         </section>
-        <p>Copyright © 2022 BestGames Todos los derechos reservados.</p>
+        <span>Copyright © 2022 BestGames Todos los derechos reservados.</span>
     </footer>
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/06334b4bc7.js" crossorigin="anonymous"></script>
