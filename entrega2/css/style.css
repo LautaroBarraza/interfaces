@@ -231,9 +231,17 @@ header .icono-usuario{
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
     }
   
-    
+    /*texto boton*/
     section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
       color: white;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      text-transform: capitalize;
     }
 
 
