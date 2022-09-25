@@ -52,6 +52,7 @@ header .icono-usuario{
   section.categoria{
     position: relative;
     padding-left: 3px;
+    margin-bottom: 60px;
   }
 
   /*carrusel juego*/
@@ -113,11 +114,10 @@ header .icono-usuario{
     
   }
   section.categoria ul.juego-carrusel .juego-card .juego-card-img img{
-    width: 100%;
-    height: 100%;
-    max-width: 250px;
-    max-height: 250px;
+    width: 136px;
+    height: 136px;
     border-radius: 8px;
+    object-fit: cover;
   }
 
   /*etiqueta imagen*/
@@ -136,14 +136,17 @@ header .icono-usuario{
     width: 70px;
   }
 
-  section.categoria ul.juego-carrusel .juego-card .juego-card-img .comprado{
-    background: #FF781C;
-    color: white;
-  }
-  section.categoria ul.juego-carrusel .juego-card .juego-card-img .subscripcion{
-    background: #FFD21C;
-    color: black;
-  }
+      /*etiqueta pago*/
+      section.categoria ul.juego-carrusel .juego-card .juego-card-img .comprado{
+        background: #FF781C;
+        color: white;
+      }
+
+      /*etiqueta subscripcion*/
+      section.categoria ul.juego-carrusel .juego-card .juego-card-img .subscripcion{
+        background: #FFD21C;
+        color: black;
+      }
 
 
     /* info card*/
@@ -189,8 +192,7 @@ header .icono-usuario{
     /*boton card con sus acciones*/
    
     section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
-  
-      background-color: #FF781C;
+      margin-left: 5px;
       grid-area: boton;
       height: 23px;
       width: 75px;
@@ -200,13 +202,32 @@ header .icono-usuario{
       align-items: center;
       justify-content: center;
     }
+    /*boton comprar*/
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar{
+      background-color: #FF781C;
+    }
   
-    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton:hover{
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:hover{
       background-color: #EF6100;
     }
   
-    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton:active{
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:active{
       background-color: #B84A00;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+    }
+
+    /*boton jugar*/
+    
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar{
+      background-color: #1F71B5;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:hover{
+      background-color: #015194;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:active{
+      background-color: #004884;
       box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
     }
   
