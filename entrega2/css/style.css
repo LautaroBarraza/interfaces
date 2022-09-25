@@ -15,6 +15,7 @@
 
   body{
     background-color: #FAFAFA;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   /* header*/
@@ -66,7 +67,6 @@ header .icono-usuario{
   /*titulo categoria*/
 
   section.categoria h2.juego-categoria{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     font-size: 25px;
     line-height: 36px;
@@ -106,6 +106,7 @@ header .icono-usuario{
   /*imagen card juego*/
 
   section.categoria ul.juego-carrusel .juego-card .juego-card-img{
+    position: relative;
     display: flex;
     justify-content: center;
     padding: 2px 2px 0 2px;
@@ -117,6 +118,31 @@ header .icono-usuario{
     max-width: 250px;
     max-height: 250px;
     border-radius: 8px;
+  }
+
+  /*etiqueta imagen*/
+
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img .etiqueta{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 2px;
+    top: 10px;
+    border-radius: 0px 10px 10px 0px;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: capitalize;
+    width: 70px;
+  }
+
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img .comprado{
+    background: #FF781C;
+    color: white;
+  }
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img .subscripcion{
+    background: #FFD21C;
+    color: black;
   }
 
 
