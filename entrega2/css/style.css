@@ -15,6 +15,7 @@
 
   body{
     background-color: #FAFAFA;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   /* header*/
@@ -51,11 +52,13 @@ header .icono-usuario{
   section.categoria{
     position: relative;
     padding-left: 3px;
+    margin-bottom: 60px;
   }
 
   /*carrusel juego*/
   section.categoria ul.juego-carrusel{
     display: flex;
+    column-gap: 15px;
     overflow: hidden;
     scroll-behavior: smooth;
     padding: 5px 0;
@@ -65,7 +68,6 @@ header .icono-usuario{
   /*titulo categoria*/
 
   section.categoria h2.juego-categoria{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 300;
     font-size: 25px;
     line-height: 36px;
@@ -73,11 +75,28 @@ header .icono-usuario{
     text-transform: capitalize;
   }
 
+  /* botones sigueinte y anterior carrusel*/
+
+  section.categoria .categoria-boton-izquierda, section.categoria .categoria-boton-derecha{
+    position: absolute;
+    top: 50%;
+    font-size: 30px;
+  }
+
+  section.categoria .categoria-boton-izquierda{
+    left: 0%;
+  }
+
+  section.categoria .categoria-boton-derecha{
+    right: 0%;
+  }
+
+
   /* card juego carrusel*/
 
   section.categoria ul.juego-carrusel .juego-card{
     height: auto;
-    width: 130px;
+    min-width: 140px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.21);
     transition: all 1s;
   }
@@ -88,20 +107,146 @@ header .icono-usuario{
   /*imagen card juego*/
 
   section.categoria ul.juego-carrusel .juego-card .juego-card-img{
+    position: relative;
     display: flex;
     justify-content: center;
     padding: 2px 2px 0 2px;
     
   }
   section.categoria ul.juego-carrusel .juego-card .juego-card-img img{
-    width: 100%;
-    height: 100%;
-    max-width: 250px;
-    max-height: 250px;
+    width: 136px;
+    height: 136px;
     border-radius: 8px;
+    object-fit: cover;
   }
 
+  /*etiqueta imagen*/
 
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img .etiqueta{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 2px;
+    top: 10px;
+    border-radius: 0px 10px 10px 0px;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: capitalize;
+    width: 70px;
+  }
+
+      /*etiqueta pago*/
+      section.categoria ul.juego-carrusel .juego-card .juego-card-img .comprado{
+        background: #FF781C;
+        color: white;
+      }
+
+      /*etiqueta subscripcion*/
+      section.categoria ul.juego-carrusel .juego-card .juego-card-img .subscripcion{
+        background: #FFD21C;
+        color: black;
+      }
+
+
+    /* info card*/
+
+    section.categoria ul.juego-carrusel .juego-card .card-info{
+      display: grid;
+      grid-template-columns: 1fr 4fr 4fr 1fr;
+      grid-template-areas: ". titulo titulo ."
+                           ". genero . ."
+                           ". precio boton .";
+      padding: 5px 5px;
+  
+    }
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
+      grid-area: titulo;
+      font-style: normal;
+      font-size: 14px;
+      font-weight: 100;
+      text-transform: capitalize;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+        
+    }
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
+      grid-area: genero;
+      display: flex;
+      align-items: center;
+      font-weight: 100;
+      font-size: 10px;
+      line-height: 16px;
+      text-transform: capitalize;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-precio{
+      grid-area: precio;
+      font-size: 15px;
+      line-height: 26px;
+      font-weight: 600;
+    }
+  
+  
+    /*boton card con sus acciones*/
+   
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
+      margin-left: 5px;
+      grid-area: boton;
+      height: 23px;
+      width: 75px;
+      border-radius: 15px;
+      transition: all 1s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /*boton comprar*/
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar{
+      background-color: #FF781C;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:hover{
+      background-color: #EF6100;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:active{
+      background-color: #B84A00;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+    }
+
+    /*boton jugar*/
+    
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar{
+      background-color: #1F71B5;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:hover{
+      background-color: #015194;
+    }
+  
+    section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:active{
+      background-color: #004884;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+    }
+  
+    /*texto boton*/
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
+      color: white;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 30px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+
+
+    /* footer*/
 
   .footer-container{
     background-color: #ECECEC;
