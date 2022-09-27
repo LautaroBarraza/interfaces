@@ -96,7 +96,7 @@ header .icono-usuario{
 
   section.categoria ul.juego-carrusel .juego-card{
     height: auto;
-    min-width: 140px;
+    width: 140px;
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.21);
     transition: all 1s;
   }
@@ -154,11 +154,12 @@ header .icono-usuario{
     section.categoria ul.juego-carrusel .juego-card .card-info{
       display: grid;
       grid-template-columns: 1fr 4fr 4fr 1fr;
+      grid-template-rows: 3fr 2fr 3fr;
       grid-template-areas: ". titulo titulo ."
                            ". genero . ."
                            ". precio boton .";
       padding: 5px 5px;
-  
+      align-items: center;
     }
     section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
       grid-area: titulo;
@@ -234,9 +235,10 @@ header .icono-usuario{
     /*texto boton*/
     section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
       color: white;
+      padding: 2px;
       font-style: normal;
       font-weight: 500;
-      font-size: 13px;
+      font-size: 100%;
       line-height: 30px;
       display: flex;
       align-items: center;
@@ -302,5 +304,116 @@ header .icono-usuario{
     padding-bottom: 20px;
 }
 
+
+
+@media only screen and (min-width: 768px){
+
+  /*card juego*/
+  section.categoria ul.juego-carrusel .juego-card{
+    height: auto;
+    width: 170px;
+  }
+
+  /*imagen card juego*/
+
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2px 2px 0 2px;
+    
+  }
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img img{
+    width: 165px;
+    height: 165px;
+  }
+
+  /* card-info*/
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
+    font-size: 15px;
+    font-weight: 300;   
+  }
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
+    font-weight: 500;
+    font-size: 9px;
+  }
+
+
+}
+
+@media only screen and (min-width: 1024px){
+
+/*card juego*/
+  section.categoria ul.juego-carrusel .juego-card{
+    height: auto;
+    width: 230px;
+  }
+
+  /*imagen card juego*/
+  section.categoria ul.juego-carrusel .juego-card .juego-card-img img{
+    width: 225px;
+    height: 225px;
+  }
+
+
+    /* card-info*/
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
+      font-size: 20px;  
+    }
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
+      font-weight: 500;
+      font-size: 11px;
+    }
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-precio{
+      font-size: 20px;
+
+    }
+
+    /*boton card*/
+
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
+      height: 35px;
+      width: 100px;
+    }
+
+}
+
+
+@media only screen and (min-width: 1440px){ 
+
+  /*card juego*/
+  section.categoria ul.juego-carrusel .juego-card{
+    width: 260px;
+    height: 400px;
+  }
+
+    /*imagen card juego*/
+    section.categoria ul.juego-carrusel .juego-card .juego-card-img img{
+      width: 250px;
+      height: 250px;
+    }
+
+       /* card-info*/
+       section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
+        font-size: 26px;  
+      }
+      section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
+        font-weight: 500;
+        font-size: 14px;
+      }
+      section.categoria ul.juego-carrusel .juego-card .card-info .card-precio{
+        font-size: 22px;
+  
+      }
+  
+      /*boton card*/
+  
+      section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
+        height: 43px;
+        width: 135px;
+      }
+
+
+}
 
 
