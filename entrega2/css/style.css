@@ -376,6 +376,12 @@ header .icono-usuario{
       width: 100px;
     }
 
+    
+    /*texto boton*/
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
+      font-size: 20px;
+    }
+
 }
 
 
@@ -393,25 +399,38 @@ header .icono-usuario{
       height: 250px;
     }
 
-       /* card-info*/
-       section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
-        font-size: 26px;  
+      /*etiqueta imagen*/
+
+      section.categoria ul.juego-carrusel .juego-card .juego-card-img .etiqueta{
+        top: 20px;
+        font-size: 15px;
+        width: 100px;
       }
-      section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
-        font-weight: 500;
-        font-size: 14px;
-      }
-      section.categoria ul.juego-carrusel .juego-card .card-info .card-precio{
-        font-size: 22px;
-  
-      }
-  
-      /*boton card*/
-  
-      section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
-        height: 43px;
-        width: 135px;
-      }
+
+      /* card-info*/
+      section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
+      font-size: 26px;  
+    }
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-genero{
+      font-weight: 500;
+      font-size: 14px;
+    }
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-precio{
+      font-size: 22px;
+
+    }
+
+    /*boton card*/
+
+    section.categoria ul.juego-carrusel .juego-card .card-info .card-boton{
+      height: 43px;
+      width: 135px;
+    }
+
+        /*texto boton*/
+  section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
+    font-size: 26px;
+  }
 
 
 }
