@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    /*border:0;*/
+    border:0;
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
@@ -17,23 +17,6 @@
     background-color: #FAFAFA;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-
-  /* header*/
-  header{
-    width: 100%;
-    height: 70px;
-    background-color: #ECECEC;
-    box-shadow: 0px 5px 9px rgb(168, 167, 167);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  header .imagen{
-    width: 60px;
-    height: 60px;
-    background-color: rgb(88, 88, 88);
-}
 
 a{
   color: #111111;
@@ -78,7 +61,7 @@ header .icon-user{
   flex-direction: column;
   background-color: #ECECEC;
   width: 100%;
-  height: 460px;
+  height: 100vh;
   left: -100%; 
   box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   overflow: hidden;
@@ -88,7 +71,7 @@ header .icon-user{
 }
 
 .nav.show{
-  position: absolute;
+  position:absolute;
   left: 0;
   transition: .5s ease-in;
 }
@@ -127,22 +110,20 @@ header .icon-user{
 .nav .main-social{
   display: flex;
   justify-content: center;
+  margin-top: 40px;
 }
 
 .nav .main-social a{
-  margin: 5px;
+  margin: 10px;
 }
 
-.nav hr, .user-nav hr{
-  color: #dfdfdf;
-}
-
+/* user-nav */
 .user-nav{
   display: flex;
   flex-direction: column;
   background-color: #ECECEC;
   width: 100%;
-  height: 417px;
+  height: 100vh;
   right:-100%; 
   box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   overflow: hidden;
@@ -158,19 +139,36 @@ header .icon-user{
 }
 
 .user-nav section{
+  width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .user-nav section .user-image{
-  width: 150px;
-  height: 150px;
-  margin: 10px;
+  display: block;
+  width: 100px;
+  height: 100px;
 }
 
+.user-nav section .user-name{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: .2em;
+  width: 50%;
+}
 
-  /*main */
+.user-nav section .user-name h3{
+  padding-left: 10px;
+}
 
+.user-nav section .user-name span{
+  padding-left: 10px;
+  color: #777777;
+}
+  
+/*main */
 
   /* seccion categoria*/
 
@@ -335,6 +333,7 @@ header .icon-user{
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:hover{
       background-color: #EF6100;
+      transform: scale(1.1);
     }
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:active{
@@ -350,6 +349,7 @@ header .icon-user{
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:hover{
       background-color: #015194;
+      transform: scale(1.1);
     }
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:active{
@@ -435,6 +435,7 @@ header .icon-user{
 }
 
 .footer-container span{
+    font-size: 12px;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -444,15 +445,13 @@ header .icon-user{
 @media only screen and (min-width: 768px){
 
   .nav{
-    width: 400px;
-    height: 464px;
-    left: -400px; 
+    width: 380px;
+    left: -380px; 
   }
 
   .user-nav{
-    width: 400px;
-    height: 417px;
-    right:-400px; 
+    width: 380px;
+    right:-380px; 
   }
 
   /*card juego*/
