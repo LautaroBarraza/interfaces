@@ -31,13 +31,63 @@ header{
   background-color: #ECECEC;
   box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
+}
+
+header .left-header{
+  width: auto;
+  display: flex;
+  justify-content: start;
   align-items: center;
+  gap: .6em;
+}
+
+header .search-header{
+  width:60%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+/*///// buscador /////*/
+header .search-header .search-input-content{
+  background-color: #ffffff;
+  width: 0;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  transition: .35s ease-out;
+}
+
+header .search-header .search-input-content .search-input{
+  width: 100%;
+  height: 100%;
+  padding-left:8px;
+  font-size: 14px;
+}
+
+header .search-header .search-input-content:hover{
+  width:500px;
+}
+header .search-header .search-input-content:focus{
+  width:500px;
+}
+
+header .search-header .search-input-content a{
+  padding-right:8px;
+}
+
+header .right-header{
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 header .imagen{
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height:50px;
   border-radius: 100%;
   transition: .35s ease-in;
 }
@@ -61,19 +111,17 @@ header .icon-user{
   flex-direction: column;
   background-color: #ECECEC;
   width: 100%;
-  height: 100vh;
-  left: -100%; 
+  height: 0;
   box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   overflow: hidden;
-  position:fixed;
   z-index: 100;
   transition: .5s ease-out;
 }
 
 .nav.show{
-  position:absolute;
-  left: 0;
-  transition: .5s ease-in;
+  height: 705px;
+  position:relative;
+  /*left: 0;*/
 }
 
 .list{
@@ -85,6 +133,7 @@ header .icon-user{
 
 .list .list-item{
   width: 100%;
+  height: 70px;
   text-align: center;
 }
 
@@ -100,6 +149,7 @@ header .icon-user{
   color: #000000;
   display: block;
   padding: 15px 0;
+  line-height: 35px;
 }
 
 .list-item:hover{
@@ -107,10 +157,13 @@ header .icon-user{
   transition: .35s ease-in;
 }
 
+.nav .list .list-item:nth-child(8), .user-nav .list .list-item:last-child, .nav .main-social {
+  border-top: 1px solid #0000001f;
+}
+
 .nav .main-social{
   display: flex;
   justify-content: center;
-  margin-top: 40px;
 }
 
 .nav .main-social a{
@@ -123,19 +176,16 @@ header .icon-user{
   flex-direction: column;
   background-color: #ECECEC;
   width: 100%;
-  height: 100vh;
-  right:-100%; 
+  height: 0;
   box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
   overflow: hidden;
-  position: fixed;
   z-index: 100;
   transition: .5s ease-out;
 }
 
 .user-nav.showUser{
-  position: absolute;
-  right: 0;
-  transition: .5s ease-in;
+  height: 450px;
+  position: relative;
 }
 
 .user-nav section{
@@ -146,9 +196,11 @@ header .icon-user{
 }
 
 .user-nav section .user-image{
+  background-color: #777777;
   display: block;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
 }
 
 .user-nav section .user-name{
@@ -445,14 +497,65 @@ header .icon-user{
 
 @media only screen and (min-width: 768px){
 
+  header{
+    height: 90px;
+  }
+
+  header .left-header{
+    width: 20%;
+    gap: 1em;
+  }
+  
+  header .search-header{
+    justify-content: center;
+  }
+  /*///// buscador /////*/
+  header .search-header .search-input-content{
+    width: 500px;
+    height: 50px;
+    border-radius: 10px;
+  }
+  
+  header .search-header .search-input-content .search-input{
+    padding-left:24px;
+    font-size: 16px;
+  }
+  
+  header .search-header .search-input-content a{
+    padding-right:24px;
+  }
+  
+  header .right-header{
+    width: 20%;
+  }
+  
+  header .imagen{
+    width: 70px;
+    height: 70px;
+  }
+
   .nav{
     width: 380px;
-    left: -380px; 
+    left: -100%; 
+    position: fixed;
+    height: 705px;
+  }
+
+  .nav.show{
+    position: absolute;
+    left: 0;
   }
 
   .user-nav{
     width: 380px;
-    right:-380px; 
+    right:-100%; 
+    position: fixed;
+    height: 450px;
+  }
+
+  .user-nav.showUser{
+    position: absolute;
+    right: 0;
   }
 
   /*card juego*/

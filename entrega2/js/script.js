@@ -7,3 +7,4 @@ document.querySelector('.icon-user').addEventListener('click', () =>{
     document.querySelector(".user-nav").classList.toggle("showUser");
 });
 
+
