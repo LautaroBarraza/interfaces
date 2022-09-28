@@ -256,6 +256,16 @@ header .icon-user{
     position: absolute;
     top: 50%;
     font-size: 30px;
+    width: 28px;
+    height: 28px;
+    background-color: #dfdfdf;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    z-index: 100;
+    color: #015194;
   }
 
   section.categoria .categoria-boton-izquierda{
