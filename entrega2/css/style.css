@@ -3,7 +3,7 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
+    border:0;
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
@@ -18,34 +18,157 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
-  /* header*/
-  header{
-    width: 100%;
-    height: 70px;
-    background-color: #ECECEC;
-    box-shadow: 0px 5px 9px rgb(168, 167, 167);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  header .imagen{
-    width: 60px;
-    height: 60px;
-    background-color: rgb(88, 88, 88);
+a{
+  color: #111111;
 }
-header .icono-menu{
+a:hover{
+  color: #4d4d4d;
+}
+  /* header*/
+header{
+  width: 100%;
+  height: 70px;
+  background-color: #ECECEC;
+  box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .imagen{
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  transition: .35s ease-in;
+}
+
+header .imagen:hover, .footer-logo:hover{
+  transition: .35s ease-out;
+  box-shadow: 1px 2px 1px 1px rgb(168, 167, 167);
+} 
+
+header .icon-main{
     margin-left: 20px;
 }
 
-header .icono-usuario{
+header .icon-user{
     margin-right: 20px;
 }
 
+/* nav */
+.nav{
+  display: flex;
+  flex-direction: column;
+  background-color: #ECECEC;
+  width: 100%;
+  height: 100vh;
+  left: -100%; 
+  box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
+  overflow: hidden;
+  position:fixed;
+  z-index: 100;
+  transition: .5s ease-out;
+}
 
+.nav.show{
+  position:absolute;
+  left: 0;
+  transition: .5s ease-in;
+}
 
-  /*main */
+.list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
+.list .list-item{
+  width: 100%;
+  text-align: center;
+}
+
+.list .list-item .list-button{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.list .list-item .list-button .nav-link{
+  color: #000000;
+  display: block;
+  padding: 15px 0;
+}
+
+.list-item:hover{
+  background-color: rgb(216, 216, 216);
+  transition: .35s ease-in;
+}
+
+.nav .main-social{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.nav .main-social a{
+  margin: 10px;
+}
+
+/* user-nav */
+.user-nav{
+  display: flex;
+  flex-direction: column;
+  background-color: #ECECEC;
+  width: 100%;
+  height: 100vh;
+  right:-100%; 
+  box-shadow: 0 6px 3px -2px rgb(168, 167, 167);
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+  transition: .5s ease-out;
+}
+
+.user-nav.showUser{
+  position: absolute;
+  right: 0;
+  transition: .5s ease-in;
+}
+
+.user-nav section{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.user-nav section .user-image{
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.user-nav section .user-name{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: .2em;
+  width: 50%;
+}
+
+.user-nav section .user-name h3{
+  padding-left: 10px;
+}
+
+.user-nav section .user-name span{
+  padding-left: 10px;
+  color: #777777;
+}
+  
+/*main */
 
   /* seccion categoria*/
 
@@ -152,6 +275,7 @@ header .icono-usuario{
     /* info card*/
 
     section.categoria ul.juego-carrusel .juego-card .card-info{
+      height: 79px;
       display: grid;
       grid-template-columns: 1fr 4fr 4fr 1fr;
       grid-template-rows: 3fr 2fr 3fr;
@@ -210,6 +334,7 @@ header .icono-usuario{
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:hover{
       background-color: #EF6100;
+      transform: scale(1.1);
     }
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-comprar:active{
@@ -225,6 +350,7 @@ header .icono-usuario{
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:hover{
       background-color: #015194;
+      transform: scale(1.1);
     }
   
     section.categoria ul.juego-carrusel .juego-card .card-info .boton-jugar:active{
@@ -250,10 +376,18 @@ header .icono-usuario{
 
     /* footer*/
 
-  .footer-container{
+.footer-container{
     background-color: #ECECEC;
     width: 100%;
-    min-height: 800px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-container .footer-nav{
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0 20px;
 }
 
 .footer-container .footer-logo-container{
@@ -264,31 +398,33 @@ header .icono-usuario{
 .footer-container .footer-logo-container .footer-logo{
     width: 100px;
     height: 100px;
-    background-color: rgb(88, 88, 88);
-    margin-top: 10px;
+    margin-top: 25px;
+    border-radius: 100%;
+    transition: .35s ease-in;
+
 }
 
-.footer-container .footer-links h3{
-    padding: 6px 0px 0px 18px;
+.footer-container .footer-nav .footer-links h3{
+    padding: 16px 0px 10px 18px;
+    letter-spacing: 3px;
+    color: #777777;
 }
 
-.footer-container .footer-links li{
-    padding: 8px 0px 10px 18px;
+.footer-container .footer-nav .footer-links li{
+    padding: 4px 0px 10px 18px;
+    font-size: 14px;
 }
+
 
 .footer-container hr{
     width: 90%;
-    margin-top: 20px;
-    margin-left: 5%;
-    color: #B8B8B8;
+    margin: 20px 5%;
+    color: #dfdfdf;
 }
 
 .footer-container .footer-social{
     width: 100%;
     height: auto;
-}
-
-.footer-container .footer-social{
     display: flex;
     justify-content: center;
     margin-top: 40px;
@@ -299,7 +435,8 @@ header .icono-usuario{
     margin: 10px 16px 10px 16px;
 }
 
-.footer-container p{
+.footer-container span{
+    font-size: 12px;
     text-align: center;
     padding-bottom: 20px;
 }
@@ -307,6 +444,16 @@ header .icono-usuario{
 
 
 @media only screen and (min-width: 768px){
+
+  .nav{
+    width: 380px;
+    left: -380px; 
+  }
+
+  .user-nav{
+    width: 380px;
+    right:-380px; 
+  }
 
   /*card juego*/
   section.categoria ul.juego-carrusel .juego-card{
@@ -338,6 +485,14 @@ header .icono-usuario{
     font-size: 9px;
   }
 
+  .footer-container .footer-nav{
+    display: grid;
+    width: 80%;
+    margin: 25px 4% 0% 16%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  } 
+
 
 }
 
@@ -355,8 +510,11 @@ header .icono-usuario{
     height: 225px;
   }
 
+    /* info card*/
 
-    /* card-info*/
+    section.categoria ul.juego-carrusel .juego-card .card-info{
+      height: auto;
+    }
     section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
       font-size: 20px;  
     }
@@ -381,6 +539,19 @@ header .icono-usuario{
     section.categoria ul.juego-carrusel .juego-card .card-info .card-boton a{
       font-size: 20px;
     }
+
+    .footer-container .footer-grid{
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      width: 80%;
+      height: 300px;
+      margin: 20px 10%;
+    }
+    .footer-container .footer-nav{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin: 0 0 0 20%;
+    }  
 
 }
 
