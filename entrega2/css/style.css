@@ -275,6 +275,7 @@ header .icon-user{
     /* info card*/
 
     section.categoria ul.juego-carrusel .juego-card .card-info{
+      height: 79px;
       display: grid;
       grid-template-columns: 1fr 4fr 4fr 1fr;
       grid-template-rows: 3fr 2fr 3fr;
@@ -509,8 +510,11 @@ header .icon-user{
     height: 225px;
   }
 
+    /* info card*/
 
-    /* card-info*/
+    section.categoria ul.juego-carrusel .juego-card .card-info{
+      height: auto;
+    }
     section.categoria ul.juego-carrusel .juego-card .card-info .card-titulo{
       font-size: 20px;  
     }
