@@ -16,14 +16,101 @@
   body{
     background-color: #FAFAFA;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    animation: '';
+    overflow:hidden;
   }
 
-a{
-  color: #111111;
+  a{
+    color: #111111;
+  }
+  a:hover{
+    color: #4d4d4d;
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1; 
+    }
+  }
+
+.loader-hero{
+    background-color: #030513;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
-a:hover{
-  color: #4d4d4d;
+
+.loader-hero .ring span{
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 200px;
 }
+
+/*preloader*/
+
+.loader{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.ring{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.ring::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255,255,255,.3);
+    animation: ring .5s infinite;
+}
+
+.loader .ring span{
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 1px;
+    line-height: 200px;
+}
+
+@keyframes ring {
+  0%{
+      transform: rotate(0deg);
+      box-shadow: 1px 5px 2px #1F71B5;
+  }
+  25%{
+      transform: rotate(90deg);
+      box-shadow: 1px 5px 2px #1F71B5;
+  }
+  50%{
+      transform: rotate(180deg);
+      box-shadow: 1px 5px 2px #1F71B5;
+  }
+  75%{
+      transform: rotate(270deg);
+      box-shadow: 1px 5px 2px #1F71B5;
+  }
+  100%{
+      transform: rotate(360deg);
+      box-shadow: 1px 5px 2px #1F71B5;
+  }
+}
+
   /* header*/
 header{
   width: 100%;

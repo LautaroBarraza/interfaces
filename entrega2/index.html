@@ -9,7 +9,13 @@
     <script src="https://kit.fontawesome.com/06334b4bc7.js" crossorigin="anonymous"></script>
     <link rel ="shortcut icon" type="image/x-icon" href="img/pagina/logo.png">
 </head>
-<body>
+<body class="hidden">
+    <div class="loader" id="onload">
+        <div class="ring">
+            <span>Cargando</span>
+            <span id="porcentaje">0%</span>
+        </div>
+    </div>
     <header>
         <div class="left-header">
             <a class="icon-main" href="#"><i class="fa-solid fa-bars fa-xl"></i></a>
@@ -155,7 +161,7 @@
                         <h3 class="card-titulo">starfield</h3>
                         <p class="card-genero">aventura</p>
                         <p class="card-precio">$99.99</p>
-                        <button class="card-boton boton-comprar"><a href="">comprar</a></button>
+                        <button class="card-boton boton-comprar"><a href="html/hero.html">comprar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -167,7 +173,7 @@
                         <h3 class="card-titulo">ghost recon breakpoint</h3>
                         <p class="card-genero">disparos</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">Jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">Jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -178,7 +184,7 @@
                         <h3 class="card-titulo">resident evil village</h3>
                         <p class="card-genero">disparos</p>
                         <p class="card-precio">$69.99</p>
-                        <button class="card-boton boton-comprar"><a href="">comprar</a></button>
+                        <button class="card-boton boton-comprar"><a href="#">comprar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -189,7 +195,7 @@
                         <h3 class="card-titulo">god of war ragnarok</h3>
                         <p class="card-genero">accion</p>
                         <p class="card-precio">$69.99</p>
-                        <button class="card-boton boton-comprar"><a href="">comprar</a></button>
+                        <button class="card-boton boton-comprar"><a href="#">comprar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -201,7 +207,7 @@
                         <h3 class="card-titulo">jurassic world evolution 2</h3>
                         <p class="card-genero">estrategia</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">Jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">Jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -212,7 +218,7 @@
                         <h3 class="card-titulo">modern warfare 2</h3>
                         <p class="card-genero">accion</p>
                         <p class="card-precio">$69.99</p>
-                        <button class="card-boton boton-comprar"><a href="">comprar</a></button>
+                        <button class="card-boton boton-comprar"><a href="#">comprar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -224,7 +230,7 @@
                         <h3 class="card-titulo">limbo</h3>
                         <p class="card-genero">ingenio</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -235,7 +241,7 @@
                         <h3 class="card-titulo">apex legends</h3>
                         <p class="card-genero">disparos</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -247,7 +253,7 @@
                         <h3 class="card-titulo">kena</h3>
                         <p class="card-genero">aventura</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
             </ul>
@@ -266,7 +272,7 @@
                         <h3 class="card-titulo">unravel two</h3>
                         <p class="card-genero">ingenio</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -278,7 +284,7 @@
                         <h3 class="card-titulo">red dead redeption 2</h3>
                         <p class="card-genero">aventura</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -290,7 +296,7 @@
                         <h3 class="card-titulo">rachet and clanck</h3>
                         <p class="card-genero">aventura</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -302,7 +308,7 @@
                         <h3 class="card-titulo">limbo</h3>
                         <p class="card-genero">ingenio</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -314,7 +320,7 @@
                         <h3 class="card-titulo">inside</h3>
                         <p class="card-genero">ingenio</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -326,7 +332,7 @@
                         <h3 class="card-titulo">struggling</h3>
                         <p class="card-genero">ingenio</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
                 <li class="juego-card">
@@ -338,7 +344,7 @@
                         <h3 class="card-titulo">the last of us part 1</h3>
                         <p class="card-genero">accion</p>
                         <p class="card-precio"></p>
-                        <button class="card-boton boton-jugar"><a href="">jugar</a></button>
+                        <button class="card-boton boton-jugar"><a href="#">jugar</a></button>
                     </div>
                 </li>
             </ul>
