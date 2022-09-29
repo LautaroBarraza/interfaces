@@ -468,10 +468,10 @@ header .icon-user{
 }
 
 
-.footer-container hr{
+.footer-container .line{
     width: 90%;
+    border-top: 1px solid #0000001f;
     margin: 20px 5%;
-    color: #dfdfdf;
 }
 
 .footer-container .footer-social{
@@ -479,7 +479,7 @@ header .icon-user{
     height: auto;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-bottom: 10px;
 }
 
@@ -534,6 +534,23 @@ header .icon-user{
     height: 70px;
   }
 
+  .dark-background{
+    visibility: hidden;
+    transition: .5s ease-in-out;
+  }
+
+  .dark-background.on{
+    visibility: visible;
+    content: '';
+    top: 90px;
+    bottom:0;
+    left: 0;
+    right: 0;
+    background-color: #0000008e;
+    position: absolute;
+    z-index: 10;
+  }
+  
   .nav{
     width: 380px;
     left: -100%; 
