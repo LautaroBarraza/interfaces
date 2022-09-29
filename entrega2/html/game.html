@@ -11,9 +11,19 @@
 </head>
 <body>
     <header>
-        <a class="icon-main" href="#"><i class="fa-solid fa-bars fa-xl"></i></a>
-        <a href="../index.html"><img class="imagen" src="../img/pagina/logo.png" alt="logo"></a>
-        <a class="icon-user" href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+        <div class="left-header">
+            <a class="icon-main" href="#"><i class="fa-solid fa-bars fa-xl"></i></a>
+            <a href="../index.html"><img class="imagen" src="../img/pagina/logo.png" alt="logo"></a>
+        </div>
+        <div class="search-header">
+            <section class="search-input-content">
+                <input class="search-input" type="text" placeholder="Buscar juegos, generos y mas">
+                <a class="search-button" href="#"><i class="fa-solid fa-magnifying-glass fa-xl"></i></a>
+            </section>
+        </div>
+        <div class="right-header">
+            <a class="icon-user" href="#"><i class="fa-solid fa-user fa-xl"></i></a>
+        </div>         
     </header>
     <nav class="nav">
         <ul class="list">
@@ -59,15 +69,19 @@
                     <a class="nav-link" href="#">Premium</a>
                 </div>                    
             </li>
-            
             <li class="list-item">
                 <div class="list-button">
                     <i class="fa-solid fa-circle-question fa-lg"></i>
                     <a class="nav-link" href="#">Ayuda</a>
                 </div>                    
             </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <i class="fa-solid fa-gear fa-lg"></i>
+                    <a class="nav-link" href="#">Preferencias</a>
+                </div>                    
+            </li>
         </ul>
-        
         <section class="main-social">
             <a href="#"><img src="../assets/instagram-icon.png" alt="instagram-logo" width="50px"></a>       
             <a href="#"><img src="../assets/twitter-icon.png" alt="twitter-logo" width="50px"></a>
@@ -76,7 +90,7 @@
     </nav>
     <nav class="user-nav">
         <section>
-            <img class="user-image" src="../assets/usuario-perfil.png" alt="usuario">
+            <div class="user-image"></div>
             <div class="user-name">
                 <h3>Nombre Apellido</h3>
                 <span>#nick</span>
@@ -116,9 +130,8 @@
             </li>
         </ul>
     </nav>
-    <main class="game">
-
-    </main>
+    <div class="dark-background"></div>
+    <main class="game"></main>
     <footer class="footer-container">
         <div class="footer-grid">
             <section class="footer-logo-container">
@@ -156,7 +169,7 @@
                 </ul>
             </nav> 
         </div>
-        <hr />
+        <div class="line"></div>
         <section class="footer-social">
             <a href="#"><img src="../assets/instagram-icon.png" alt="instagram-logo" width="72px"></a>       
             <a href="#"><img src="../assets/twitter-icon.png" alt="twitter-logo" width="72px"></a>
@@ -164,6 +177,6 @@
         </section>
         <span>Copyright © 2022 BestGames Todos los derechos reservados.</span>
     </footer>
-    <script src="../js/script.js"></script>   
+    <script src="../js/script.js"></script>
 </body>
 </html>
