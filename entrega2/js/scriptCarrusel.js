@@ -11,6 +11,9 @@ function cargar(){
     carruseles.forEach((item,i)=> {
         let dimensionContenedor = item.getBoundingClientRect();
         let contenedorWidth = dimensionContenedor.width;
+        console.log(item.scrollWidth);
+        console.log(contenedorWidth);
+        console.log(item.scrollWidth/contenedorWidth)
 
         nxtBtn[i].addEventListener("click", () => {
             item.scrollLeft += contenedorWidth;
