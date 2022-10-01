@@ -172,14 +172,15 @@ header .right-header{
   justify-content: end;
 }
 
-header .imagen{
+header .image{
   width: 50px;
   height:50px;
   border-radius: 100%;
   transition: .35s ease-in;
+  margin-top: 4px;
 }
 
-header .imagen:hover, .footer-logo:hover{
+header .image:hover, .footer-logo:hover{
   transition: .35s ease-out;
   box-shadow: 1px 2px 1px 1px rgb(168, 167, 167);
 } 
@@ -652,9 +653,10 @@ header .icon-user{
     width: 20%;
   }
   
-  header .imagen{
+  header .image{
     width: 70px;
     height: 70px;
+    
   }
 
   .dark-background{
@@ -741,22 +743,100 @@ header .icon-user{
 
 @media only screen and (min-width: 1024px){
   /*4 en linea*/
-  .game{
-    width: 100%;
-    height: 700px;
-    
+  .game-container{
+    width: 80%;
+    height: auto;
+    margin: 10px 10%;
+    padding: 16px 0;
   }
 
-/*card juego*/
-  section.category ul.game-slide .game-card{
+  .game-container h2{
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .game-container section{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .game-container section .section-image{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .game-container section .section-image .bk-game-image{
+    width: 100%;
+  }
+
+  .game-container section .section-image .play-section{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .game-container section .section-image .play-section .game-image{
+      width: 220px;
+      height: 260px;
+      border-radius: 10px;
+  }
+
+  .game-container section .section-image .play-section .play-button{
+      height: 43px;
+      width: 135px;
+      border-radius: 15px;
+      background-color: #1F71B5;
+      transition: all .5s;   
+  }
+
+  .game-container section .section-image .play-section .play-button a{
+    width: 100%;
+    height: 100%;
+    line-height: 43px;
+    color: white;
+    font-size: 20px;
+  }
+
+  .game-container section .section-image .play-section .play-button:hover{
+      background-color: #015194;
+      transform: scale(1.1);
+  }
+
+  .game-container section .section-image .play-section .play-button:active{
+      background-color: #004884;
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+  }
+
+  .game-container section .game-info{
+    width: 100%;
+    height: 100px;
+    background-color:#ECECEC;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .game-container section .game-info h1{
+    font-weight: 340;
+    font-size: 28px;
+    line-height: 96px;
+    margin-left: 30px;
+  }
+
+  /*card juego*/
+  section.categoria ul.game-slide .game-card{
     height: auto;
     width: 230px;
   }
 
   /*imagen card juego*/
   section.category ul.game-slide .game-card .game-card-img img{
-    width: 225px;
-    height: 225px;
+    width: 166px;
+    height: 166px;
   }
 
     /* info card*/
