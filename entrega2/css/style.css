@@ -359,6 +359,7 @@ header .icon-user{
     font-size: 18px;
     z-index: 100;
     color: #015194;
+    cursor: pointer;
   }
 
   section.category .category-button-left{
@@ -381,6 +382,7 @@ header .icon-user{
     width: 10px;
     height: 10px;
     border-radius: 100%;
+    cursor: pointer;
   }
 
   .pag-slide button.active{
