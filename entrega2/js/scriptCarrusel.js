@@ -18,10 +18,21 @@ function cargar(){
 
         nxtBtn[i].addEventListener("click", () => {
             item.scrollLeft += contenedorWidth;
+            let activo = NAV_CARRUSEL[i].querySelector(".activo");
+            if(activo.nextSibling){
+                activo.nextSibling.classList.add("activo");
+                activo.classList.remove("activo");
+            
+            }
         })
 
         preBtn[i].addEventListener("click", () => {
             item.scrollLeft -= contenedorWidth;
+            let activo = NAV_CARRUSEL[i].querySelector(".activo");
+            if(activo.previousSibling){
+                activo.previousSibling.classList.add("activo");
+                activo.classList.remove("activo");
+            }
         })
 
         let cantidad_nav=Math.trunc( item.scrollWidth/contenedorWidth);
