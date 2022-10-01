@@ -3,11 +3,11 @@
 document.addEventListener("DOMContentLoaded", cargar);
 
 function cargar(){
-    const carruseles = [...document.querySelectorAll(".juego-carrusel")];
+    const carruseles = [...document.querySelectorAll(".game-slide")];
     console.log(carruseles);
-    const nxtBtn = [...document.querySelectorAll(".categoria-boton-derecha")];
-    const preBtn = [...document.querySelectorAll(".categoria-boton-izquierda")];
-    const NAV_CARRUSEL = [...document.querySelectorAll(".pag-carrusel")];
+    const nxtBtn = [...document.querySelectorAll(".category-button-right")];
+    const preBtn = [...document.querySelectorAll(".category-button-left")];
+    const NAV_CARRUSEL = [...document.querySelectorAll(".pag-slide")];
 
     carruseles.forEach((item,i)=> {
         let dimensionContenedor = item.getBoundingClientRect();
@@ -18,20 +18,20 @@ function cargar(){
 
         nxtBtn[i].addEventListener("click", () => {
             item.scrollLeft += contenedorWidth;
-            let activo = NAV_CARRUSEL[i].querySelector(".activo");
+            let activo = NAV_CARRUSEL[i].querySelector(".active");
             if(activo.nextSibling){
-                activo.nextSibling.classList.add("activo");
-                activo.classList.remove("activo");
+                activo.nextSibling.classList.add("active");
+                activo.classList.remove("active");
             
             }
         })
 
         preBtn[i].addEventListener("click", () => {
             item.scrollLeft -= contenedorWidth;
-            let activo = NAV_CARRUSEL[i].querySelector(".activo");
+            let activo = NAV_CARRUSEL[i].querySelector(".active");
             if(activo.previousSibling){
-                activo.previousSibling.classList.add("activo");
-                activo.classList.remove("activo");
+                activo.previousSibling.classList.add("active");
+                activo.classList.remove("active");
             }
         })
 
@@ -40,13 +40,13 @@ function cargar(){
         for(let j=-1;j<cantidad_nav;j++){
             let button = document.createElement("button");
             if(j===-1){
-                button.classList.add("activo")
+                button.classList.add("active")
             }
             NAV_CARRUSEL[i].appendChild(button);
             button.addEventListener("click",(e) => {
                 item.scrollLeft = contenedorWidth * (j+1);
-                NAV_CARRUSEL[i].querySelector(".activo").classList.remove("activo");
-                e.target.classList.add("activo");
+                NAV_CARRUSEL[i].querySelector(".active").classList.remove("active");
+                e.target.classList.add("active");
             })
             
         }
