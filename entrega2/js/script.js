@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function (){
         }
         user.classList.toggle("showUser");
         document.querySelector(".dark-background").classList.add("on");
-        comprobar();
+        check();
     });
 
     function check(){

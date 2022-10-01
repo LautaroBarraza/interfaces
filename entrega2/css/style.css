@@ -826,15 +826,15 @@ header .icon-user{
   }
 
   /*card juego*/
-  section.categoria ul.juego-carrusel .juego-card{
+  section.categoria ul.game-slide .game-card{
     height: auto;
     width: 230px;
   }
 
   /*imagen card juego*/
   section.category ul.game-slide .game-card .game-card-img img{
-    width: 225px;
-    height: 225px;
+    width: 166px;
+    height: 166px;
   }
 
     /* info card*/
