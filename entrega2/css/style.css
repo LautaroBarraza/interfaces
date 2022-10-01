@@ -369,6 +369,24 @@ header .icon-user{
     right: 0%;
   }
 
+  /*nav carrusel*/
+
+  .pag-carrusel{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .pag-carrusel button{
+    background-color: #858383;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+
+  .pag-carrusel button.activo{
+    background-color: #015194;
+
+  }
 
   /* card juego carrusel*/
 
