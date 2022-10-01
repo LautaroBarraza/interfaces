@@ -2,18 +2,18 @@
 document.addEventListener("DOMContentLoaded", function (){
 
     //Preloader//
-    let numero = document.querySelector('#porcentaje');
-    let contador = 0;
+    let number = document.querySelector('#percentage');
+    let counter = 0;
     let loader = document.querySelector('#onload');
     setInterval(()=>{
-        if(contador==100){
+        if(counter==100){
             clearInterval();
             loader.remove(loader);
             document.querySelector('.hidden').style.overflow = "visible";
             document.querySelector('.hidden').style.animation = "fadeOut 1.3s";
         }else{
-            contador+=1;
-            numero.textContent = contador + "%";
+            counter+=1;
+            number.textContent = counter + "%";
         }
     }, 20);
     
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function (){
         }
         main.classList.toggle("show");
         document.querySelector(".dark-background").classList.add("on");
-        comprobar();
+        check();
     });
 
     document.querySelector('.icon-user').addEventListener('click', () =>{
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function (){
         comprobar();
     });
 
-    function comprobar(){
+    function check(){
         if(!main.classList.contains('show') && !user.classList.contains('showUser')){
             document.querySelector(".dark-background").classList.remove("on");
         }
