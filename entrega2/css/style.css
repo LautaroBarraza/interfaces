@@ -374,8 +374,9 @@ section.category .category-button-right{
 /*nav carrusel*/
 .pag-slide{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  
 }
 
 .pag-slide button{
@@ -384,6 +385,7 @@ section.category .category-button-right{
   height: 10px;
   border-radius: 100%;
   cursor: pointer;
+  margin: 8px;
 }
 
 .pag-slide button.active{
