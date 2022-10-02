@@ -20,28 +20,47 @@ document.addEventListener("DOMContentLoaded", function (){
     //desplegables//
     let main = document.querySelector(".nav");
     let user = document.querySelector(".user-nav");
+    let background = document.querySelector(".dark-background");
+    let hamburger = document.querySelector('#hamburger');
+    let login = document.querySelector('#login');
 
     document.querySelector('.icon-main').addEventListener('click', () =>{
         if(user.classList.contains('showUser')){
             user.classList.remove('showUser');
+            login.classList.remove('fa-xmark', 'fa-2xl');
         }
         main.classList.toggle("show");
-        document.querySelector(".dark-background").classList.add("on");
+        background.classList.add("on");
+        hamburger.classList.add('fa-xmark', 'fa-2xl');    
         check();
     });
 
     document.querySelector('.icon-user').addEventListener('click', () =>{
         if(main.classList.contains('show')){
             main.classList.remove('show');
+            hamburger.classList.remove('fa-xmark', 'fa-2xl');
         }
         user.classList.toggle("showUser");
-        document.querySelector(".dark-background").classList.add("on");
+        background.classList.add("on");
+        login.classList.add('fa-xmark', 'fa-2xl');  
         check();
     });
 
+    
+
     function check(){
         if(!main.classList.contains('show') && !user.classList.contains('showUser')){
-            document.querySelector(".dark-background").classList.remove("on");
+            hamburger.classList.remove('fa-xmark', 'fa-2xl');
+            login.classList.remove('fa-xmark', 'fa-2xl');
+            background.classList.remove("on");
         }
+    }
+
+    background.onclick = function(){
+        user.classList.remove('showUser');
+        main.classList.remove('show');
+        hamburger.classList.remove('fa-xmark', 'fa-2xl');
+        login.classList.remove('fa-xmark', 'fa-2xl');
+        background.classList.remove("on");
     }
 });
