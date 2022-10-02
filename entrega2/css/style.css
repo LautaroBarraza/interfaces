@@ -622,7 +622,10 @@ header .icon-user{
 @media only screen and (min-width: 768px){
 
   header{
+    top: 0%;
     height: 90px;
+    z-index: 1000;
+    position: fixed;
   }
 
   header .left-header{
@@ -672,32 +675,38 @@ header .icon-user{
     left: 0;
     right: 0;
     background-color: #00000094;
-    position: absolute;
+    position: fixed;
     z-index: 110;
   }
 
   .nav{
+    top: 90px;
     width: 380px;
     left: -100%; 
     position: fixed;
     height: 705px;
+    z-index: 1001;
   }
 
   .nav.show{
-    position: absolute;
+    position: fixed;
     left: 0;
+    
   }
 
   .user-nav{
+    top: 90px;
     width: 380px;
     right:-100%; 
     position: fixed;
     height: 450px;
+    z-index: 1001;
   }
 
   .user-nav.showUser{
-    position: absolute;
+    position: fixed;
     right: 0;
+    
   }
 
   /*card juego*/
@@ -859,14 +868,14 @@ header .icon-user{
     /*boton card*/
 
     section.category ul.game-slide .game-card .card-info .card-button{
-      height: 35px;
-      width: 100px;
+      height: 30px;
+      width: 90px;
     }
 
     
     /*texto boton*/
     section.category ul.game-slide .game-card .card-info .card-button a{
-      font-size: 20px;
+      font-size: 18px;
     }
 
     .footer-container .footer-grid{
