@@ -1,40 +1,40 @@
 /*Reseteo de estilos*/
 
 *{
-    margin: 0;
-    padding: 0;
-    border:0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  border:0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
 
-  body{
-    background-color: #FAFAFA;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    animation: '';
-    overflow:hidden;
-  }
+body{
+  background-color: #FAFAFA;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  animation: '';
+  overflow:hidden;
+}
 
-  a{
-    color: #111111;
-  }
-  a:hover{
-    color: #4d4d4d;
-  }
+a{
+  color: #111111;
+}
+a:hover{
+  color: #4d4d4d;
+}
 
-  @keyframes fadeOut {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1; 
-    }
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
   }
+  100% {
+    opacity: 1; 
+  }
+}
 
 .loader-hero{
     background-color: #030513;
@@ -43,6 +43,9 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    top: 0;
 }
 
 .loader-hero .ring span{
@@ -53,13 +56,16 @@
 }
 
 /*preloader*/
-
 .loader{
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    z-index: 400;
+    width: 100%;
+    height: 100%;
+    top: 0;
 }
 
 .ring{
@@ -111,7 +117,7 @@
   }
 }
 
-  /* header*/
+/* header*/
 header{
   width: 100%;
   height: 70px;
@@ -135,6 +141,7 @@ header .search-header{
   align-items: center;
   justify-content: start;
 }
+
 /*///// buscador /////*/
 header .search-header .search-input-content{
   background-color: #ffffff;
@@ -310,245 +317,235 @@ header .icon-user{
   padding-left: 10px;
   color: #777777;
 }
-  
+
 /*main */
+/* seccion categoria*/
+section.category{
+  position: relative;
+  padding-left: 3px;
+  margin-bottom: 60px;
+}
 
-  /* seccion categoria*/
+/*carrusel juego*/
+section.category ul.game-slide{
+  display: flex;
+  column-gap: 15px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  padding: 5px 0;
+  column-gap: 15px;
+}
 
-  section.category{
-    position: relative;
-    padding-left: 3px;
-    margin-bottom: 60px;
-  }
+/*titulo categoria*/
+section.category h2.game-category{
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 36px;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
 
-  /*carrusel juego*/
-  section.category ul.game-slide{
-    display: flex;
-    column-gap: 15px;
-    overflow: hidden;
-    scroll-behavior: smooth;
-    padding: 5px 0;
-    column-gap: 15px;
-  }
+/* botones sigueinte y anterior carrusel*/
+section.category .category-button-left, section.category .category-button-right{
+  position: absolute;
+  top: 50%;
+  font-size: 30px;
+  width: 28px;
+  height: 28px;
+  background-color: #dfdfdf;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  z-index: 100;
+  color: #015194;
+  cursor: pointer;
+}
 
-  /*titulo categoria*/
+section.category .category-button-left{
+  left: 0%;
+}
 
-  section.category h2.game-category{
-    font-weight: 300;
-    font-size: 25px;
-    line-height: 36px;
-    margin: 10px 0;
-    text-transform: capitalize;
-  }
+section.category .category-button-right{
+  right: 0%;
+}
 
-  /* botones sigueinte y anterior carrusel*/
+/*nav carrusel*/
+.pag-slide{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
-  section.category .category-button-left, section.category .category-button-right{
-    position: absolute;
-    top: 50%;
-    font-size: 30px;
-    width: 28px;
-    height: 28px;
-    background-color: #dfdfdf;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    z-index: 100;
-    color: #015194;
-    cursor: pointer;
-  }
+.pag-slide button{
+  background-color: #858383;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  cursor: pointer;
+}
 
-  section.category .category-button-left{
-    left: 0%;
-  }
+.pag-slide button.active{
+  background-color: #015194;
+}
 
-  section.category .category-button-right{
-    right: 0%;
-  }
+/* card juego carrusel*/
+section.category ul.game-slide .game-card{
+  height: auto;
+  width: 140px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.21);
+  transition: all 1s;
+}
 
-  /*nav carrusel*/
+section.category ul.game-slide .game-card:hover{
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+}
 
-  .pag-slide{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .pag-slide button{
-    background-color: #858383;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    cursor: pointer;
-  }
+/*imagen card juego*/
+section.category ul.game-slide .game-card .game-card-img{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 2px 2px 0 2px;
+  
+}
 
-  .pag-slide button.active{
-    background-color: #015194;
+section.category ul.game-slide .game-card .game-card-img img{
+  width: 136px;
+  height: 136px;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
-  }
+/*etiqueta imagen*/
+section.category ul.game-slide .game-card .game-card-img .tag{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 2px;
+  top: 10px;
+  border-radius: 0px 10px 10px 0px;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: capitalize;
+  width: 70px;
+}
 
-  /* card juego carrusel*/
+/*etiqueta pago*/
+section.category ul.game-slide .game-card .game-card-img .bought{
+  background: #FF781C;
+  color: white;
+}
 
-  section.category ul.game-slide .game-card{
-    height: auto;
-    width: 140px;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.21);
-    transition: all 1s;
-  }
-  section.category ul.game-slide .game-card:hover{
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
-  }
+/*etiqueta subscripcion*/
+section.category ul.game-slide .game-card .game-card-img .subscription{
+  background: #FFD21C;
+  color: black;
+}
 
-  /*imagen card juego*/
+/* info card*/
+section.category ul.game-slide .game-card .card-info{
+  height: 79px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 4fr 1fr;
+  grid-template-rows: 3fr 2fr 3fr;
+  grid-template-areas: ". titulo titulo ."
+                        ". genero . ."
+                        ". precio boton .";
+  padding: 5px 5px;
+  align-items: center;
+}
 
-  section.category ul.game-slide .game-card .game-card-img{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 2px 2px 0 2px;
+section.category ul.game-slide .game-card .card-info .card-title{
+  grid-area: titulo;
+  font-style: normal;
+  font-size: 14px;
+  font-weight: 100;
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
     
-  }
-  section.category ul.game-slide .game-card .game-card-img img{
-    width: 136px;
-    height: 136px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
+}
+section.category ul.game-slide .game-card .card-info .card-genre{
+  grid-area: genero;
+  display: flex;
+  align-items: center;
+  font-weight: 100;
+  font-size: 10px;
+  line-height: 16px;
+  text-transform: capitalize;
+}
 
-  /*etiqueta imagen*/
-
-  section.category ul.game-slide .game-card .game-card-img .tag{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 2px;
-    top: 10px;
-    border-radius: 0px 10px 10px 0px;
-    font-weight: 400;
-    font-size: 12px;
-    text-transform: capitalize;
-    width: 70px;
-  }
-
-      /*etiqueta pago*/
-      section.category ul.game-slide .game-card .game-card-img .bought{
-        background: #FF781C;
-        color: white;
-      }
-
-      /*etiqueta subscripcion*/
-      section.category ul.game-slide .game-card .game-card-img .subscription{
-        background: #FFD21C;
-        color: black;
-      }
+section.category ul.game-slide .game-card .card-info .card-price{
+  grid-area: precio;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 600;
+}
 
 
-    /* info card*/
+/*boton card con sus acciones*/
 
-    section.category ul.game-slide .game-card .card-info{
-      height: 79px;
-      display: grid;
-      grid-template-columns: 1fr 4fr 4fr 1fr;
-      grid-template-rows: 3fr 2fr 3fr;
-      grid-template-areas: ". titulo titulo ."
-                           ". genero . ."
-                           ". precio boton .";
-      padding: 5px 5px;
-      align-items: center;
-    }
-    section.category ul.game-slide .game-card .card-info .card-title{
-      grid-area: titulo;
-      font-style: normal;
-      font-size: 14px;
-      font-weight: 100;
-      text-transform: capitalize;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-        
-    }
-    section.category ul.game-slide .game-card .card-info .card-genre{
-      grid-area: genero;
-      display: flex;
-      align-items: center;
-      font-weight: 100;
-      font-size: 10px;
-      line-height: 16px;
-      text-transform: capitalize;
-    }
+section.category ul.game-slide .game-card .card-info .card-button{
+  margin-left: 5px;
+  grid-area: boton;
+  height: 23px;
+  width: 75px;
+  border-radius: 15px;
+  transition: all 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*boton comprar*/
+section.category ul.game-slide .game-card .card-info .button-buy{
+  background-color: #FF781C;
+}
+
+section.category ul.game-slide .game-card .card-info .button-buy:hover{
+  background-color: #EF6100;
+  transform: scale(1.1);
+}
+
+section.category ul.game-slide .game-card .card-info .button-buy:active{
+  background-color: #B84A00;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+}
+
+/*boton jugar*/
+
+section.category ul.game-slide .game-card .card-info .button-play{
+  background-color: #1F71B5;
+}
+
+section.category ul.game-slide .game-card .card-info .button-play:hover{
+  background-color: #015194;
+  transform: scale(1.1);
+}
+
+section.category ul.game-slide .game-card .card-info .button-play:active{
+  background-color: #004884;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+}
   
-    section.category ul.game-slide .game-card .card-info .card-price{
-      grid-area: precio;
-      font-size: 15px;
-      line-height: 26px;
-      font-weight: 600;
-    }
-  
-  
-    /*boton card con sus acciones*/
-   
-    section.category ul.game-slide .game-card .card-info .card-button{
-      margin-left: 5px;
-      grid-area: boton;
-      height: 23px;
-      width: 75px;
-      border-radius: 15px;
-      transition: all 1s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    /*boton comprar*/
-    section.category ul.game-slide .game-card .card-info .button-buy{
-      background-color: #FF781C;
-    }
-  
-    section.category ul.game-slide .game-card .card-info .button-buy:hover{
-      background-color: #EF6100;
-      transform: scale(1.1);
-    }
-  
-    section.category ul.game-slide .game-card .card-info .button-buy:active{
-      background-color: #B84A00;
-      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
-    }
+/*texto boton*/
+section.category ul.game-slide .game-card .card-info .card-button a{
+  color: white;
+  padding: 2px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100%;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+}
 
-    /*boton jugar*/
-    
-    section.category ul.game-slide .game-card .card-info .button-play{
-      background-color: #1F71B5;
-    }
-  
-    section.category ul.game-slide .game-card .card-info .button-play:hover{
-      background-color: #015194;
-      transform: scale(1.1);
-    }
-  
-    section.category ul.game-slide .game-card .card-info .button-play:active{
-      background-color: #004884;
-      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
-    }
-  
-    /*texto boton*/
-    section.category ul.game-slide .game-card .card-info .card-button a{
-      color: white;
-      padding: 2px;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 100%;
-      line-height: 30px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      text-transform: capitalize;
-    }
-
-
-
-    /* footer*/
-
+/* footer*/
 .footer-container{
     background-color: #ECECEC;
     width: 100%;
@@ -574,7 +571,6 @@ header .icon-user{
     margin-top: 25px;
     border-radius: 100%;
     transition: .35s ease-in;
-
 }
 
 .footer-container .footer-nav .footer-links h3{
@@ -621,8 +617,8 @@ header .icon-user{
   header{
     top: 0%;
     height: 90px;
-    z-index: 1000;
-    position: fixed;
+    z-index: 200;
+    position: sticky;
   }
 
   header .left-header{
@@ -633,6 +629,7 @@ header .icon-user{
   header .search-header{
     justify-content: center;
   }
+
   /*///// buscador /////*/
   header .search-header .search-input-content{
     width: 500px;
@@ -655,8 +652,7 @@ header .icon-user{
   
   header .image{
     width: 70px;
-    height: 70px;
-    
+    height: 70px; 
   }
 
   .dark-background{
@@ -687,8 +683,7 @@ header .icon-user{
 
   .nav.show{
     position: fixed;
-    left: 0;
-    
+    left: 0;  
   }
 
   .user-nav{
@@ -702,14 +697,9 @@ header .icon-user{
 
   .user-nav.showUser{
     position: fixed;
-    right: 0;
-    
+    right: 0;  
   }
 
-  /*main*/
-  main{
-    margin-top: 110px;
-  }
   /*card juego*/
   section.category ul.game-slide .game-card{
     height: auto;
@@ -717,7 +707,6 @@ header .icon-user{
   }
 
   /*imagen card juego*/
-
   section.category ul.game-slide .game-card .game-card-img{
     position: relative;
     display: flex;
@@ -735,6 +724,7 @@ header .icon-user{
     font-size: 15px;
     font-weight: 300;   
   }
+
   section.category ul.game-slide .game-card .card-info .card-genre{
     font-weight: 500;
     font-size: 9px;
@@ -747,9 +737,9 @@ header .icon-user{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   } 
-
-
 }
+
+
 
 @media only screen and (min-width: 1024px){
   /*4 en linea*/
@@ -848,50 +838,50 @@ header .icon-user{
     height: 166px;
   }
 
-    /* info card*/
+  /* info card*/
+  section.category ul.game-slide .game-card .card-info{
+    height: auto;
+  }
 
-    section.category ul.game-slide .game-card .card-info{
-      height: auto;
-    }
-    section.category ul.game-slide .game-card .card-info .card-title{
-      font-size: 20px;  
-    }
-    section.category ul.game-slide .game-card .card-info .card-genre{
-      font-weight: 500;
-      font-size: 11px;
-    }
-    section.category ul.game-slide .game-card .card-info .card-price{
-      font-size: 20px;
+  section.category ul.game-slide .game-card .card-info .card-title{
+    font-size: 20px;  
+  }
 
-    }
+  section.category ul.game-slide .game-card .card-info .card-genre{
+    font-weight: 500;
+    font-size: 11px;
+  }
 
-    /*boton card*/
+  section.category ul.game-slide .game-card .card-info .card-price{
+    font-size: 20px;
+  }
 
-    section.category ul.game-slide .game-card .card-info .card-button{
-      height: 30px;
-      width: 90px;
-    }
+  /*boton card*/
+  section.category ul.game-slide .game-card .card-info .card-button{
+    height: 30px;
+    width: 90px;
+  }
+  
+  /*texto boton*/
+  section.category ul.game-slide .game-card .card-info .card-button a{
+    font-size: 18px;
+  }
 
-    
-    /*texto boton*/
-    section.category ul.game-slide .game-card .card-info .card-button a{
-      font-size: 18px;
-    }
+  .footer-container .footer-grid{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    width: 80%;
+    height: 300px;
+    margin: 20px 10%;
+  }
 
-    .footer-container .footer-grid{
-      display: grid;
-      grid-template-columns: 1fr 4fr;
-      width: 80%;
-      height: 300px;
-      margin: 20px 10%;
-    }
-    .footer-container .footer-nav{
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      margin: 0 0 0 20%;
-    }  
-
+  .footer-container .footer-nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 0 0 20%;
+  }  
 }
+
 
 
 @media only screen and (min-width: 1440px){ 
@@ -902,46 +892,43 @@ header .icon-user{
     height: 400px;
   }
 
-    /*imagen card juego*/
-    section.category ul.game-slide .game-card .game-card-img img{
-      width: 250px;
-      height: 250px;
-    }
+  /*imagen card juego*/
+  section.category ul.game-slide .game-card .game-card-img img{
+    width: 250px;
+    height: 250px;
+  }
 
-      /*etiqueta imagen*/
+  /*etiqueta imagen*/
+  section.category ul.game-slide .game-card .game-card-img .tag{
+    top: 20px;
+    font-size: 15px;
+    width: 100px;
+  }
 
-      section.category ul.game-slide .game-card .game-card-img .tag{
-        top: 20px;
-        font-size: 15px;
-        width: 100px;
-      }
+  /* card-info*/
+  section.category ul.game-slide .game-card .card-info .card-title{
+    font-size: 26px;  
+  }
 
-      /* card-info*/
-      section.category ul.game-slide .game-card .card-info .card-title{
-      font-size: 26px;  
-    }
-    section.category ul.game-slide .game-card .card-info .card-genre{
-      font-weight: 500;
-      font-size: 14px;
-    }
-    section.category ul.game-slide .game-card .card-info .card-price{
-      font-size: 22px;
+  section.category ul.game-slide .game-card .card-info .card-genre{
+    font-weight: 500;
+    font-size: 14px;
+  }
 
-    }
+  section.category ul.game-slide .game-card .card-info .card-price{
+    font-size: 22px;
+  }
 
-    /*boton card*/
+  /*boton card*/
+  section.category ul.game-slide .game-card .card-info .card-button{
+    height: 43px;
+    width: 135px;
+  }
 
-    section.category ul.game-slide .game-card .card-info .card-button{
-      height: 43px;
-      width: 135px;
-    }
-
-        /*texto boton*/
+  /*texto boton*/
   section.category ul.game-slide .game-card .card-info .card-button a{
     font-size: 26px;
   }
-
-
 }
 
 
