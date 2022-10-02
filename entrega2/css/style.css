@@ -709,6 +709,10 @@ header .icon-user{
     
   }
 
+  /*main*/
+  main{
+    margin-top: 110px;
+  }
   /*card juego*/
   section.category ul.game-slide .game-card{
     height: auto;
