@@ -17,12 +17,16 @@ function cargar(){
         console.log(item.scrollWidth/contenedorWidth)
 
         nxtBtn[i].addEventListener("click", () => {
-            item.scrollLeft += contenedorWidth;
+            
             let activo = NAV_CARRUSEL[i].querySelector(".active");
             if(activo.nextSibling){
+                item.scrollLeft += contenedorWidth;
                 activo.nextSibling.classList.add("active");
                 activo.classList.remove("active");
-            
+            }else{
+                item.scrollLeft = 0;
+                NAV_CARRUSEL[i].firstElementChild.classList.add("active");
+                NAV_CARRUSEL[i].lastElementChild.classList.remove("active")
             }
         })
 
@@ -32,6 +36,11 @@ function cargar(){
             if(activo.previousSibling){
                 activo.previousSibling.classList.add("active");
                 activo.classList.remove("active");
+            }else{
+                item.scrollLeft = item.scrollWidth;
+                NAV_CARRUSEL[i].lastElementChild.classList.add("active");
+                NAV_CARRUSEL[i].firstElementChild.classList.remove("active")
+                
             }
         })
 
