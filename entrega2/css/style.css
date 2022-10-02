@@ -791,14 +791,13 @@ header .icon-user{
       border-radius: 15px;
       background-color: #1F71B5;
       transition: all .5s;   
+      text-align: center;
   }
 
-  .game-container section .section-image .play-section .play-button a{
-    width: 100%;
-    height: 100%;
-    line-height: 43px;
-    color: white;
-    font-size: 20px;
+  .game-container section .section-image .play-section .play-button span{
+      color: white;
+      font-size: 20px;
+      line-height: 40px;
   }
 
   .game-container section .section-image .play-section .play-button:hover{
