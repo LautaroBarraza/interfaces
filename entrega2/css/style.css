@@ -758,6 +758,8 @@ section.category ul.game-slide .game-card .card-info .card-button a{
     color: white;
   }
 
+  /*seccion hero*/
+
   section.hero{
     position: relative;
     height: 100vh;
@@ -768,13 +770,14 @@ section.category ul.game-slide .game-card .card-info .card-button a{
     overflow: hidden;
   }
 
-  section.hero::before{
+  .background-dark::before{
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: #000000;
     opacity: 0.7;
+    z-index: 0;
   }
   section.hero .prof1, section.hero .prof2, section.hero .prof3{
     position: absolute;
@@ -805,6 +808,83 @@ section.category ul.game-slide .game-card .card-info .card-button a{
     width: 400px;
   }
 
+  /*seccion info juego proximamente*/
+
+
+  /*seccion info historia*/
+
+  section.info-game-coming article{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr 1fr;
+    align-items: center;
+    height: 700px;
+    background: url("../img/starfield/starry-night-sky.jpg") center/cover;
+  }
+
+  section.info-game-coming article.left{
+    grid-template-areas: ". img . info .";
+  }
+  section.info-game-coming article.right{
+    grid-template-areas: ". info . img .";
+  }
+
+  section.info-game-coming article div:first-child {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+    width: auto;
+    background: #5F80F5;
+    border-radius: 15px;
+    z-index: 2;
+  }
+
+  section.info-game-com div:first-child p{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 5px 15px;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 41px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+  }
+
+  section.info-game-com div:nth-child(2){
+    grid-area: img;
+    display: flex;
+    justify-content: center;
+    width: 560px;
+    height: 430px;
+    overflow: hidden;
+    z-index: 1;
+  }
+  section.info-game-com div:nth-child(2) img {
+    object-fit: cover;
+  }
+
+  section.info-game-com div:last-child{
+    display: flex;
+    justify-content: center;
+    grid-area: info;
+    width: 420px;
+    z-index: 1;
+  }
+  section.info-game-com div:last-child p{
+    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+
+  /* seccion personajes y multimedia*/
+
+
+  
 
   /*4 en linea*/
   .game-container{
