@@ -744,6 +744,68 @@ section.category ul.game-slide .game-card .card-info .card-button a{
 
 
 @media only screen and (min-width: 1024px){
+
+  /*juego-proximamente*/
+
+  /*header hero*/
+
+  header.hero{
+    background-color: #00000000;
+    position: fixed;
+  }
+
+  header.hero i{
+    color: white;
+  }
+
+  section.hero{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: url("../img/starfield/starry-night-sky.jpg") center/cover;
+    overflow: hidden;
+  }
+
+  section.hero::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.7;
+  }
+  section.hero .prof1, section.hero .prof2, section.hero .prof3{
+    position: absolute;
+  }
+
+  section.hero .prof1{
+    background: url("../img/starfield/Sin-título-2.png") center/cover;
+    top: 0%;
+    width: 140%;
+    height: 80%;
+  }
+
+  section.hero .prof2{
+    background: url("../img/starfield/Sin-títul4444o-1.png") center/cover;
+    bottom: 0%;
+    height: 500px;
+    width: 100%;
+  }
+
+  section.hero .prof3 {
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+  }
+
+  section.hero .prof3 img{
+    width: 400px;
+  }
+
+
   /*4 en linea*/
   .game-container{
     width: 80%;
@@ -930,6 +992,20 @@ section.category ul.game-slide .game-card .card-info .card-button a{
   /*texto boton*/
   section.category ul.game-slide .game-card .card-info .card-button a{
     font-size: 26px;
+  }
+}
+
+
+@media only screen and (min-width: 1920px) {
+
+  section.hero .prof2{
+    min-height: 600px;
+  }
+
+  section.hero .prof1{
+    background: url("../img/starfield/Sin-título-2.png") center/cover;
+    top: 0%;
+    width: 110%;
   }
 }
 
