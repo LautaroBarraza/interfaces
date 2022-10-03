@@ -3,10 +3,10 @@
 document.addEventListener("DOMContentLoaded", cargar);
 
 function cargar(){
-    const carruseles = [...document.querySelectorAll(".game-slide")];
+    const carruseles = [...document.querySelectorAll(".slide")];
     console.log(carruseles);
-    const nxtBtn = [...document.querySelectorAll(".category-button-right")];
-    const preBtn = [...document.querySelectorAll(".category-button-left")];
+    const nxtBtn = [...document.querySelectorAll(".button-right")];
+    const preBtn = [...document.querySelectorAll(".button-left")];
     const NAV_CARRUSEL = [...document.querySelectorAll(".pag-slide")];
 
     carruseles.forEach((item,i)=> {
