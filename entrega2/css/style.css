@@ -323,17 +323,16 @@ header .icon-user{
 section.category{
   position: relative;
   padding-left: 3px;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 /*carrusel juego*/
-section.category ul.game-slide{
+.game-slide{
   display: flex;
   column-gap: 15px;
   overflow: hidden;
   scroll-behavior: smooth;
-  padding: 5px 0;
-  column-gap: 15px;
+  padding: 20px 0;
 }
 
 /*titulo categoria*/
@@ -346,7 +345,7 @@ section.category h2.game-category{
 }
 
 /* botones sigueinte y anterior carrusel*/
-section.category .category-button-left, section.category .category-button-right{
+.category-button-left, .category-button-right{
   position: absolute;
   top: 50%;
   font-size: 30px;
@@ -363,11 +362,11 @@ section.category .category-button-left, section.category .category-button-right{
   cursor: pointer;
 }
 
-section.category .category-button-left{
+.category-button-left{
   left: 0%;
 }
 
-section.category .category-button-right{
+.category-button-right{
   right: 0%;
 }
 
@@ -819,13 +818,83 @@ section.category ul.game-slide .game-card .card-info .card-button a{
     height: 100px;
     background-color:#ECECEC;
     border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
   }
 
   .game-container section .game-info h1{
-    font-weight: 340;
+    font-weight: 390;
     font-size: 28px;
     line-height: 96px;
-    margin-left: 30px;
+    margin-left: 46px;
+  }
+
+  .game-container section .game-info .share-section{
+    margin-right:46px;
+  }
+
+  .game-container section .game-info .share-section i{
+    margin-left: 16px;
+    transition: all .5s;
+  }
+
+  .yellow-star{
+    color: yellow;
+  }
+
+  .empty-star{
+    color:#9e9e9e; 
+  }
+
+  .like:hover{
+    transform: scale(1.1);
+    color: #3E9CEB;
+  }
+
+  .dislike:hover{
+    transform: scale(1.1);
+    color: #FE5D4D;
+  }
+
+  .heart:hover{
+    transform: scale(1.1);
+    color: #FF781C;
+  }
+
+  .share:hover{
+    transform: scale(1.1);
+    color: #5CC35C;
+  }
+
+  .carousel{
+    position: relative;
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  .carousel .game-slide .game-item{
+    transition: all 1s;
+  }
+
+  .carousel .game-slide .game-item .photo-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel .game-slide .game-item .photo-container .game-photo{
+    height: 190px;
+    width: 280px;
+    border-radius: 10px;
+    transition: all .5s;
+  }
+
+  .carousel .game-slide .game-item .photo-container .game-photo:hover{
+    transform: scale(1.1, 1.1);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
   }
 
   /*card juego*/
