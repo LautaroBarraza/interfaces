@@ -767,8 +767,69 @@ section.category ul.slide .game-card .card-info .card-button a{
     display: flex;
     justify-content: center;
     background: url("../img/starfield/starry-night-sky.jpg") center/cover;
-    overflow: hidden;
+
   }
+
+
+  section.hero .call-to-action{
+    position: absolute;
+    top: 75%;
+  }
+
+
+  section.hero .call-to-action button{
+    position: relative;
+    background: #ECECEC;
+    transition: ease 1s;
+    border-radius: 15px;
+    overflow: hidden;
+    
+  }
+
+  section.hero .call-to-action button::after{
+    content: "";
+    width: 150%;
+    height: 150%;
+    background: #015194;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    z-index: 1;
+    transition: all ease-in-out 0.5s;
+  }
+
+  section.hero .call-to-action button:hover:after{
+    transform: translate(0%,-100%);
+  }
+
+  section.hero .call-to-action button a span{
+    position: relative;
+    color: #015194;
+    z-index: 2;
+    padding: 20px 20px;
+    transition: all 0.3s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 68px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+
+  }
+  section.hero .call-to-action button a span:hover{
+    color: #ECECEC;
+  }
+
+
+
+
+
+
+
+
+
 
   .background-dark::before{
     content: "";
