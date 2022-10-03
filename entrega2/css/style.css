@@ -346,7 +346,7 @@ section.category h2.game-category{
 }
 
 /* botones sigueinte y anterior carrusel*/
-section.category .button-left, section.category .button-right, article.characters .button-left, article.characters .button-right{
+section.category .button-left, section.category .button-right, article .button-left, article .button-right{
   position: absolute;
   top: 50%;
   font-size: 30px;
@@ -363,11 +363,11 @@ section.category .button-left, section.category .button-right, article.character
   cursor: pointer;
 }
 
-section.category .button-left, article.characters .button-left{
+section.category .button-left, article .button-left{
   left: 0%;
 }
 
-section.category .button-right, article.characters .button-right{
+section.category .button-right, article .button-right{
   right: 0%;
 }
 
@@ -438,7 +438,7 @@ section.category ul.slide .game-card .game-card-img .tag{
 /*etiqueta pago*/
 section.category ul.slide .game-card .game-card-img .bought{
   background: #FF781C;
-  color: white;
+  color: #ECECEC;
 }
 
 /*etiqueta subscripcion*/
@@ -535,7 +535,7 @@ section.category ul.slide .game-card .card-info .button-play:active{
   
 /*texto boton*/
 section.category ul.slide .game-card .card-info .card-button a{
-  color: white;
+  color: #ECECEC;
   padding: 2px;
   font-style: normal;
   font-weight: 500;
@@ -755,7 +755,7 @@ section.category ul.slide .game-card .card-info .card-button a{
   }
 
   header.hero i{
-    color: white;
+    color: #ECECEC;
   }
 
   /*seccion hero*/
@@ -816,7 +816,7 @@ section.category ul.slide .game-card .card-info .card-button a{
   section.info-game-coming article{
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr 3fr 1fr;
+    grid-template-columns: 3fr 3fr 1fr 3fr 3fr;
     align-items: center;
     height: 700px;
     background: url("../img/starfield/starry-night-sky.jpg") center/cover;
@@ -840,7 +840,7 @@ section.category ul.slide .game-card .card-info .card-button a{
   }
 
   section.info-game-coming div:first-child p{
-    color: white;
+    color: #ECECEC;
     display: flex;
     justify-content: center;
     padding: 5px 15px;
@@ -873,7 +873,7 @@ section.category ul.slide .game-card .card-info .card-button a{
     z-index: 1;
   }
   section.info-game-coming div:last-child p{
-    color: white;
+    color: #ECECEC;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -882,23 +882,13 @@ section.category ul.slide .game-card .card-info .card-button a{
 
 
   /* seccion personajes y multimedia*/
-
-
-  /*perosnajes */
-
-  article.characters{
-    height: 500px;
-    position: relative;
-    background: #030513;
-
-  }
-
-  article.characters h2.title{
+  
+  article h2.title{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    padding: 20px;
+    color: #ECECEC;
+    padding: 30px;
     font-style: normal;
     font-weight: 800;
     font-size: 60px;
@@ -907,7 +897,18 @@ section.category ul.slide .game-card .card-info .card-button a{
     text-transform: capitalize;
   }
 
-  article.characters ul.slide{
+  /*personajes */
+
+  article.characters{
+    height: 500px;
+    position: relative;
+    background: #030513;
+
+  }
+
+
+
+  article.characters ul.slide, article.galery ul.slide{
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -921,6 +922,50 @@ section.category ul.slide .game-card .card-info .card-button a{
     border-radius: 100%;
     width: 250px;
     height: 250px;
+  }
+
+  /*galeria*/
+
+  article.galery{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #030513;
+    padding: 40px 0;
+  }
+
+  article.galery div:first-of-type{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  article.galery div:first-of-type img{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+
+  }
+
+  article.galery div:nth-child(3){
+    position: relative;
+  }
+
+  article.galery ul.slide{
+    overflow: hidden;
+    width: 100%;
+  }
+  article.galery ul.slide li img{
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  /*separacion*/
+
+  article.galery+div{
+    background: #030513 url("../img/starfield/separacion.png");
+    width: 100%;
+    height: 400px;
   }
 
   
