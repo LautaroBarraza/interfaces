@@ -828,13 +828,21 @@ section.category ul.game-slide .game-card .card-info .card-button a{
     font-size: 28px;
     line-height: 96px;
     margin-left: 46px;
+    width: auto;
   }
 
-  .game-container section .game-info .share-section{
-    margin-right:46px;
+  .game-container section .game-info .info-section{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: auto;
   }
 
-  .game-container section .game-info .share-section i{
+  .game-container section .game-info .info-section .share-section{
+    margin:0 46px 0 20px;
+  }
+
+  .game-container section .game-info .info-section .share-section i{
     margin-left: 16px;
     transition: all .5s;
   }
