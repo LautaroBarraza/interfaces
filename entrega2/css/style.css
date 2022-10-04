@@ -753,8 +753,36 @@ section.category ul.slide .game-card .card-info .card-button a{
     position: fixed;
   }
 
+  header.hero .image:hover{
+    box-shadow: 1px 2px 1px 1px rgb(27, 28, 39);
+  }
+
   header.hero i{
     color: #ECECEC;
+  }
+
+  .hero-nav{
+    background-color: #030513;
+  }
+
+  .hero-nav .list .list-item .list-button a{
+    color: white;
+  }
+
+  .hero-nav .list .list-item:hover{
+    background-color: #171b36;
+  }
+
+  .hero-nav section{
+    background-color: #030513;
+  }
+
+  .hero-nav section .user-name h3{
+    color: white;
+  }
+
+  .hero-nav .list .list-item:nth-child(8), .user-nav.hero-nav .list .list-item:last-child, .hero-nav .main-social {
+    border-top: 1px solid rgba(255, 255, 255, 0.589);
   }
 
   /*seccion hero*/
@@ -1206,12 +1234,12 @@ section.category ul.slide .game-card .card-info .card-button a{
     align-items: center;
   }
 
-  .modal-content .social-modal img{
+  .modal-content .social-modal i{
     margin: 0 14px;
     transition: all .5s;
   }
 
-  .modal-content .social-modal img:hover{
+  .modal-content .social-modal i:hover{
     transform: scale(1.2);
   }
 
