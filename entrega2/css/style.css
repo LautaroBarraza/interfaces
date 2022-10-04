@@ -761,36 +761,11 @@ section.category ul.slide .game-card .card-info .card-button a{
     color: #ECECEC;
   }
 
-  
+  /*seccion hero*/
+    
 main.game-coming{
   background: #030513;
 }
-.hero-nav{
-    background-color: #030513;
-  }
-
-  .hero-nav .list .list-item .list-button a{
-    color: white;
-  }
-
-  .hero-nav .list .list-item:hover{
-    background-color: #171b36;
-  }
-
-  .hero-nav section{
-    background-color: #030513;
-  }
-
-  .hero-nav section .user-name h3{
-    color: white;
-  }
-
-  .hero-nav .list .list-item:nth-child(8), .user-nav.hero-nav .list .list-item:last-child, .hero-nav .main-social {
-    border-top: 1px solid rgba(255, 255, 255, 0.589);
-  }
-
-  /*seccion hero*/
-
 
 
   section.hero{
