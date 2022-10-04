@@ -63,4 +63,19 @@ document.addEventListener("DOMContentLoaded", function (){
         login.classList.remove('fa-xmark', 'fa-2xl');
         background.classList.remove("on");
     }
+
+    let openModal = document.querySelector('#openModal');
+    let closeModal = document.querySelector('#closeModal');
+    let modal = document.querySelector('#modal');
+    openModal.onclick = function(){
+        modal.style.visibility = 'visible';
+    }
+
+    closeModal.onclick = function(){
+        modal.style.visibility = 'hidden';
+    }
+
+    modal.onlick = function(){
+        modal.style.visibility = 'hidden';
+    }
 });

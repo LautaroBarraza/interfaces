@@ -124,7 +124,7 @@
     <div class="dark-background"></div>
     
     <main class="game-container">
-        <h2>Juegos / Solo para ti / Saint Seiya: 4 En Linea</h2>
+        <p class="breadcrums"><a href="../index.html">Juegos</a> / Solo para ti / <a href="../html/game.html">Saint Seiya: 4 En Linea</a> </p>
         <section>
             <div class="section-image">
                 <img class="bk-game-image" src="../img/game/sainhades.jpg" alt="game-background">
@@ -148,14 +148,14 @@
                         <span>4.732</span>
                         <a href="#"><i class="fa-regular fa-thumbs-down fa-2x dislike"></i></a>
                         <a href="#"><i class="fa-regular fa-heart fa-2x heart"></i></a>
-                        <a href="#"><i class="fa-solid fa-share-nodes fa-2x share"></i></a>
+                        <a id="openModal" href="#"><i class="fa-solid fa-share-nodes fa-2x share"></i></a>
                     </div>
                 </section>    
             </div>
         </section>
         <section class="carousel">
-            <button class="category-button-left"><i class="fas fa-angle-left"></i></button>
-            <ul class="game-slide">
+            <button class="button-left"><i class="fas fa-angle-left"></i></button>
+            <ul class="slide">
                 <li class="game-item">
                     <div class="photo-container">
                         <img class="game-photo" src="../img/game/gameVideo.png" alt="galery-photo">
@@ -192,11 +192,129 @@
                     </div>
                 </li>
             </ul>
-            <button class="category-button-right"><i class="fas fa-angle-right"></i></button>
+            <button class="button-right"><i class="fas fa-angle-right"></i></button>
             <div class="pag-slide"></div>
+        </section>
+        <h2>Instrucciones</h2>
+        <section class="game-instructions">
+            <p>Cada jugador dispone de 21 fichas de un mismo tipo (Seiya o Hades).
+                En cada turno cada jugador coloca una ficha de su tipo en la columna donde desee y esta caerá en un sitio disponible.
+                El que consigue ubicar 4 fichas del mismo tipo seguidas en horizontal, vertical u oblicuo gana. 
+                Si nadie lo consigue la partida termina en empate.</p>
+            <img src="../img/game/instrucciones.png" alt="instructions-image">
+        </section>
+        <h2>Controles</h2>
+        <section class="controls">
+            <p>-Click izquierdo = Para seleccionar ficha</p>
+            <p>-Click izquierdo sobre el tablero = Para colocar ficha</p>
+            <p>-Tecla “R” = Rendirse</p>
+        </section>
+        <h2>Comentarios</h2>
+        <section class="form-container">
+            <div class="user-content">
+                <div></div>
+                <span>Tú</span>
+            </div>
+            <div class="form-comment">
+                <input type="text" placeholder="¿Que te parecio el juego?">
+                <button>Enviar</button>
+            </div>
+        </section>
+        <h3>Últimos comentarios</h3>
+        <section class="comments">
+            <ul class="comment-list">
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <div></div>
+                            <span>Patricio rey</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>1 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>Muy divertido!!!</span>
+                        <span class="date-comment">12/12/2012</span>
+                    </div>
+                </li>
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <div></div>
+                            <span>JhonnyWalker</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>12 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>Muy bueno para jugar con amigos, muy recomendable</span>
+                        <span class="date-comment">21/21/2021</span>
+                    </div>
+                </li>
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <div></div>
+                            <span>NoobMaster69</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>3 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>Aburrido, prefiero el ajedrez</span>
+                        <span class="date-comment">15/12/2021</span>
+                    </div>
+                </li>
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <div></div>
+                            <span>BocaPasion</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>6 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>el mejor juego de mesa que existe</span>
+                        <span class="date-comment">13/07/2014</span>
+                    </div>
+                </li>
+            </ul>
         </section>
     </main>
 
+    <div id="modal" class="modal-container">
+        <div class="modal-content">
+            <h2>Compartir</h2>
+            <div class="close-button">
+                <a id="closeModal" href="#"><i class="fa-solid fa-circle-xmark fa-2x"></i></a>
+            </div>  
+            <div class="line"></div>
+            <div class="modal-image">
+                <img src="../img/game/sshades.jpg" alt="game-image">
+                <p>¡Comparte Saint Seiya: 4 En Linea con tus amigos y eleva tu cosmos a lo mas alto!</p>
+            </div>
+            <div class="social-modal">
+                <a href="#"><img src="../assets/facebook2-icon.png" alt="facebook-icon" width="58px"></a>
+                <a href="#"><img src="../assets/whatsapp-icon.png" alt="whatsapp-icon" width="58px"></a>
+                <a href="#"><img src="../assets/telegram-icon.png" alt="telegram-icon" width="58px"></a>
+                <a href="#"><img src="../assets/chats-icon.png" alt="chats-icon" width="58px"></a>
+                <a href="#"><img src="../assets/mail-icon.png" alt="mail-icon" width="58px"></a>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer-container">
         <div class="footer-grid">
