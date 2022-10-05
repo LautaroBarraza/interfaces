@@ -921,10 +921,12 @@ main.game-coming{
   }
 
 
+  /*flecha debajo boton hero*/
   section.hero .call-to-action > div {
     position: relative;
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
   section.hero .call-to-action > div i{
     position: absolute;
