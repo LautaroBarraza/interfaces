@@ -1625,14 +1625,9 @@ main.game-coming{
 
 @media only screen and (min-width: 1440px){ 
 
-  .nav{
-    height: auto;
-  }
   
   .nav.show{
-    position: fixed;
-    left: 0;  
-    height: auto;
+    height: calc(100vh - 90px);
   }
 
   /*card juego*/
