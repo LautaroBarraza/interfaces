@@ -829,16 +829,20 @@ section.category ul.slide .game-card .card-info .card-button a{
 
   /*header hero*/
 
-  header.hero{
+  .header-hero{
     background: #00000000;
   }
 
-  header.hero .image:hover{
+  .header-hero .image:hover{
     box-shadow: 1px 2px 1px 1px rgb(27, 28, 39);
   }
 
-  header.hero i{
+  .header-hero i{
     color: #ECECEC;
+  }
+
+  .header-hero .search-header{
+    display: none;
   }
 
   /*seccion hero*/
@@ -925,10 +929,12 @@ main.game-coming{
   }
 
 
+  /*flecha debajo boton hero*/
   section.hero .call-to-action > div {
     position: relative;
     display: flex;
     justify-content: center;
+    cursor: pointer;
   }
   section.hero .call-to-action > div i{
     position: absolute;
@@ -1243,10 +1249,10 @@ section.hero .call-to-action button:hover span:nth-child(4){
     grid-template-areas:". titulo . ."
                         ". clasificacion features .";
     width: 100%;
-    height: 500px;
+    height: 350px;
     justify-content: center;
     align-items: flex-start;
-    padding: 50px 0;
+    padding: 50px 0 0 0;
     background: white;
   }
   /*titulo features*/
@@ -1301,6 +1307,22 @@ section.hero .call-to-action button:hover span:nth-child(4){
     display: flex;
     flex-direction: column;
   }
+
+
+  /*card reserva juego*/
+
+  .game-coming section.card-game{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .game-coming section.card-game div:first-child img{
+    width: 100%;
+    height: 100%
+  }
+
+
   
 
   /*4 en linea*/
