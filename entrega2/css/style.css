@@ -863,10 +863,11 @@ main.game-coming{
     position: relative;
     background: #ECECEC;
     transition: ease 1s;
-    border-radius: 15px;
     overflow: hidden;
     
   }
+
+
 
   section.hero .call-to-action button::after{
     content: "";
@@ -878,10 +879,19 @@ main.game-coming{
     top: 100%;
     z-index: 1;
     transition: all ease-in-out 0.5s;
+    transition-delay: 0.5;
+  }
+
+  section.hero .call-to-action button:hover{
+    transform: scale(1.2) translate(0px, -20px);
+    box-shadow: 0 0 40px black;
+    transition-delay: 0.8s;
+
   }
 
   section.hero .call-to-action button:hover:after{
     transform: translate(0%,-100%);
+
   }
 
   section.hero .call-to-action button a span{
@@ -898,11 +908,112 @@ main.game-coming{
     text-align: center;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    transition: all 0.5s;
 
   }
   section.hero .call-to-action button a span:hover{
+    transition: 0.0s color;
     color: #ECECEC;
   }
+
+
+  section.hero .call-to-action > div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  section.hero .call-to-action > div i{
+    position: absolute;
+    left: 40%;
+    padding-top: 20px;
+    width: 10vh;
+    font-size: 45px;
+    color: white;
+  } 
+
+  /*animacion borde call to action*/
+
+  section .call-to-action button > span{
+    display: block;
+    position: absolute;
+    background: white;
+    z-index: 100;
+  }
+
+  section.hero .call-to-action button span:nth-child(1){
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.2s;
+ }
+
+ section.hero .call-to-action button:hover span:nth-child(1){
+   transform: scaleY(1);
+   transform-origin: bottom;
+   transition: transform 0.2s;
+
+ }
+ section.hero .call-to-action button span:nth-child(2){
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s;
+  transition-delay: 0.3s
+
+}
+
+section.hero .call-to-action button:hover span:nth-child(2){
+ transform: scaleX(1);
+ transform-origin: left;
+ transition: transform 0.2s;
+ transition-delay: 0.3s
+
+}
+
+section.hero .call-to-action button span:nth-child(3){
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.2s;
+  transition-delay: 0.6s
+
+}
+
+section.hero .call-to-action button:hover span:nth-child(3){
+ transform: scaleY(1);
+ transform-origin: top;
+ transition: transform 0.2s;
+ transition-delay: 0.6s
+
+}
+
+section.hero .call-to-action button span:nth-child(4){
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.2s;
+  transition-delay: 0.7s
+
+}
+
+section.hero .call-to-action button:hover span:nth-child(4){
+ transform: scaleX(1);
+ transform-origin: right;
+ transition: transform 0.2s;
+ transition-delay: 0.7s
+}
 
 
 
@@ -961,7 +1072,7 @@ main.game-coming{
     display: grid;
     grid-template-columns: 3fr 3fr 1fr 3fr 3fr;
     align-items: center;
-    height: 700px;
+    height: 550px;
     background: url("../img/starfield/starry-night-sky.jpg") center/cover;
   }
 
@@ -974,7 +1085,7 @@ main.game-coming{
 
   section.info-game-coming article div:first-child {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 40%;
     width: auto;
     background: #5F80F5;
