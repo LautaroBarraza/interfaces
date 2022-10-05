@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function (){
         
         background.classList.remove("on");
     }
-
+    /*modificarlo*/
     let openModal = document.querySelector('#openModal');
     let closeModal = document.querySelector('#closeModal');
     let modal = document.querySelector('#modal');

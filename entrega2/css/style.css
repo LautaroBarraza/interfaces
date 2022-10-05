@@ -189,12 +189,19 @@ header .icon-main{
 }
 
 
-header .icon-user img, .user-nav section .user-image img{
+header .icon-user img {
   display: block;
-  width: 80px;
-  height: 80px;
+  width: 50px;  
+  height: 50px;
   border-radius: 100%;
   object-fit: cover;
+  margin-right: 20px;
+  transition: .3s ease all;
+}
+
+header .icon-user img:hover{
+  background-color: rgba(58, 58, 58, 0.281);
+  filter:brightness(0.9);
 }
 
 /* nav */
@@ -296,6 +303,7 @@ header .icon-user img, .user-nav section .user-image img{
   width: 80px;
   height: 80px;
   border-radius: 100%;
+  object-fit: cover;
 }
 
 .user-nav section .user-name{
@@ -1432,6 +1440,11 @@ section.hero .call-to-action button:hover span:nth-child(4){
     position: relative;
     width: 100%;
     margin: 16px 0;
+  }
+
+  .galery-game{
+    padding: 20px;
+    gap: 18px;
   }
 
   .carousel .slide .game-item{
