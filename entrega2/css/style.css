@@ -1469,12 +1469,13 @@ main.game-coming{
     gap: 1em;
   }
 
-  .user-content div{
+  .user-content img{
     width:45px;
     height: 45px;
     background-color: #4d4d4d;
     border-radius: 100%;
     margin-left: 20px;
+    object-fit: cover;
   }
 
   .game-container .form-container .form-comment{
