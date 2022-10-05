@@ -1640,9 +1640,6 @@ main.game-coming{
 
 @media only screen and (min-width: 1440px){ 
 
-  .nav{
-    height: auto;
-  }
   
   .nav.show{
     height: auto;
