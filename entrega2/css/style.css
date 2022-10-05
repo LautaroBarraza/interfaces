@@ -503,7 +503,29 @@ section.category ul.slide .game-card .card-info .card-button a{
   transition: .4s ease all;
 }
 
-
+@keyframes rubberBand {
+  0% {
+    transform: scaleX(1);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
 /*boton comprar*/
 section.category ul.slide .game-card .card-info .button-buy{
   background-color: #FF781C;
@@ -530,9 +552,10 @@ section.category ul.slide .game-card .card-info .button-buy:hover::after{
   transform: scale(200);
 }
 
-section.category ul.slide .game-card .card-info .button-buy:hover{
+section.category ul.slide .game-card .card-info .button-buy:hover {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
-  transform: translateY(-3px);
+  /*transform: translateY(-3px);*/
+  animation: rubberBand .6s;
 }
 
 section.category ul.slide .game-card .card-info .button-buy:active{
@@ -568,7 +591,8 @@ section.category ul.slide .game-card .card-info .button-play:hover::after{
 
 section.category ul.slide .game-card .card-info .button-play:hover{
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
-  transform: translateY(-3px);
+  /*transform: translateY(-3px);*/
+  animation: rubberBand .6s;
 }
 
 section.category ul.slide .game-card .card-info .button-play:active{
@@ -723,13 +747,13 @@ section.category ul.slide .game-card .card-info .card-button a{
     left: -100%; 
     position: fixed;
     z-index: 1001; 
-    height: 470px;
+    height: calc(100vh - 90px);
   }
   
   .nav.show{
     position: fixed;
     left: 0;  
-    height: 470px;
+    height: calc(100vh - 90px);
     overflow: auto;
   }
 
@@ -789,15 +813,6 @@ section.category ul.slide .game-card .card-info .card-button a{
 
 
 @media only screen and (min-width: 1024px){
-
-  .nav{
-    height: 520px;
-  }
-  
-  .nav.show{
-    height: 520px;
-    overflow: auto;
-  }
 
   /*juego-proximamente*/
 
@@ -1630,8 +1645,6 @@ main.game-coming{
   }
   
   .nav.show{
-    position: fixed;
-    left: 0;  
     height: auto;
   }
 
