@@ -136,7 +136,7 @@ header .left-header{
 }
 
 header .search-header{
-  width:60%;
+  width:55%;
   display: flex;
   align-items: center;
   justify-content: start;
@@ -145,7 +145,7 @@ header .search-header{
 /*///// buscador /////*/
 header .search-header .search-input-content{
   background-color: #ffffff;
-  width: 0;
+  width: 100%;
   height: 40px;
   border-radius: 10px;
   align-items: center;
@@ -160,19 +160,12 @@ header .search-header .search-input-content .search-input{
   font-size: 14px;
 }
 
-header .search-header .search-input-content:hover{
-  width:500px;
-}
-header .search-header .search-input-content:focus{
-  width:500px;
-}
-
 header .search-header .search-input-content a{
   padding-right:8px;
 }
 
 header .right-header{
-  width: 10%;
+  width: 15%;
   display: flex;
   align-items: center;
   justify-content: end;
@@ -496,19 +489,50 @@ section.category ul.slide .game-card .card-info .card-button{
   height: 23px;
   width: 75px;
   border-radius: 15px;
-  transition: all 1s;
+  transition: .4s ease all;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
+section.category ul.slide .game-card .card-info .card-button a{
+  position: relative;
+  z-index: 2;
+  transition: .4s ease all;
+}
+
+
 /*boton comprar*/
 section.category ul.slide .game-card .card-info .button-buy{
   background-color: #FF781C;
+  transition: .4s ease-in-out all;
+}
+
+section.category ul.slide .game-card .card-info .button-buy::after{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transition: .4s ease-in-out all;
+  border-radius: 100px;
+  transform-origin: center;
+  border: 1px solid #ff8f44;
+}
+
+section.category ul.slide .game-card .card-info .button-buy:hover::after{
+  background-color: #EF6100;
+  transform: scale(200);
 }
 
 section.category ul.slide .game-card .card-info .button-buy:hover{
-  background-color: #EF6100;
-  transform: scale(1.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+  transform: translateY(-3px);
 }
 
 section.category ul.slide .game-card .card-info .button-buy:active{
@@ -517,14 +541,34 @@ section.category ul.slide .game-card .card-info .button-buy:active{
 }
 
 /*boton jugar*/
-
 section.category ul.slide .game-card .card-info .button-play{
   background-color: #1F71B5;
+  transition: .4s ease-in-out all;
+}
+
+section.category ul.slide .game-card .card-info .button-play::after{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transition: .4s ease-in-out all;
+  border-radius: 100px;
+  transform-origin: center;
+  border: 1px solid #318dda;
+}
+
+section.category ul.slide .game-card .card-info .button-play:hover::after{
+  background-color: #015194;
+  transform: scale(200);
 }
 
 section.category ul.slide .game-card .card-info .button-play:hover{
-  background-color: #015194;
-  transform: scale(1.1);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+  transform: translateY(-3px);
 }
 
 section.category ul.slide .game-card .card-info .button-play:active{
@@ -678,13 +722,15 @@ section.category ul.slide .game-card .card-info .card-button a{
     width: 380px;
     left: -100%; 
     position: fixed;
-    height: auto;
     z-index: 1001; 
+    height: 470px;
   }
-
+  
   .nav.show{
     position: fixed;
     left: 0;  
+    height: 470px;
+    overflow: auto;
   }
 
   .user-nav{
@@ -743,6 +789,15 @@ section.category ul.slide .game-card .card-info .card-button a{
 
 
 @media only screen and (min-width: 1024px){
+
+  .nav{
+    height: 520px;
+  }
+  
+  .nav.show{
+    height: 520px;
+    overflow: auto;
+  }
 
   /*juego-proximamente*/
 
@@ -1568,6 +1623,16 @@ main.game-coming{
 
 
 @media only screen and (min-width: 1440px){ 
+
+  .nav{
+    height: auto;
+  }
+  
+  .nav.show{
+    position: fixed;
+    left: 0;  
+    height: auto;
+  }
 
   /*card juego*/
   section.category ul.slide .game-card{
