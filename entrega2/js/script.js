@@ -22,12 +22,10 @@ document.addEventListener("DOMContentLoaded", function (){
     let user = document.querySelector(".user-nav");
     let background = document.querySelector(".dark-background");
     let hamburger = document.querySelector('#hamburger');
-    let login = document.querySelector('#login');
 
     document.querySelector('.icon-main').addEventListener('click', () =>{
         if(user.classList.contains('showUser')){
             user.classList.remove('showUser');
-            login.classList.remove('fa-xmark', 'fa-2xl');
         }
         main.classList.toggle("show");
         background.classList.add("on");
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function (){
         }
         user.classList.toggle("showUser");
         background.classList.add("on");
-        login.classList.add('fa-xmark', 'fa-2xl');  
+          
         check();
     });
 
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function (){
     function check(){
         if(!main.classList.contains('show') && !user.classList.contains('showUser')){
             hamburger.classList.remove('fa-xmark', 'fa-2xl');
-            login.classList.remove('fa-xmark', 'fa-2xl');
+            
             background.classList.remove("on");
         }
     }
@@ -60,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function (){
         user.classList.remove('showUser');
         main.classList.remove('show');
         hamburger.classList.remove('fa-xmark', 'fa-2xl');
-        login.classList.remove('fa-xmark', 'fa-2xl');
+        
         background.classList.remove("on");
     }
 

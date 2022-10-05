@@ -189,7 +189,7 @@ header .icon-main{
 }
 
 
-header .icon-user img, .user-nav section .user-image{
+header .icon-user img, .user-nav section .user-image img{
   display: block;
   width: 80px;
   height: 80px;
@@ -1646,7 +1646,7 @@ main.game-coming{
 
   
   .nav.show{
-    height: auto;
+    height: calc(100vh - 90px);
   }
 
   /*card juego*/
