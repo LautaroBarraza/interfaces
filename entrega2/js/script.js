@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function (){
     let closeModal = document.querySelector('#closeModal');
     let modal = document.querySelector('#modal');
     openModal.onclick = function(){
-        modal.style.visibility = 'visible';
+        modal.classList.add('modal-flex');
     }
 
     closeModal.onclick = function(){
-        modal.style.visibility = 'hidden';
+        modal.classList.remove('modal-flex');
     }
 
     modal.onlick = function(){
-        modal.style.visibility = 'hidden';
+        modal.classList.remove('modal-flex');
     }
 });

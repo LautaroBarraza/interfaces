@@ -39,8 +39,7 @@ function cargar(){
             }else{
                 item.scrollLeft = item.scrollWidth;
                 NAV_CARRUSEL[i].lastElementChild.classList.add("active");
-                NAV_CARRUSEL[i].firstElementChild.classList.remove("active")
-                
+                NAV_CARRUSEL[i].firstElementChild.classList.remove("active") 
             }
         })
 
@@ -56,11 +55,7 @@ function cargar(){
                 item.scrollLeft = contenedorWidth * (j+1);
                 NAV_CARRUSEL[i].querySelector(".active").classList.remove("active");
                 e.target.classList.add("active");
-            })
-            
+            }) 
         }
-
-
-
-    })
+    }) 
 }
