@@ -490,11 +490,7 @@ section.category ul.slide .game-card .card-info .card-price{
   overflow: hidden;
 }
 
-.card-button a{
-  position: relative;
-  z-index: 2;
-  transition: .4s ease all;
-}
+
 
 /*boton comprar*/
 section.category ul.slide .game-card .card-info .button-buy{
@@ -525,7 +521,6 @@ section.category ul.slide .game-card .card-info .button-buy:hover, .game-coming 
   /*transform: translateY(-3px);*/
   transform: scale(1.1);
   box-shadow: 0 0 10px #EF6100;
-  color: white;
 }
 
 section.category ul.slide .game-card .card-info .button-buy:active{
@@ -570,6 +565,9 @@ height: 380%;
   
 /*texto boton*/
 .card-button a{
+  position: relative;
+  z-index: 2;
+  transition: .4s ease all;
   color: #ECECEC;
   padding: 2px;
   font-style: normal;
@@ -1289,8 +1287,8 @@ section.hero .call-to-action button:hover span:nth-child(4){
 
   .game-coming section.card-game div:nth-child(2){
     position: absolute;
-    height: 40%;
-    top: 60%;
+    height: 50%;
+    top: 50%;
     width: 100%;
     background: rgba(0, 0, 0, 0.359);
     display: flex;
@@ -1324,10 +1322,22 @@ section.hero .call-to-action button:hover span:nth-child(4){
     transition: .4s ease-in-out all;
     width: 135px;
     height: 43px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 15px;
+ 
   }
 
   .game-coming section.card-game div:nth-child(2) button a{
     font-size: 26px;
+    position: relative;
+    z-index: 2;
+    transition: .4s ease all;
+    color: #ECECEC;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: capitalize;
+
   }
 
 
