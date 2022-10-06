@@ -487,7 +487,7 @@ section.category ul.slide .game-card .card-info .card-price{
 
 /*boton card con sus acciones*/
 
-section.category ul.slide .game-card .card-info .card-button{
+section.category ul.slide .game-card .card-info .card-button, .game-coming section.card-game div:nth-child(2) button{
   margin-left: 5px;
   grid-area: boton;
   height: 23px;
@@ -501,7 +501,7 @@ section.category ul.slide .game-card .card-info .card-button{
   overflow: hidden;
 }
 
-section.category ul.slide .game-card .card-info .card-button a{
+section.category ul.slide .game-card .card-info .card-button a, .game-coming section.card-game div:nth-child(2) button a{
   position: relative;
   z-index: 2;
   transition: .4s ease all;
@@ -536,7 +536,7 @@ section.category ul.slide .game-card .card-info .button-buy{
   transition: .4s ease-in-out all;
 }
 
-section.category ul.slide .game-card .card-info .button-buy::after{
+section.category ul.slide .game-card .card-info .button-buy::after, .game-coming section.card-game div:nth-child(2) button::after{
   content: '';
   position: absolute;
   background: #c95508;
@@ -550,12 +550,12 @@ section.category ul.slide .game-card .card-info .button-buy::after{
 }
 
 
-section.category ul.slide .game-card .card-info .button-buy:hover::after{
+section.category ul.slide .game-card .card-info .button-buy:hover::after, .game-coming section.card-game div:nth-child(2) button:hover::after{
   height: 380%;
   
 }
 
-section.category ul.slide .game-card .card-info .button-buy:hover {
+section.category ul.slide .game-card .card-info .button-buy:hover, .game-coming section.card-game div:nth-child(2) button:hover {
   /*transform: translateY(-3px);*/
   transform: scale(1.1);
   box-shadow: 0 0 10px #EF6100;
@@ -603,7 +603,7 @@ section.category ul.slide .game-card .card-info .button-play:active{
 }
   
 /*texto boton*/
-section.category ul.slide .game-card .card-info .card-button a{
+section.category ul.slide .game-card .card-info .card-button a, .game-coming section.card-game div:nth-child(2) button a{
   color: #ECECEC;
   padding: 2px;
   font-style: normal;
@@ -1305,9 +1305,56 @@ section.hero .call-to-action button:hover span:nth-child(4){
 
   .game-coming section.card-game{
     width: 100%;
-    height: 400px;
+    height: 350px;
     overflow: hidden;
+    position: relative;
+
   }
+
+  .game-coming section.card-game div:nth-child(2){
+    position: absolute;
+    height: 40%;
+    top: 60%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.359);
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .game-coming section.card-game div:nth-child(2) h2{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 43px;
+    text-transform: capitalize;
+    color: white;
+  }
+
+  .game-coming section.card-game div:nth-child(2) p{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: white;
+  }
+
+
+  .game-coming section.card-game div:nth-child(2) button{
+    background-color: #ff7e27;
+    transition: .4s ease-in-out all;
+    width: 135px;
+    height: 43px;
+  }
+
+  .game-coming section.card-game div:nth-child(2) button a{
+    font-size: 26px;
+  }
+
+
 
   .game-coming section.card-game div:first-child img{
     width: 100%;
