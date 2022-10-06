@@ -146,7 +146,7 @@ header .search-header .search-input-content a{
 }
 
 header .right-header{
-  width: 17%;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: end;
