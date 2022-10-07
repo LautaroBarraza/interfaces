@@ -20,12 +20,14 @@ document.addEventListener("DOMContentLoaded", function (){
     //desplegables//
     let main = document.querySelector(".nav");
     let user = document.querySelector(".user-nav");
+    let icon_user =document.querySelector(".arrow-user")
     let background = document.querySelector(".dark-background");
     let hamburger = document.querySelector('#hamburger');
 
     document.querySelector('.icon-main').addEventListener('click', () =>{
         if(user.classList.contains('showUser')){
             user.classList.remove('showUser');
+            icon_user.classList.toggle("drop-down")
         }
         main.classList.toggle("show");
         background.classList.add("on");
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function (){
             hamburger.classList.remove('fa-xmark', 'fa-2xl');
         }
         user.classList.toggle("showUser");
-        document.querySelector(".arrow-user").classList.toggle("drop-down")
+        icon_user.classList.toggle("drop-down")
         background.classList.add("on");
           
         check();

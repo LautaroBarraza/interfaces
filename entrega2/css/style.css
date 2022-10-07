@@ -145,6 +145,7 @@ header .search-header .search-input-content a{
   padding-right:8px;
 }
 
+/*seccion usuario*/
 header .right-header{
   width: auto;
   display: flex;
@@ -176,7 +177,7 @@ header .icon-user img {
   height: 42px;
   border-radius: 100%;
   object-fit: cover;
-  margin-right: 10px;
+  margin-left: 10px;
   transition: .3s ease all;
 }
 
@@ -185,7 +186,15 @@ header .icon-user img:hover{
   filter:brightness(0.9);
 }
 
-/* nav */
+header .right-header i{
+  transition: all 0.3s ease-in;
+}
+header .right-header i.drop-down{
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in;
+}
+
+/* menu plegable */
 .nav{
   display: flex;
   flex-direction: column;
@@ -741,13 +750,7 @@ height: 380%;
     margin: 0;
   }
 
-  header .right-header i{
-    transition: all 0.3s ease-in;
-  }
-  header .right-header i.drop-down{
-    transform: rotate(180deg);
-    transition: all 0.3s ease-in;
-  }
+
 
   /*fondo oscuro menu plegable*/
 
