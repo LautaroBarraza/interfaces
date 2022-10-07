@@ -927,7 +927,7 @@ main.game-coming{
     background: #ECECEC;
     transition: ease 1s;
     overflow: hidden;
-    
+    box-shadow: -4px 10px 65px 14px rgba(0,0,0,0.57);
   }
 
 
@@ -947,13 +947,14 @@ main.game-coming{
 
   section.hero .call-to-action button:hover{
     transform: scale(1.2) translate(0px, -20px);
-    box-shadow: 0 0 40px black;
+    box-shadow: -4px 10px 142px 89px rgba(0,0,0,0.57);
     transition-delay: 0.8s;
 
   }
 
   section.hero .call-to-action button:hover:after{
     transform: translate(0%,-100%);
+
 
   }
 
