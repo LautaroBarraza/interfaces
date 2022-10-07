@@ -323,6 +323,7 @@ section.category:first-child{
   column-gap: 15px;
   overflow: hidden;
   scroll-behavior: smooth;
+  padding-bottom: 10px;
 }
 
 /*titulo categoria*/
@@ -714,9 +715,14 @@ height: 380%;
   header .search-header .search-input-content a{
     padding-right:24px;
   }
+
+  /*seccion usuario*/
   
   header .right-header{
     width: 20%;
+    display: flex;
+    justify-content: center;
+    column-gap: 5px;
   }
   
   header .image{
@@ -730,9 +736,20 @@ height: 380%;
 
   header .icon-user img {
     width: 56px;  
-    height: 56px; 
-    margin-right: 20px;
+    height: 56px;
+    object-fit: cover;
+    margin: 0;
   }
+
+  header .right-header i{
+    transition: all 0.3s ease-in;
+  }
+  header .right-header i.drop-down{
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in;
+  }
+
+  /*fondo oscuro menu plegable*/
 
   .dark-background{
     visibility: hidden;
@@ -751,6 +768,7 @@ height: 380%;
     z-index: 110;
   }
 
+  /*menu hamburguesa*/
   .nav{
     top: 90px;
     width: 380px;

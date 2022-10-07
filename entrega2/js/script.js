@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function (){
             hamburger.classList.remove('fa-xmark', 'fa-2xl');
         }
         user.classList.toggle("showUser");
+        document.querySelector(".arrow-user").classList.toggle("drop-down")
         background.classList.add("on");
           
         check();
