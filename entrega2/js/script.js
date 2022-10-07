@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function (){
         check();
     });
 
-    
-
     function check(){
         if(!main.classList.contains('show') && !user.classList.contains('showUser')){
             hamburger.classList.remove('fa-xmark', 'fa-2xl');
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (){
         
         background.classList.remove("on");
     }
-    /*modificarlo*/
+    /*Ventana modal*/
     let openModal = document.querySelector('#openModal');
     let closeModal = document.querySelector('#closeModal');
     let modal = document.querySelector('#modal');
@@ -78,5 +76,6 @@ document.addEventListener("DOMContentLoaded", function (){
 
     modal.onlick = function(){
         modal.classList.remove('modal-flex');
-    }
+    }  
+    
 });

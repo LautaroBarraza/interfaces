@@ -150,7 +150,7 @@ header .right-header{
   width: auto;
   display: flex;
   align-items: center;
-  justify-content: end;
+  margin-right: 10px;
 }
 
 header .image{
@@ -177,7 +177,6 @@ header .icon-user img {
   height: 42px;
   border-radius: 100%;
   object-fit: cover;
-  margin-left: 10px;
   transition: .3s ease all;
 }
 
@@ -701,7 +700,6 @@ height: 380%;
   }
 
   header .left-header{
-    width: 20%;
     gap: 1em;
   }
   
@@ -728,10 +726,8 @@ height: 380%;
   /*seccion usuario*/
   
   header .right-header{
-    width: 20%;
-    display: flex;
-    justify-content: center;
     column-gap: 5px;
+    margin-right: 20px;
   }
   
   header .image{
@@ -747,7 +743,7 @@ height: 380%;
     width: 56px;  
     height: 56px;
     object-fit: cover;
-    margin: 0;
+    
   }
 
 
@@ -1566,8 +1562,12 @@ section.hero .call-to-action button:hover span:nth-child(4){
     gap: 18px;
   }
 
+  .galery-game:hover .game-photo{
+    filter: blur(10px);
+  }
+
   .carousel .slide .game-item{
-    transition: all 1s;
+    transition: all .4s;
   }
 
   .carousel .slide .game-item .photo-container{
@@ -1582,12 +1582,14 @@ section.hero .call-to-action button:hover span:nth-child(4){
     height: 190px;
     width: 280px;
     border-radius: 10px;
-    transition: all .5s;
+    transition: all .4s;
+    filter: '';
   }
 
   .carousel .slide .game-item .photo-container .game-photo:hover{
     transform: scale(1.1, 1.1);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+    filter: blur(0px);
   }
 
   /*pop up*/
