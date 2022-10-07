@@ -804,24 +804,10 @@ height: 380%;
 
   /*categorias home*/
 
-
   section.category{
     padding: 0 30px;
   }
 
-  /*explorar todos titulo categoria*/
-section.category h2.game-category span{
-  opacity: 0;
-  transform: translate(-100%);
-
-}
-
-section.category h2.game-category:hover span{
-  opacity: 1;
-  transition: all 0.5s ease-in;
-  transform: translate(0%);
-
-}
 
   /*botones slide*/
 
@@ -1835,11 +1821,46 @@ section.hero .call-to-action button:hover span:nth-child(4){
     margin-top: 18px;
   }
 
-  /*card juego*/
+
+    /*titulo categoria home y explorar mas*/
+          /*titulo*/
+
+  section.category h2.game-category{
+    padding: 0 10px;
+  }
+  section.category h2.game-category span{
+    opacity: 0;
+    transform: translate(-100%);
+  
+  }
+
+  section.category h2.game-category:hover span{
+    opacity: 1;
+    transition: all 0.5s ease-in;
+    transform: translate(0%);
+  
+  }
+
+/*card juego*/
+
+
+
+/*carrusel home*/
+  section.category ul.slide{
+    column-gap: 20px;
+    padding: 30px 10px;
+  }
+
+  section.category ul.slide .game-card:hover{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+    transform: scale(1.1);
+  }
   section.categoria ul.slide .game-card{
     height: auto;
     width: 230px;
   }
+
+
 
   /*imagen card juego*/
   section.category ul.slide .game-card .game-card-img img{
