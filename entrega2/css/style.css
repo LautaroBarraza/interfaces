@@ -312,13 +312,17 @@ section.category{
   margin-bottom: 40px;
 }
 
+section.category:first-child{
+  margin-top: 30px;
+}
+
+
 /*carrusel juego*/
 .slide{
   display: flex;
   column-gap: 15px;
   overflow: hidden;
   scroll-behavior: smooth;
-  padding: 20px 0;
 }
 
 /*titulo categoria*/
@@ -326,8 +330,38 @@ section.category h2.game-category{
   font-weight: 300;
   font-size: 25px;
   line-height: 36px;
-  margin: 10px 0;
   text-transform: capitalize;
+  display: flex;
+  align-items: baseline;
+  column-gap: 15px;
+  position: relative;
+  cursor: pointer;
+}
+
+
+
+/*explorar todos titulo categoria*/
+section.category h2.game-category span{
+  display: flex;
+  cursor: pointer;
+  column-gap: 5px;
+
+}
+
+section.category h2.game-category span a{
+  font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 100%;
+color: #1F71B5;
+font-stretch: 100;
+
+}
+
+section.category h2.game-category span i{
+  color: #1F71B5;
+  font-size: 12px;
+  transform: rotate(270deg);
 }
 
 /* botones sigueinte y anterior carrusel*/
@@ -747,6 +781,36 @@ height: 380%;
     right: 0;  
   }
 
+  /*categorias home*/
+
+
+  section.category{
+    padding: 0 30px;
+  }
+
+  /*explorar todos titulo categoria*/
+section.category h2.game-category span{
+  opacity: 0;
+  transform: translate(-100%);
+
+}
+
+section.category h2.game-category:hover span{
+  opacity: 1;
+  transition: all 0.5s ease-in;
+  transform: translate(0%);
+
+}
+
+  /*botones slide*/
+
+  section.category .button-left{
+    left: 30px;
+  }
+
+  section.category .button-right{
+    right: 30px;
+  }
   /*card juego*/
   section.category ul.slide .game-card{
     height: auto;
@@ -1168,7 +1232,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 40px 0;
+    padding: 40px 40px;
   }
 
   article.galery div:first-of-type{
