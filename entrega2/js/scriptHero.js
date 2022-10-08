@@ -1,8 +1,8 @@
 "use strict"
 
-document.addEventListener("DOMContentLoaded", cargar);
+document.addEventListener("DOMContentLoaded", load);
 
-function cargar(){
+function load(){
 
     let header = document.querySelector("header");
     let hero_tamanio = document.querySelector(".hero").clientHeight;

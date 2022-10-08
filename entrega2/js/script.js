@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function (){
         modal.classList.remove('modal-flex');
     }
 
-    modal.onlick = function(){
+    modal.onclick = function(){
         modal.classList.remove('modal-flex');
     }  
     

@@ -1,8 +1,8 @@
 "use strict"
 
-document.addEventListener("DOMContentLoaded", cargar);
+document.addEventListener("DOMContentLoaded", load);
 
-function cargar(){
+function load(){
     const carruseles = [...document.querySelectorAll(".slide")];
     console.log(carruseles);
     const nxtBtn = [...document.querySelectorAll(".button-right")];
@@ -45,7 +45,7 @@ function cargar(){
 
         let cantidad_nav=Math.trunc( item.scrollWidth/contenedorWidth);
 
-        for(let j=-1;j<cantidad_nav;j++){
+        for(let j=-1; j < cantidad_nav; j++){
             let button = document.createElement("button");
             if(j===-1){
                 button.classList.add("active")

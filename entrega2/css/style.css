@@ -109,6 +109,7 @@ header{
   transition: .4s ease all;
 }
 
+/*seccion logo y menu hamburguesa*/
 header .left-header{
   width: auto;
   display: flex;
@@ -325,7 +326,6 @@ section.category:first-child{
   margin-top: 30px;
 }
 
-
 /*carrusel juego*/
 .slide{
   display: flex;
@@ -348,14 +348,11 @@ section.category h2.game-category{
   cursor: pointer;
 }
 
-
-
 /*explorar todos titulo categoria*/
 section.category h2.game-category span{
   display: flex;
   cursor: pointer;
   column-gap: 5px;
-
 }
 
 section.category h2.game-category span a{
@@ -365,7 +362,6 @@ font-size: 15px;
 line-height: 100%;
 color: #1F71B5;
 font-stretch: 100;
-
 }
 
 section.category h2.game-category span i{
@@ -404,8 +400,7 @@ section.category h2.game-category span i{
 .pag-slide{
   display: flex;
   justify-content: center;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 .pag-slide button{
@@ -438,8 +433,7 @@ section.category ul.slide .game-card .game-card-img{
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 2px 2px 0 2px;
-  
+  padding: 2px 2px 0 2px; 
 }
 
 section.category ul.slide .game-card .game-card-img img{
@@ -500,6 +494,7 @@ section.category ul.slide .game-card .card-info .card-title{
   white-space: nowrap;
     
 }
+
 section.category ul.slide .game-card .card-info .card-genre{
   grid-area: genero;
   display: flex;
@@ -517,9 +512,7 @@ section.category ul.slide .game-card .card-info .card-price{
   font-weight: 600;
 }
 
-
 /*boton card con sus acciones*/
-
 .card-button{
   margin-left: 5px;
   grid-area: boton;
@@ -533,8 +526,6 @@ section.category ul.slide .game-card .card-info .card-price{
   position: relative;
   overflow: hidden;
 }
-
-
 
 /*boton comprar*/
 section.category ul.slide .game-card .card-info .button-buy{
@@ -555,10 +546,8 @@ section.category ul.slide .game-card .card-info .button-buy::after, .game-coming
   height: 0%;
 }
 
-
 section.category ul.slide .game-card .card-info .button-buy:hover::after, .game-coming section.card-game div:nth-child(2) button:hover::after{
-  height: 380%;
-  
+  height: 380%; 
 }
 
 section.category ul.slide .game-card .card-info .button-buy:hover, .game-coming section.card-game div:nth-child(2) button:hover {
@@ -626,11 +615,11 @@ height: 380%;
 
 /* footer*/
 .footer-container{
-    background-color: #ECECEC;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
+  background-color: #ECECEC;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-container .footer-nav{
@@ -640,59 +629,56 @@ height: 380%;
 }
 
 .footer-container .footer-logo-container{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .footer-container .footer-logo-container .footer-logo{
-    width: 100px;
-    height: 100px;
-    margin-top: 25px;
-    border-radius: 100%;
-    transition: .35s ease-in;
+  width: 100px;
+  height: 100px;
+  margin-top: 25px;
+  border-radius: 100%;
+  transition: .35s ease-in;
 }
 
 .footer-container .footer-nav .footer-links h3{
-    padding: 16px 0px 10px 18px;
-    letter-spacing: 3px;
-    color: #777777;
+  padding: 16px 0px 10px 18px;
+  letter-spacing: 3px;
+  color: #777777;
 }
 
 .footer-container .footer-nav .footer-links li{
-    padding: 4px 0px 10px 18px;
-    font-size: 14px;
+  padding: 4px 0px 10px 18px;
+  font-size: 14px;
 }
 
-
 .line{
-    width: 90%;
-    border-top: 1px solid #0000001f;
-    margin: 20px 5%;
+  width: 90%;
+  border-top: 1px solid #0000001f;
+  margin: 20px 5%;
 }
 
 .footer-container .footer-social{
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .footer-container .footer-social a{
-    margin: 10px 16px 10px 16px;
+  margin: 10px 16px 10px 16px;
 }
 
 .footer-container span{
-    font-size: 12px;
-    text-align: center;
-    padding-bottom: 20px;
+  font-size: 12px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 
-
 @media only screen and (min-width: 768px){
-
   header{
     top: 0%;
     height: 90px;
@@ -725,7 +711,6 @@ height: 380%;
   }
 
   /*seccion usuario*/
-  
   header .right-header{
     column-gap: 5px;
     margin-right: 20px;
@@ -743,14 +728,10 @@ height: 380%;
   header .icon-user img {
     width: 56px;  
     height: 56px;
-    object-fit: cover;
-    
+    object-fit: cover;  
   }
 
-
-
   /*fondo oscuro menu plegable*/
-
   .dark-background{
     visibility: hidden;
     transition: .5s ease-in-out;
@@ -829,6 +810,7 @@ height: 380%;
     padding: 2px 2px 0 2px;
     
   }
+
   section.category ul.slide .game-card .game-card-img img{
     width: 165px;
     height: 165px;
@@ -855,14 +837,9 @@ height: 380%;
 }
 
 
-
 @media only screen and (min-width: 1024px){
-
   /*juego-proximamente*/
-
-
   /*header hero*/
-
   .header-hero{
     background: #00000000;
   }
@@ -879,12 +856,10 @@ height: 380%;
     display: none;
   }
 
-  /*seccion hero*/
-    
-main.game-coming{
-  background: #030513;
-}
-
+  /*seccion hero*/   
+  main.game-coming{
+    background: #030513;
+  }
 
   section.hero{
     position: relative;
@@ -895,15 +870,13 @@ main.game-coming{
     justify-content: center;
     background: #030513 url("../img/starfield/starry-night-sky.jpg") center/cover;
     overflow: hidden;
-
   }
 
-/*call to action hero*/
+  /*call to action hero*/
   section.hero .call-to-action{
     position: absolute;
     top: 75%;
   }
-
 
   section.hero .call-to-action button{
     position: relative;
@@ -912,8 +885,6 @@ main.game-coming{
     overflow: hidden;
     box-shadow: -4px 10px 65px 14px rgba(0,0,0,0.57);
   }
-
-
 
   section.hero .call-to-action button::after{
     content: "";
@@ -932,13 +903,10 @@ main.game-coming{
     transform: scale(1.2) translate(0px, -20px);
     box-shadow: -4px 10px 142px 89px rgba(0,0,0,0.57);
     transition-delay: 0.8s;
-
   }
 
   section.hero .call-to-action button:hover:after{
     transform: translate(0%,-100%);
-
-
   }
 
   section.hero .call-to-action button a span{
@@ -956,13 +924,12 @@ main.game-coming{
     letter-spacing: 0.02em;
     text-transform: uppercase;
     transition: all 0.5s;
-
   }
+
   section.hero .call-to-action button a span:hover{
     transition: 0.0s color;
     color: #ECECEC;
   }
-
 
   /*flecha debajo boton hero*/
   section.hero .call-to-action > div {
@@ -971,6 +938,7 @@ main.game-coming{
     justify-content: center;
     cursor: pointer;
   }
+
   section.hero .call-to-action > div i{
     position: absolute;
     left: 40%;
@@ -981,7 +949,6 @@ main.game-coming{
   } 
 
   /*animacion borde call to action*/
-
   section .call-to-action button > span{
     display: block;
     position: absolute;
@@ -997,82 +964,69 @@ main.game-coming{
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.2s;
- }
+  }
 
- section.hero .call-to-action button:hover span:nth-child(1){
-   transform: scaleY(1);
-   transform-origin: bottom;
-   transition: transform 0.2s;
+  section.hero .call-to-action button:hover span:nth-child(1){
+    transform: scaleY(1);
+    transform-origin: bottom;
+    transition: transform 0.2s;
+  }
 
- }
- section.hero .call-to-action button span:nth-child(2){
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 3px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s;
-  transition-delay: 0.3s
+  section.hero .call-to-action button span:nth-child(2){
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s;
+    transition-delay: 0.3s
+  } 
 
-}
+  section.hero .call-to-action button:hover span:nth-child(2){
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.2s;
+    transition-delay: 0.3s
+  }
 
-section.hero .call-to-action button:hover span:nth-child(2){
- transform: scaleX(1);
- transform-origin: left;
- transition: transform 0.2s;
- transition-delay: 0.3s
+  section.hero .call-to-action button span:nth-child(3){
+    right: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.2s;
+    transition-delay: 0.6s
+  }
 
-}
+  section.hero .call-to-action button:hover span:nth-child(3){
+    transform: scaleY(1);
+    transform-origin: top;
+    transition: transform 0.2s;
+    transition-delay: 0.6s
+  }
 
-section.hero .call-to-action button span:nth-child(3){
-  right: 0;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.2s;
-  transition-delay: 0.6s
+  section.hero .call-to-action button span:nth-child(4){
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s;
+    transition-delay: 0.7s
+  }
 
-}
+  section.hero .call-to-action button:hover span:nth-child(4){
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.2s;
+    transition-delay: 0.7s
+  }
 
-section.hero .call-to-action button:hover span:nth-child(3){
- transform: scaleY(1);
- transform-origin: top;
- transition: transform 0.2s;
- transition-delay: 0.6s
-
-}
-
-section.hero .call-to-action button span:nth-child(4){
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 3px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.2s;
-  transition-delay: 0.7s
-
-}
-
-section.hero .call-to-action button:hover span:nth-child(4){
- transform: scaleX(1);
- transform-origin: right;
- transition: transform 0.2s;
- transition-delay: 0.7s
-}
-
-
-
-
-
-
-/*imagen compuesta hero*/
-
-
-
+  /*imagen compuesta hero*/
   .background-dark::before{
     content: "";
     position: absolute;
@@ -1082,6 +1036,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
     opacity: 0.7;
     z-index: 0;
   }
+
   section.hero .prof1, section.hero .prof2, section.hero .prof3{
     position: absolute;
   }
@@ -1112,10 +1067,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
   }
 
   /*seccion info juego proximamente*/
-
-
   /*seccion info historia*/
-
   section.info-game-coming article{
     position: relative;
     display: grid;
@@ -1128,6 +1080,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
   section.info-game-coming article.left{
     grid-template-areas: ". img . info .";
   }
+
   section.info-game-coming article.right{
     grid-template-areas: ". info . img .";
   }
@@ -1164,6 +1117,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
     overflow: hidden;
     z-index: 1;
   }
+
   section.info-game-coming div:nth-child(2) img {
     object-fit: cover;
   }
@@ -1175,6 +1129,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
     width: 420px;
     z-index: 1;
   }
+
   section.info-game-coming div:last-child p{
     color: #ECECEC;
     font-style: normal;
@@ -1183,9 +1138,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
     line-height: 150%;
   }
 
-
   /* seccion personajes y multimedia*/
-
   section.characters-galery{
     background-color: #030513;
   }
@@ -1204,16 +1157,11 @@ section.hero .call-to-action button:hover span:nth-child(4){
     text-transform: capitalize;
   }
 
-
   /*personajes */
-
   article.characters{
     height: 500px;
     position: relative;
-
   }
-
-
 
   article.characters ul.slide, article.galery ul.slide{
     display: flex;
@@ -1232,7 +1180,6 @@ section.hero .call-to-action button:hover span:nth-child(4){
   }
 
   /*galeria*/
-
   article.galery{
     display: flex;
     flex-direction: column;
@@ -1245,11 +1192,11 @@ section.hero .call-to-action button:hover span:nth-child(4){
     justify-content: center;
     padding: 10px 0;
   }
+
   article.galery div:first-of-type img{
     display: flex;
     justify-content: center;
     width: 50%;
-
   }
 
   article.galery div:nth-child(3){
@@ -1260,6 +1207,7 @@ section.hero .call-to-action button:hover span:nth-child(4){
     overflow: hidden;
     width: 100%;
   }
+
   article.galery ul.slide li img{
     width: 500px;
     height: 300px;
@@ -1267,16 +1215,13 @@ section.hero .call-to-action button:hover span:nth-child(4){
   }
 
   /*separacion*/
-
   section.characters-galery .end-section{
     background: #030513 url("../img/starfield/separacion.png") center/cover;
     width: 100%;
     height: 400px;
   }
 
-
   /*features*/
-
   section.features article {
     display: grid;
     grid-template-columns: 1fr 3fr 5fr 1fr;
@@ -1290,8 +1235,8 @@ section.hero .call-to-action button:hover span:nth-child(4){
     padding: 50px 0 0 0;
     background: white;
   }
-  /*titulo features*/
 
+  /*titulo features*/
   section.features article h2:first-child{
     grid-area: titulo;
     text-transform: uppercase;
@@ -1301,11 +1246,11 @@ section.hero .call-to-action button:hover span:nth-child(4){
   }
 
   section.features article h3{
-  font-style: normal;
-  font-weight: 800;
-  font-size: 16px;
-  line-height: 150%;
-  text-transform: capitalize;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 150%;
+    text-transform: capitalize;
   }
 
   /*parrafos features*/
@@ -1313,17 +1258,18 @@ section.hero .call-to-action button:hover span:nth-child(4){
     text-transform: uppercase;
   }
 
-
   /*clasificacion*/
   section.features article div:first-of-type{
     grid-area: clasificacion;
     display: flex;
     column-gap: 10px;
   }
+
   section.features article div:first-of-type div img{
     width: 68px;
     height: 68px;
   }
+
   section.features article div:first-of-type p{
     width: 205px;
   }
@@ -1343,15 +1289,12 @@ section.hero .call-to-action button:hover span:nth-child(4){
     flex-direction: column;
   }
 
-
   /*card reserva juego*/
-
   .game-coming section.card-game{
     width: 100%;
     height: 350px;
     overflow: hidden;
     position: relative;
-
   }
 
   .game-coming section.card-game div:nth-child(2){
@@ -1385,7 +1328,6 @@ section.hero .call-to-action button:hover span:nth-child(4){
     color: white;
   }
 
-
   .game-coming section.card-game div:nth-child(2) button{
     background-color: #ff7e27;
     transition: .4s ease-in-out all;
@@ -1394,7 +1336,6 @@ section.hero .call-to-action button:hover span:nth-child(4){
     overflow: hidden;
     cursor: pointer;
     border-radius: 15px;
- 
   }
 
   .game-coming section.card-game div:nth-child(2) button a{
@@ -1406,18 +1347,12 @@ section.hero .call-to-action button:hover span:nth-child(4){
     font-style: normal;
     font-weight: 500;
     text-transform: capitalize;
-
   }
-
-
 
   .game-coming section.card-game div:first-child img{
     width: 100%;
     height: 100%
   }
-
-
-  
 
   /*4 en linea*/
   .game-container{
@@ -1459,34 +1394,34 @@ section.hero .call-to-action button:hover span:nth-child(4){
   }
 
   .game-image{
-      width: 220px;
-      height: 260px;
-      border-radius: 10px;
+    width: 220px;
+    height: 260px;
+    border-radius: 10px;
   }
 
   .game-container section .section-image .play-section .play-button{
-      height: 43px;
-      width: 135px;
-      border-radius: 15px;
-      background-color: #1F71B5;
-      transition: all .5s;   
-      text-align: center;
+    height: 43px;
+    width: 135px;
+    border-radius: 15px;
+    background-color: #1F71B5;
+    transition: all .5s;   
+    text-align: center;
   }
 
   .game-container section .section-image .play-section .play-button span{
-      color: white;
-      font-size: 20px;
-      line-height: 40px;
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
   }
 
   .game-container section .section-image .play-section .play-button:hover{
-      background-color: #015194;
-      transform: scale(1.1);
+    background-color: #015194;
+    transform: scale(1.1);
   }
 
   .game-container section .section-image .play-section .play-button:active{
-      background-color: #004884;
-      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+    background-color: #004884;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
   }
 
   .game-container section .game-info{
@@ -1702,8 +1637,6 @@ section.hero .call-to-action button:hover span:nth-child(4){
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
   }
 
-  
-
   .game-container h3{
     text-align: center;
     font-size: 24px;
@@ -1824,31 +1757,25 @@ section.hero .call-to-action button:hover span:nth-child(4){
     margin-top: 18px;
   }
 
-
-    /*titulo categoria home y explorar mas*/
-          /*titulo*/
-
+  /*titulo categoria home y explorar mas*/
+  /*titulo*/
   section.category h2.game-category{
     padding: 0 10px;
   }
+
   section.category h2.game-category span{
     opacity: 0;
     transform: translate(-100%);
-  
   }
 
   section.category h2.game-category:hover span{
     opacity: 1;
     transition: all 0.5s ease-in;
     transform: translate(0%);
-  
   }
 
-/*card juego*/
-
-
-
-/*carrusel home*/
+  /*card juego*/
+  /*carrusel home*/
   section.category ul.slide{
     column-gap: 20px;
     padding: 30px 10px;
@@ -1858,12 +1785,11 @@ section.hero .call-to-action button:hover span:nth-child(4){
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
     transform: scale(1.1);
   }
+
   section.categoria ul.slide .game-card{
     height: auto;
     width: 230px;
   }
-
-
 
   /*imagen card juego*/
   section.category ul.slide .game-card .game-card-img img{
@@ -1918,7 +1844,6 @@ section.hero .call-to-action button:hover span:nth-child(4){
 
 
 @media only screen and (min-width: 1440px){ 
-
   /*card juego*/
   section.category ul.slide .game-card{
     width: 260px;
@@ -1966,7 +1891,6 @@ section.hero .call-to-action button:hover span:nth-child(4){
 
 
 @media only screen and (min-width: 1920px) {
-
   section.hero .prof2{
     min-height: 600px;
   }
