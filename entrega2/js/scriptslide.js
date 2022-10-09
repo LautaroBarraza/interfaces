@@ -19,6 +19,8 @@ function load(){
         nxtBtn[i].addEventListener("click", () => {
             
             let activo = NAV_CARRUSEL[i].querySelector(".active");
+       
+        /*paginacion slide hacia adelante*/
             if(activo.nextSibling){
                 item.scrollLeft += contenedorWidth;
                 activo.nextSibling.classList.add("active");
@@ -29,7 +31,7 @@ function load(){
                 NAV_CARRUSEL[i].lastElementChild.classList.remove("active")
             }
         })
-
+        /*paginacion slide hacia atras*/
         preBtn[i].addEventListener("click", () => {
             item.scrollLeft -= contenedorWidth;
             let activo = NAV_CARRUSEL[i].querySelector(".active");
@@ -43,6 +45,7 @@ function load(){
             }
         })
 
+        /*generacion de circulos para la paginacion con su interaccion */
         let cantidad_nav=Math.trunc( item.scrollWidth/contenedorWidth);
 
         for(let j=-1; j < cantidad_nav; j++){
