@@ -591,6 +591,7 @@ height: 380%;
   color: white;
 }
 
+
 .button-play:active{
   background-color: #004884;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
@@ -1354,7 +1355,7 @@ height: 380%;
     height: 100%
   }
 
-  /*4 en linea*/
+  /*4 en linea*/ 
   .game-container{
     width: 80%;
     height: auto;
@@ -1393,35 +1394,35 @@ height: 380%;
     gap: 1em;
   }
 
+  .game-container section .section-image .play-section button:hover{
+    transform: scale(1.1);
+    animation: headShake 0.8s;
+  }
+  @keyframes headShake {
+    0% {
+      transform: translateX(0);
+    }
+    6.5% {
+      transform: translateX(-6px) rotateY(-9deg);
+    }
+    18.5% {
+      transform: translateX(5px) rotateY(7deg);
+    }
+    31.5% {
+      transform: translateX(-3px) rotateY(-5deg);
+    }
+    43.5% {
+      transform: translateX(2px) rotateY(3deg);
+    }
+    50% {
+      transform: translateX(0);
+    }
+  }
+
   .game-image{
     width: 220px;
     height: 260px;
     border-radius: 10px;
-  }
-
-  .game-container section .section-image .play-section .play-button{
-    height: 43px;
-    width: 135px;
-    border-radius: 15px;
-    background-color: #1F71B5;
-    transition: all .5s;   
-    text-align: center;
-  }
-
-  .game-container section .section-image .play-section .play-button span{
-    color: white;
-    font-size: 20px;
-    line-height: 40px;
-  }
-
-  .game-container section .section-image .play-section .play-button:hover{
-    background-color: #015194;
-    transform: scale(1.1);
-  }
-
-  .game-container section .section-image .play-section .play-button:active{
-    background-color: #004884;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
   }
 
   .game-container section .game-info{
@@ -1499,7 +1500,7 @@ height: 380%;
   }
 
   .galery-game:hover .game-photo{
-    filter: blur(10px);
+    filter: blur(1px);
   }
 
   .carousel .slide .game-item{
