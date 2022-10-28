@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (){
         
         background.classList.remove("on");
     }
-    /*Ventana modal*/
+    /*Ventana modal
     let openModal = document.querySelector('#openModal');
     let closeModal = document.querySelector('#closeModal');
     let modal = document.querySelector('#modal');
@@ -77,5 +77,6 @@ document.addEventListener("DOMContentLoaded", function (){
     modal.onclick = function(){
         modal.classList.remove('modal-flex');
     }  
+    */
     
 });

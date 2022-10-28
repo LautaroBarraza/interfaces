@@ -1,4 +1,11 @@
+
+
+
+
 /*Reseteo de estilos*/
+
+
+
 
 *{
   margin: 0;
@@ -1367,6 +1374,11 @@ height: 380%;
     font-weight: 500;
     font-size: 20px;
     margin-bottom: 16px;
+  }
+
+  .game-container section:first-of-type{
+    display: flex;
+    justify-content: center;
   }
 
   .game-container section{
