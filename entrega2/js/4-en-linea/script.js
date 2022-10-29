@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", cargar)
 function cargar(){
 
     let canvas= document.querySelector("#canvas");
-    let coordsCanvas=canvas.getBoundingClientRect();
+    
     /** @type {CanvasRenderingContext2D} */
     let ctx = canvas.getContext("2d");
 
@@ -138,6 +138,7 @@ function cargar(){
 
         function mouseDown(event){
             isMouseDown=true;
+            let coordsCanvas=canvas.getBoundingClientRect();
             let x =Math.round(event.clientX - coordsCanvas.left)
             let y =Math.round(event.clientY - coordsCanvas.top);
             if(lastTokenSelected!=null){
@@ -153,6 +154,7 @@ function cargar(){
         }
 
         function mouseMove(event){
+            let coordsCanvas=canvas.getBoundingClientRect();
             let x =Math.round(event.clientX - coordsCanvas.left)
             let y =Math.round(event.clientY - coordsCanvas.top);
             if(isMouseDown && lastTokenSelected!=null){
