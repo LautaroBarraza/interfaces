@@ -26,6 +26,7 @@ function cargar(){
     let fichasJugador1=[];
     let fichasJugador2=[];
     let cantidadFichas= fila*columna;
+    let fichasJugadas=0;
     let inLine=4;
 
     let turno = jugador1;
@@ -54,6 +55,7 @@ function cargar(){
     inicializarTablero();
 
         function inicializarTablero(){
+            fichasJugadas=0;
             let ubicacionFichaX= ubicacionTableroX;
             let ubicacionFichaY = ubicacionTableroY;
             for(let f=0;f<fila;f++){
@@ -88,7 +90,7 @@ function cargar(){
             }
 
         }
-
+        //inicia las fichas
         function initTokens(){
             for(let i=0;i<cantidadFichas/2;i++){
                 //fichas jugador 1
@@ -123,6 +125,7 @@ function cargar(){
 
         }
 
+        //agrega fondo de tablero
         function addRectangulo(ubicacionFichaX, ubicacionFichaY){
             let rectangulo = new Rectangulo(ubicacionFichaX, ubicacionFichaY, TAMPOSTABLERO, ctx);
             tablero.push(rectangulo);
@@ -184,6 +187,9 @@ function cargar(){
 
         //********** LOGICA WIN *************//
         function checkWin(row,column){
+            if(cantidadFichas==fichasJugadas){
+                alert("empate")
+            }
             if(winRow(row,column) || winColumn(row,column) || winDiag(row,column)){
                 alert("ganaste");
             }
@@ -456,6 +462,8 @@ function cargar(){
             }
         }
 
+
+        //colocar ficha
         function putToken(columna){
             for(let i=0;i<fila;i++){
                 let x= ubicacionTableroX+TAMFICHA+ (TAMPOSTABLERO*columna);
@@ -465,6 +473,7 @@ function cargar(){
                     figuras[i][columna].setToken(lastTokenSelected);
                     lastTokenSelected.move(x,y);
                     lastTokenSelected.setCanMove(false);
+                    fichasJugadas++;
                     inInit();
                     return i;
                 }else{
@@ -474,6 +483,7 @@ function cargar(){
                             figuras[i][columna].setToken(lastTokenSelected);
                             lastTokenSelected.move(x,y);
                             lastTokenSelected.setCanMove(false);
+                            fichasJugadas++;
                             inInit();
                             return i;
                         }
