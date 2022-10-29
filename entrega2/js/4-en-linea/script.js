@@ -184,9 +184,123 @@ function cargar(){
 
         //********** LOGICA WIN *************//
         function checkWin(row,column){
-            if(winRow(row,column) || winColumn(row,column)){
+            if(winRow(row,column) || winColumn(row,column) || winDiag(row,column)){
                 alert("ganaste");
             }
+        }
+
+        //win diagonal//
+
+        function winDiag(row,column){
+            let leftDown= inLineLeftDown(row,column);
+            let LeftUp = inLineLefttUp(row,column);
+            let rightDown= inLineRightDown(row,column);
+            let rightUp = inLineRightUp(row,column);
+            if((leftDown+rightUp+1>=inLine) || (LeftUp+rightDown+1>=inLine)){
+                return true;
+            }
+        }
+
+        function inLineLeftDown(row,column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(row+i<fila && column-i>-1){
+                    let token=figuras[row+i][column-i].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
+        }
+        function inLineLefttUp(row,column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(row-i>-1 && column-i>-1){
+                    let token=figuras[row-i][column-i].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
+        }
+
+        function inLineRightDown(row,column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(row+i<fila && column+i<columna){
+                    let token=figuras[row+i][column+i].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
+        }
+        function inLineRightUp(row,column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(row-i>-1 && column+i<columna){
+                    let token=figuras[row-i][column+i].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
         }
 
 
