@@ -1,7 +1,7 @@
 'use strict'
+
 let canvas = document.querySelector("#canvas");
 let ctx = canvas.getContext("2d");
-const rect = canvas.getBoundingClientRect();
 let canvasWidth = canvas.width;
 let canvasHeight = canvas.height;
 
