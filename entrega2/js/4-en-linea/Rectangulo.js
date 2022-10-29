@@ -7,6 +7,15 @@ class Rectangulo{
         this.ctx= ctx;
         this.image = new Image();
         this.isTokenInside=false;
+        this.token=null;
+    }
+
+    setToken(token){
+        this.token=token;
+    }
+
+    getToken(){
+        return this.token;
     }
 
     drawImg(img){

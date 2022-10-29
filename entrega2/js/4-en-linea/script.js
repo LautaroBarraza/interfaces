@@ -9,7 +9,7 @@ function cargar(){
 
     let figuras= [];
     let tablero= [];
-    let imgTablero= '../../img/2.png';
+    let imgTablero= '../img/2.png';
 
     let dropZone=[];
 
@@ -26,6 +26,7 @@ function cargar(){
     let fichasJugador1=[];
     let fichasJugador2=[];
     let cantidadFichas= fila*columna;
+    let inLine=4;
 
     let turno = jugador1;
 
@@ -117,7 +118,7 @@ function cargar(){
 
         function drawTablero(){
             for(let i=0;i<tablero.length;i++){
-                tablero[i].draw();
+                tablero[i].drawImg(imgTablero);
             }
 
         }
@@ -159,15 +160,16 @@ function cargar(){
             let y =Math.round(event.clientY - coordsCanvas.top);
             if(isMouseDown && lastTokenSelected!=null){
                 lastTokenSelected.move(x,y);
-                
                 inInit();
             }
         }
 
         function mouseUp(event){
             isMouseDown=false;
-            let columna=checkDropZone();
-            if(putToken(columna)){
+            let column=checkDropZone();
+            let row=putToken(column)
+            if(fila!=false){
+                checkWin(row,column);
                 changeTurn();
             }
             
@@ -176,6 +178,139 @@ function cargar(){
                 lastTokenSelected.setIsSelected(false);
             }
             console.log(figuras)
+        }
+
+
+
+        //********** LOGICA WIN *************//
+        function checkWin(row,column){
+            if(winRow(row,column) || winColumn(row,column)){
+                alert("ganaste");
+            }
+        }
+
+
+        //win columna//
+
+        function winColumn(row,column){
+            let up= winColumnUp(row,column);
+            let down = winColumnDown(row,column);
+            if(up+down+1>=inLine){
+                return true;
+            }
+        }
+
+        function winColumnDown(row,column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(row-i>-1){
+                    let token=figuras[row-i][column].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
+        }
+
+        function winColumnUp(row,column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(row+i<fila){
+                    let token=figuras[row+i][column].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
+        }
+
+        //win fila//
+
+        function winRow(row,column){
+            let left= winRowLeft(row,column);
+            let right = winRowRight(row,column);
+            if(left+right+1>=inLine){
+                return true;
+            }
+        }
+
+        function winRowLeft(row, column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(column-i>-1){
+                    let token=figuras[row][column-i].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
+        }
+        function winRowRight(row, column){
+            let encontro=false;
+            let i=1;
+            let cantidad=0;
+            while(encontro!=true){
+                if(column+i<columna){
+                    let token=figuras[row][column+i].getToken();
+                    console.log(token)
+                    if(token!=null){
+                        if (token.getJugador()==lastTokenSelected.getJugador()){
+                            cantidad++;
+                        }else{
+                            encontro=true;
+                        }
+                    }else{
+                        encontro=true;;
+                    }
+                }else{
+                    encontro=true;
+                }
+                i++;
+            }
+            console.log(cantidad);
+            return cantidad;
         }
 
         function findClickedToken(x,y){
@@ -213,18 +348,20 @@ function cargar(){
                 let y= ubicacionTableroY+TAMFICHA + (TAMPOSTABLERO*i);
                 if(i==fila-1 && !figuras[i][columna].getIsTokenInside()){
                     figuras[i][columna].setIsTokenInside(true);
+                    figuras[i][columna].setToken(lastTokenSelected);
                     lastTokenSelected.move(x,y);
                     lastTokenSelected.setCanMove(false);
                     inInit();
-                    return true;
+                    return i;
                 }else{
                     if((!figuras[i][columna].getIsTokenInside())){
                         if(figuras[i+1][columna].getIsTokenInside()){
                             figuras[i][columna].setIsTokenInside(true);
+                            figuras[i][columna].setToken(lastTokenSelected);
                             lastTokenSelected.move(x,y);
                             lastTokenSelected.setCanMove(false);
                             inInit();
-                            return true;
+                            return i;
                         }
                     }
                 }
