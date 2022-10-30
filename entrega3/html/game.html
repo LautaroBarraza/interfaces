@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestGames</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/06334b4bc7.js" crossorigin="anonymous"></script>
+    <link rel ="shortcut icon" type="image/x-icon" href="../img/pagina/logo.png">
+</head>
+<body class="hidden">
+    <div class="loader" id="onload">
+        <div class="ring">
+            <span>Cargando</span>
+            <span id="percentage">0%</span>
+        </div>
+    </div>
+    <header>
+        <div class="left-header">
+            <a class="icon-main" href="#"><i id="hamburger" class="fa-solid fa-bars fa-xl"></i></a>
+            <a href="../index.html"><img class="image" src="../img/pagina/logo.png" alt="logo"></a>
+        </div>
+        <div class="search-header">
+            <section class="search-input-content">
+                <input class="search-input" type="text" placeholder="Buscar juegos, generos y mas">
+                <a class="search-button" href="#"><i class="fa-solid fa-magnifying-glass fa-xl"></i></a>
+            </section>
+        </div>
+        <div class="right-header">
+            <a href="#" class="user-image icon-user"><img src="../img/starfield/personajes/starfield-xbox.jpg" alt="imagen de usuario"></a>
+            <i class="fa-solid fa-chevron-down arrow-user"></i>
+        </div>       
+    </header>
+    <nav class="nav">
+        <ul class="list">
+            <li class="list-item">
+                <div class="list-button">  
+                    <a class="nav-link" href="#"><i class="fa-solid fa-house fa-lg"></i>Principal</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-compass fa-lg"></i>Explorar</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-bookmark fa-lg"></i>Mi biblioteca</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">   
+                    <a class="nav-link" href="#"><i class="fa-solid fa-wand-magic-sparkles fa-lg"></i>Novedades</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-tags fa-lg"></i>Gratuitos</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">   
+                    <a class="nav-link" href="#"><i class="fa-solid fa-fire fa-lg"></i>Destacado</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">  
+                    <a class="nav-link" href="#"><i class="fa-solid fa-star fa-lg"></i>Premium</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button"> 
+                    <a class="nav-link" href="#"><i class="fa-solid fa-circle-question fa-lg"></i>Ayuda</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-gear fa-lg"></i>Preferencias</a>
+                </div>                    
+            </li>
+        </ul>
+        <section class="main-social">
+            <a href="#"><img src="../assets/instagram-icon.png" alt="instagram-logo" width="50px"></a>       
+            <a href="#"><img src="../assets/twitter-icon.png" alt="twitter-logo" width="50px"></a>
+            <a href="#"><img src="../assets/facebook-icon.png" alt="facebook-logo" width="50px"></a>
+        </section>
+    </nav>
+    <nav class="user-nav">
+        <section>
+            <img class="user-image" src="../img/starfield/personajes/starfield-xbox.jpg" alt="imagen de usuario">
+            <div class="user-name">
+                <h3>Usuario_prueba</h3>
+                <span>#07232</span>
+            </div>
+        </section>
+        <ul class="list">
+            <li class="list-item">
+                <div class="list-button">         
+                    <a class="nav-link" href="#"><i class="fa-solid fa-user fa-lg"></i>Mi perfil</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">                    
+                    <a class="nav-link" href="#"><i class="fa-solid fa-pen-to-square fa-lg"></i>Administrar cuenta</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">                    
+                    <a class="nav-link" href="#"><i class="fa-solid fa-gamepad fa-lg"></i>Subscripcion</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">                    
+                    <a class="nav-link" href="#"><i class="fa-solid fa-gear fa-lg"></i>Configuración</a>
+                </div>                    
+            </li>
+            <li class="list-item">
+                <div class="list-button">                    
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket fa-lg"></i>Cerrar sesion</a>
+                </div>                    
+            </li>
+        </ul>
+    </nav>
+    <div class="dark-background"></div>
+    
+    <main class="game-container">
+        <p class="breadcrums"><a href="../index.html">Juegos</a> / Solo para ti / <a href="../html/game.html">Saint Seiya: 4 En Linea</a> </p>
+        
+        <section>
+            <canvas id="canvas" width="1000px" height="500px"></canvas>
+        </section>    
+            </div>
+        </section>
+        <section class="carousel">
+            <button class="button-left"><i class="fas fa-angle-left"></i></button>
+            <ul class="slide galery-game">
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/gameVideo.png" alt="galery-photo">
+                    </div>         
+                </li>
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/tableroconfichas.jpg" alt="galery-photo">
+                    </div>
+                </li>
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/caballeros-zodiaco-saga-hades.jpg" alt="galery-photo">
+                    </div>
+                </li>
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/temporada-1.jpg" alt="galery-photo">
+                    </div>
+                </li>
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/WAGCTEBBRZONTHMYW4B2KZL4TA.jpg" alt="galery-photo">
+                    </div>
+                </li>
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/bcdda43e5cbd998594b94e844a77f9ff.jpg" alt="galery-photo">
+                    </div>
+                </li>
+                <li class="game-item">
+                    <div class="photo-container">
+                        <img class="game-photo" src="../img/game/ff4187437809408440b159ce685fb7ed.jpg" alt="galery-photo">
+                    </div>
+                </li>
+            </ul>
+            <button class="button-right"><i class="fas fa-angle-right"></i></button>
+            <div class="pag-slide"></div>
+        </section>
+        
+        <section class="game-instructions">
+            <article>
+                <h2>Instrucciones</h2>
+                <p>Cada jugador dispone de 21 fichas de un mismo tipo (Seiya o Hades).
+                    En cada turno cada jugador coloca una ficha de su tipo en la columna donde desee y esta caerá en un sitio disponible.
+                    El que consigue ubicar 4 fichas del mismo tipo seguidas en horizontal, vertical u oblicuo gana. 
+                    Si nadie lo consigue la partida termina en empate.
+                </p>
+                <br>
+                <h2>Controles</h2>
+                <p>-Click izquierdo = Para seleccionar ficha</p>
+                <p>-Click izquierdo sobre el tablero = Para colocar ficha</p>
+                <p>-Tecla “R” = Rendirse</p>
+            </article>
+            <article>
+                <img src="../img/game/instrucciones.png" alt="instructions-image">
+            </article>   
+        </section>
+        <h2>Comentarios</h2>
+        <section class="form-container">
+            <div class="user-content">
+                <img src="../img/starfield/personajes/starfield-xbox.jpg" alt="user-image">
+                <span>Tú</span>
+            </div>
+            <div class="form-comment">
+                <input type="text" placeholder="¿Que te parecio el juego?">
+                <button>Enviar</button>
+            </div>
+        </section>
+        <h3>Últimos comentarios</h3>
+        <section class="comments">
+            <ul class="comment-list">
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <img src="../img/starfield/personajes/2kdQDCEVyeR7uEFmtDPLMo.jpg" alt="user-image">
+                            <span>Patricio rey</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>1 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>Muy divertido!!!</span>
+                        <span class="date-comment">12/12/2012</span>
+                    </div>
+                </li>
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <img src="../img/starfield/personajes/starfield-journey-begins.jpg" alt="user-image">
+                            <span>JhonnyWalker</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>12 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>Muy bueno para jugar con amigos, muy recomendable</span>
+                        <span class="date-comment">21/21/2021</span>
+                    </div>
+                </li>
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <img src="../img/starfield/personajes/starfield-traits-best.jpg" alt="user-image">
+                            <span>NoobMaster69</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>3 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>Aburrido, prefiero el ajedrez</span>
+                        <span class="date-comment">15/12/2021</span>
+                    </div>
+                </li>
+                <li class="comment">
+                    <div class="top-content">
+                        <div class="user-content">
+                            <img src="../img/usuarios/boquita.jpeg" alt="user-image">
+                            <span>BoquitaPasion</span>
+                        </div>
+                        <div class="like-comment">
+                            <p>6 me gusta</p>
+                            <a href="#"><i class="fa-regular fa-thumbs-up fa-2x like"></i></a>
+                        </div>
+                    </div>
+                    <div class="line-center"></div>
+                    <div class="bottom-content">
+                        <span>el mejor juego de mesa que existe</span>
+                        <span class="date-comment">13/07/2014</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <div id="modal" class="modal-container">
+        <div class="modal-content">
+            <h2>Compartir</h2>
+            <div class="close-button">
+                <a id="closeModal" href="#"><i class="fa-solid fa-circle-xmark fa-2x"></i></a>
+            </div>  
+            <div class="line"></div>
+            <div class="modal-image">
+                <img src="../img/game/sshades.jpg" alt="game-image">
+                <p>¡Comparte Saint Seiya: 4 En Linea con tus amigos y eleva tu cosmos a lo mas alto!</p>
+            </div>
+            <div class="social-modal">
+                <a href="#"><i class="fa-brands fa-facebook fa-3x"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp fa-3x"></i></a>
+                <a href="#"><i class="fa-brands fa-telegram fa-3x"></i></a>
+                <a href="#"><i class="fa-solid fa-comment-sms fa-3x"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope fa-3x"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-container">
+        <div class="footer-grid">
+            <section class="footer-logo-container">
+                <a href="../index.html"><img class="footer-logo" src="../img/pagina/logo.png" alt="logo"></a>
+            </section>
+            <nav class="footer-nav">
+                <ul class="footer-links">
+                    <h3>LINKS</h3>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Explorar</a></li>
+                    <li><a href="#">Novedades</a></li>
+                    <li><a href="#">Gratuitos</a></li>
+                    <li><a href="#">Destacados</a></li>
+                    <li><a href="#">Premium</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h3>EMPRESA</h3>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Terminos y condiciones</a></li>
+                    <li><a href="#">Política de privacidad</a></li>
+                    <li><a href="#">Cookies</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h3>ASISTENCIA</h3>
+                    <li><a href="#">Ayuda</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="#">Acuerdo de subscripcion</a></li>
+                    <li><a href="#">Cancelar subscripcion</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h3>CONTACTO</h3>
+                    <li>+1141410931</li>
+                    <li>Av Epaña 1902</li>
+                    <li><a href="#">BestGames@gmail.com</a></li>
+                </ul>
+            </nav> 
+        </div>
+        <div class="line"></div>
+        <section class="footer-social">
+            <a href="#"><img src="../assets/instagram-icon.png" alt="instagram-logo" width="72px"></a>       
+            <a href="#"><img src="../assets/twitter-icon.png" alt="twitter-logo" width="72px"></a>
+            <a href="#"><img src="../assets/facebook-icon.png" alt="facebook-logo" width="72px"></a>
+        </section>
+        <span>Copyright © 2022 BestGames Todos los derechos reservados.</span>
+    </footer>
+    <script src="../js/script.js"></script>
+    <script src="../js/scriptslide.js"></script>
+       
+   <script src="../js/4-en-linea/player.js"></script>
+   <script src="../js/4-en-linea/Circulo.js"></script>
+   <script src="../js/4-en-linea/Rectangulo.js"></script>
+   <script src="../js/4-en-linea/script.js"></script>
+</body>
+</html>
