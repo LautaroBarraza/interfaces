@@ -161,6 +161,11 @@ function cargar(){
             let coordsCanvas=canvas.getBoundingClientRect();
             let x =Math.round(event.clientX - coordsCanvas.left)
             let y =Math.round(event.clientY - coordsCanvas.top);
+            if(event.clientX<coordsCanvas.left || event.clientX>coordsCanvas.right || event.clientY<coordsCanvas.top || event.clientY>coordsCanvas.bottom){
+                console.log("afuera");
+                isMouseDown=false;
+                moveTokenBack();
+            }
             if(isMouseDown && lastTokenSelected!=null){
                 lastTokenSelected.move(x,y);
                 inInit();
@@ -168,22 +173,117 @@ function cargar(){
         }
 
         function mouseUp(event){
+            let coordsCanvas=canvas.getBoundingClientRect();
+            let x =Math.round(event.clientX - coordsCanvas.left)
+            let y =Math.round(event.clientY - coordsCanvas.top);
             isMouseDown=false;
             let column=checkDropZone();
             let row=putToken(column)
-            if(fila!=false){
+            if(row!=false){
                 checkWin(row,column);
                 changeTurn();
+            }else{
+                moveTokenBack();
             }
-            
-            
             if(lastTokenSelected!=null){
                 lastTokenSelected.setIsSelected(false);
             }
             console.log(figuras)
         }
 
+        function moveTokenBack(){
+            if(lastTokenSelected!=null){
+                if(lastTokenSelected.getJugador()==jugador1){
+                    let posx=Math.round(Math.random() * (ubicacionTableroX - TAMPOSTABLERO*2) + TAMPOSTABLERO);
+                    let posy=canvasHeight- Math.round(Math.random() * altoTablero) - TAMPOSTABLERO;
+                    lastTokenSelected.move(posx,posy);
+                }else{
+                    let posx=Math.round(Math.random() * ((canvasWidht-TAMPOSTABLERO*2) - (ubicacionTableroX+largoTablero+TAMPOSTABLERO)) + (ubicacionTableroX+largoTablero+TAMPOSTABLERO));
+                    let posy=canvasHeight - Math.round(Math.random() * altoTablero) - TAMPOSTABLERO;
+                    lastTokenSelected.move(posx,posy);
+                }
+            }
+            inInit();
+            }
 
+
+
+        
+
+        function findClickedToken(x,y){
+            if(turno==jugador1){
+                for(let i=0;i<fichasJugador1.length;i++){
+                    if(fichasJugador1[i].isClicked(x,y)){
+                        return fichasJugador1[i];
+                    }
+                }
+            }else{
+                for(let i=0;i<fichasJugador2.length;i++){
+                    if(fichasJugador2[i].isClicked(x,y)){
+                        return fichasJugador2[i];
+                    }
+                }
+            }
+
+        }
+
+
+        //zona drop
+
+        function checkDropZone(){
+            for(let i=0;i<dropZone.length;i++){
+                if(dropZone[i].isDroppedInside(lastTokenSelected.getX(),lastTokenSelected.getY())){
+                    console.log(i)
+                    return i;
+                }
+            }
+        }
+
+
+        //colocar ficha
+        function putToken(columna){
+            if(columna!=undefined){
+                for(let i=0;i<fila;i++){
+                    let x= ubicacionTableroX+TAMFICHA+ (TAMPOSTABLERO*columna);
+                    let y= ubicacionTableroY+TAMFICHA + (TAMPOSTABLERO*i);
+                    if(i==fila-1 && !figuras[i][columna].getIsTokenInside()){
+                        figuras[i][columna].setIsTokenInside(true);
+                        figuras[i][columna].setToken(lastTokenSelected);
+                        lastTokenSelected.move(x,y);
+                        lastTokenSelected.setCanMove(false);
+                        fichasJugadas++;
+                        inInit();
+                        return i;
+                    }else{
+                        if((!figuras[i][columna].getIsTokenInside())){
+                            if(figuras[i+1][columna].getIsTokenInside()){
+                                figuras[i][columna].setIsTokenInside(true);
+                                figuras[i][columna].setToken(lastTokenSelected);
+                                lastTokenSelected.move(x,y);
+                                lastTokenSelected.setCanMove(false);
+                                fichasJugadas++;
+                                inInit();
+                                return i;
+                            }
+                        }
+                    }
+                }
+                return false;
+            }else{
+                return false;
+            }
+        }
+
+
+        //cambiar turno
+
+        function changeTurn(){
+            if(turno==jugador1){
+                turno=jugador2;
+            }else{
+                turno=jugador1;
+            }
+        }
 
         //********** LOGICA WIN *************//
         function checkWin(row,column){
@@ -433,79 +533,7 @@ function cargar(){
             return cantidad;
         }
 
-        function findClickedToken(x,y){
-            if(turno==jugador1){
-                for(let i=0;i<fichasJugador1.length;i++){
-                    if(fichasJugador1[i].isClicked(x,y)){
-                        return fichasJugador1[i];
-                    }
-                }
-            }else{
-                for(let i=0;i<fichasJugador2.length;i++){
-                    if(fichasJugador2[i].isClicked(x,y)){
-                        return fichasJugador2[i];
-                    }
-                }
-            }
-
-        }
-
-
-        //zona drop
-
-        function checkDropZone(){
-            for(let i=0;i<dropZone.length;i++){
-                if(dropZone[i].isDroppedInside(lastTokenSelected.getX(),lastTokenSelected.getY())){
-                    console.log(i)
-                    return i;
-                }
-            }
-        }
-
-
-        //colocar ficha
-        function putToken(columna){
-            for(let i=0;i<fila;i++){
-                let x= ubicacionTableroX+TAMFICHA+ (TAMPOSTABLERO*columna);
-                let y= ubicacionTableroY+TAMFICHA + (TAMPOSTABLERO*i);
-                if(i==fila-1 && !figuras[i][columna].getIsTokenInside()){
-                    figuras[i][columna].setIsTokenInside(true);
-                    figuras[i][columna].setToken(lastTokenSelected);
-                    lastTokenSelected.move(x,y);
-                    lastTokenSelected.setCanMove(false);
-                    fichasJugadas++;
-                    inInit();
-                    return i;
-                }else{
-                    if((!figuras[i][columna].getIsTokenInside())){
-                        if(figuras[i+1][columna].getIsTokenInside()){
-                            figuras[i][columna].setIsTokenInside(true);
-                            figuras[i][columna].setToken(lastTokenSelected);
-                            lastTokenSelected.move(x,y);
-                            lastTokenSelected.setCanMove(false);
-                            fichasJugadas++;
-                            inInit();
-                            return i;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-
-
-        //cambiar turno
-
-        function changeTurn(){
-            if(turno==jugador1){
-                turno=jugador2;
-            }else{
-                turno=jugador1;
-            }
-        }
-
     }
-
     /*
     function draw(){
         for(let cantidad=0;cantidad<10;cantidad++){

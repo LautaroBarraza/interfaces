@@ -52,6 +52,7 @@ class Circulo{
         this.ctx.fillStyle = "blue";
         this.ctx.fill();
         this.ctx.stroke();
+        this.ctx.closePath();
     }
 
     isClicked(x,y){
