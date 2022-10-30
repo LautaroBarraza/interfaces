@@ -16,30 +16,49 @@ function cargar(){
     let dropZone=[];
 
 
+    //datos que van a variar//
     let numColumn = 7;
     let numRow =6;
+    let inLine=4;
+    let amountTokens= numRow*numColumn;
+    //
+    
+
+
     const SIZEPOSBOARD= 50;
-    const SIZETOKEN = 20;
+    const SIZETOKEN = 25;
     let canvasWidht= canvas.width;
     let canvasHeight= canvas.height;
 
+    //jugador 1
     let player1= new player("user1", 1);
-    let player2 = new player("user2", 2)
     let tokensPlayer1=[];
+
+    //jugador 2
+    let player2 = new player("user2", 2)
     let tokensPlayer2=[];
-    let amountTokens= numRow*numColumn;
-    let tokensPlayed=0;
-    let inLine=4;
 
     let playerTurn = player1;
+    let tokensPlayed=0;
 
+    //ficha jugandose actualmente
+    let lastTokenSelected;
+    let isMouseDown = false;
+    
+    //ubicacion x y inicial del tablero
     let locationBoardX= (canvasWidht/2)-(((numColumn)*SIZEPOSBOARD)/2);
     let locationBoardY= canvasHeight/2-(((SIZEPOSBOARD)*(numRow))/2);
 
+    //largo y alto del tablero
+        let widhtBoard= (numColumn * (SIZEPOSBOARD));
+        let heightBoard= (numRow * (SIZEPOSBOARD));
 
-    let widhtBoard= (numColumn * (SIZEPOSBOARD));
-    let heightBoard= (numRow * (SIZEPOSBOARD));
 
+    initEvents();
+    initBoard();
+
+
+    //redibujar el canvas
     function redraw(){
         clearCanvas();
         drawBoard();
@@ -48,14 +67,7 @@ function cargar(){
         setInterval(drawTokens, 20)
     }
 
-    function initEvents(){
-        canvas.onmousedown = mouseDown;
-        canvas.onmousemove = mouseMove;
-        canvas.onmouseup = mouseUp;
-    }
-    initEvents();
-    initBoard();
-
+    //se inicializa el tablero creando las zonas, fichas y drop zones
         function initBoard(){
             tokensPlayed=0;
             let locationTokenX= locationBoardX;
@@ -66,7 +78,7 @@ function cargar(){
                     if(c==0){
                         locationTokenX= locationBoardX;
                     } 
-                    let rect =addRectangulo(locationTokenX, locationTokenY); 
+                    let rect =addZone(locationTokenX, locationTokenY); 
                     locationTokenX += SIZEPOSBOARD;
                     aux.push(rect)
                 }
@@ -82,16 +94,6 @@ function cargar(){
             console.log(figures)
         }
 
-        function drawDropZone(){
-            for(let c=0;c<numColumn;c++){
-                let x= locationBoardX+(c*SIZEPOSBOARD);
-                let y= locationBoardY-SIZEPOSBOARD;
-                let zone = new Zone(x, y, SIZEPOSBOARD, ctx);
-                zone.draw();
-                dropZone.push(zone);
-            }
-
-        }
         //inicia las fichas
         function initTokens(){
             for(let i=0;i<amountTokens/2;i++){
@@ -109,6 +111,33 @@ function cargar(){
             drawTokens();
         }
 
+        //agrega fondo de board
+        function addZone(locationTokenX, locationTokenY){
+            let rectangulo = new Zone(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
+            board.push(rectangulo);
+            drawBoard();
+            return rectangulo;
+        }
+
+
+        //metodos dibujar
+
+        function clearCanvas(){
+            ctx.clearRect(0,0, canvasWidht, canvasHeight);
+        }
+
+        function drawDropZone(){
+            for(let c=0;c<numColumn;c++){
+                let x= locationBoardX+(c*SIZEPOSBOARD);
+                let y= locationBoardY-SIZEPOSBOARD;
+                let zone = new Zone(x, y, SIZEPOSBOARD, ctx);
+                zone.draw();
+                dropZone.push(zone);
+            }
+
+        }
+
+
         function drawTokens(){
             for(let i=0;i<tokensPlayer1.length;i++){
                 tokensPlayer1[i].drawImg(imgPlayer1);
@@ -116,9 +145,6 @@ function cargar(){
             }
         }
 
-        function clearCanvas(){
-            ctx.clearRect(0,0, canvasWidht, canvasHeight);
-        }
 
         function drawBoard(){
             for(let i=0;i<board.length;i++){
@@ -127,19 +153,21 @@ function cargar(){
 
         }
 
-        //agrega fondo de board
-        function addRectangulo(locationTokenX, locationTokenY){
-            let rectangulo = new Zone(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
-            board.push(rectangulo);
-            drawBoard();
-            return rectangulo;
+
+        //fin zona eventos dibujar
+
+
+
+
+
+        //zona mouse events
+
+        //inicializar eventos
+        function initEvents(){
+            canvas.onmousedown = mouseDown;
+            canvas.onmousemove = mouseMove;
+            canvas.onmouseup = mouseUp;
         }
-
-
-
-        //mouse events
-        let lastTokenSelected;
-        let isMouseDown = false;
 
 
         function mouseDown(event){
@@ -193,6 +221,11 @@ function cargar(){
             console.log(figures)
         }
 
+
+        //fin zona eventos mouse
+
+        //llevar ficha a zona inicial, si la suelta fuera de las dropzone
+
         function moveTokenBack(){
             if(lastTokenSelected!=null){
                 if(lastTokenSelected.getPlayer()==player1){
@@ -210,7 +243,7 @@ function cargar(){
 
 
 
-        
+        //buscar ficha que se apreto
 
         function findClickedToken(x,y){
             if(playerTurn==player1){
@@ -230,7 +263,7 @@ function cargar(){
         }
 
 
-        //zone drop
+        //buscar drop zone donde se solto
 
         function checkDropZone(){
             for(let i=0;i<dropZone.length;i++){
@@ -242,7 +275,7 @@ function cargar(){
         }
 
 
-        //colocar ficha
+        //colocar ficha si se puede o retornar falso
         function putToken(column){
             if(column!=undefined){
                 for(let i=0;i<numRow;i++){
@@ -529,41 +562,3 @@ function cargar(){
         }
 
     }
-    /*
-    function draw(){
-        for(let count=0;count<10;count++){
-            let x= Math.floor(Math.random()*900);
-            let y= Math.floor(Math.random()*1000);
-            if(Math.floor(Math.random()*2)==1){
-                    let circulo = new Token(x, y, 100, canvas);
-                    circulo.draw();
-                    figures.push(circulo);
-
-            }else{
-                let rectangulo = new Zone(x, y, 300, 200, canvas);
-                rectangulo.draw();
-                figures.push(rectangulo);
-            }
-        }
-        console.log(figures);
-    }
-
-
-    function buscarClick(e){
-        let x= e.clientX;
-        let y = e.clientY;
-        for(let i=0;i<figures.length;i++){
-            if(figures[i].isClick(x, y)){
-                console.log(figures[i].isClick(x, y))
-                figures[i].setColorVerde();
-            }
-        }
-
-    }
-
-    */
-
-
-
-    //raiz[(punto1.x - cx)^2+(punto1.y-c.y)^2]   c es el punto centra
-
