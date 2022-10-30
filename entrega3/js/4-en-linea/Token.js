@@ -5,9 +5,9 @@ class Token{
         this.y = y;
         this.radius = radius;
         this.ctx = ctx;
-        this.player=player;
-        this.selected=false;
-        this.canMove=true;
+        this.player = player;
+        this.selected = false;
+        this.canMove = true;
         this.image = new Image();
     }
 
@@ -16,7 +16,7 @@ class Token{
     }
 
     setCanMove(boolean){
-        this.canMove=boolean;
+        this.canMove = boolean;
     }
 
     isSelected(){
@@ -24,7 +24,7 @@ class Token{
     }
 
     setIsSelected(boolean){
-        this.selected=boolean;
+        this.selected = boolean;
     }
 
     getX(){
@@ -32,20 +32,20 @@ class Token{
     }
 
     setX(x){
-        this.x= x;
+        this.x = x;
     }
 
     getY(){
         return this.y;
     }
     setY(y){
-        this.y=y;
+        this.y = y;
     }
     getRadius(){
         return this.radius;
     }
     setRadius(radius){
-        this.radius=radius;
+        this.radius = radius;
     }
     draw(){
         this.ctx.beginPath();
@@ -73,8 +73,8 @@ class Token{
 
     isClicked(x,y){
         if(this.canMove){
-            let distancia = Math.sqrt(Math.pow(x-this.x, 2)+ Math.pow(y-this.y, 2));
-            if(distancia>this.radius){
+            let distancia = Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2));
+            if(distancia > this.radius){
                 return false;
             }else{
                 return true;
@@ -84,9 +84,9 @@ class Token{
         }
     }
 
-    move(x,y){
-        this.x=x;
-        this.y=y;
+    move(x, y){
+        this.x = x;
+        this.y = y;
     }
 
     //raiz[(punto1.x - cx)^2+(punto1.y-c.y)^2]   c es el punto centra

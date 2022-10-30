@@ -1,13 +1,13 @@
 class Zone{
 
     constructor(x, y, width, ctx){
-        this.x=x;
-        this.y=y;
-        this.width= width;
-        this.ctx= ctx;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.ctx = ctx;
         this.image = new Image();
-        this.isTokenInside=false;
-        this.token=null;
+        this.isTokenInside = false;
+        this.token = null;
     }
 
     setToken(token){
@@ -42,14 +42,14 @@ class Zone{
     }
 
     setX(x){
-        this.x=x;
+        this.x = x;
     }
     getY(){
         return this.y;
     }
 
     setX(y){
-        this.y=y;
+        this.y = y;
     }
 
     getIsTokenInside(){
@@ -57,11 +57,11 @@ class Zone{
     }
 
     setIsTokenInside(boolean){
-        this.isTokenInside=boolean;
+        this.isTokenInside = boolean;
     }
 
-    isDroppedInside(x,y){
-        return x>this.x && x<this.x+this.width && y>this.y && y<this.y+this.width;
+    isDroppedInside(x, y){
+        return x > this.x && x < this.x + this.width && y > this.y && y < this.y + this.width;
     }
 
 }
