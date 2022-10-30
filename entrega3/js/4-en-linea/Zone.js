@@ -1,4 +1,4 @@
-class Rectangulo{
+class Zone{
 
     constructor(x, y, width, ctx){
         this.x=x;

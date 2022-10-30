@@ -1,4 +1,4 @@
-class Circulo{
+class Token{
 
     constructor(x, y, radius, ctx, player){
         this.x = x;

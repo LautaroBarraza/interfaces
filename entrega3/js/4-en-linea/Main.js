@@ -86,7 +86,7 @@ function cargar(){
             for(let c=0;c<numColumn;c++){
                 let x= locationBoardX+(c*SIZEPOSBOARD);
                 let y= locationBoardY-SIZEPOSBOARD;
-                let zone = new Rectangulo(x, y, SIZEPOSBOARD, ctx);
+                let zone = new Zone(x, y, SIZEPOSBOARD, ctx);
                 zone.draw();
                 dropZone.push(zone);
             }
@@ -98,12 +98,12 @@ function cargar(){
                 //fichas jugador 1
                     let posx=Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
                     let posy=canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                    let fichaJugador1= new Circulo(posx,posy,SIZETOKEN,ctx,player1);
+                    let fichaJugador1= new Token(posx,posy,SIZETOKEN,ctx,player1);
                     tokensPlayer1.push(fichaJugador1);
                 //fichas jugador 2
                     posx=Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
                     posy=canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                    let fichaJugador2= new Circulo(posx,posy,SIZETOKEN,ctx,player2);
+                    let fichaJugador2= new Token(posx,posy,SIZETOKEN,ctx,player2);
                     tokensPlayer2.push(fichaJugador2);
             }
             drawTokens();
@@ -129,7 +129,7 @@ function cargar(){
 
         //agrega fondo de board
         function addRectangulo(locationTokenX, locationTokenY){
-            let rectangulo = new Rectangulo(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
+            let rectangulo = new Zone(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
             board.push(rectangulo);
             drawBoard();
             return rectangulo;
@@ -535,12 +535,12 @@ function cargar(){
             let x= Math.floor(Math.random()*900);
             let y= Math.floor(Math.random()*1000);
             if(Math.floor(Math.random()*2)==1){
-                    let circulo = new Circulo(x, y, 100, canvas);
+                    let circulo = new Token(x, y, 100, canvas);
                     circulo.draw();
                     figures.push(circulo);
 
             }else{
-                let rectangulo = new Rectangulo(x, y, 300, 200, canvas);
+                let rectangulo = new Zone(x, y, 300, 200, canvas);
                 rectangulo.draw();
                 figures.push(rectangulo);
             }
