@@ -1376,22 +1376,22 @@ height: 380%;
     margin-bottom: 16px;
   }
 
-  .game-container section:first-of-type{
-    display: flex;
-    justify-content: center;
-  }
-
   .game-container section{
     width: 100%;
     position: relative;
     overflow: hidden;
   }
 
+  .canvasGame{
+    display: none;
+    justify-content: center;
+  }
+
   .game-container section .section-image{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
   }
   
   .game-container section .section-image .bk-game-image{

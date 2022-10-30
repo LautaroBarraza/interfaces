@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (){
         
         background.classList.remove("on");
     }
-    /*Ventana modal
+    //Ventana modal
     let openModal = document.querySelector('#openModal');
     let closeModal = document.querySelector('#closeModal');
     let modal = document.querySelector('#modal');
@@ -77,6 +77,11 @@ document.addEventListener("DOMContentLoaded", function (){
     modal.onclick = function(){
         modal.classList.remove('modal-flex');
     }  
-    */
+    
+    //jugar 4 en linea
+    document.querySelector('#play-canvasGame').addEventListener('click', ()=>{
+        document.querySelector('.canvasGame').style.display = "flex";
+        document.querySelector('.section-image').style.display = "none";
+    })
     
 });
