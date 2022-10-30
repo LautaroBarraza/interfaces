@@ -8,6 +8,7 @@ class Circulo{
         this.player=player;
         this.selected=false;
         this.canMove=true;
+        this.image = new Image();
     }
 
     getPlayer(){
@@ -53,6 +54,21 @@ class Circulo{
         this.ctx.fill();
         this.ctx.stroke();
         this.ctx.closePath();
+    }
+
+    drawImg(img){
+        this.ctx.beginPath();
+        this.ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+
+        if (this.image.src === "") {
+            this.image.src = img;
+            let loadImg = function () {
+                this.ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius / .5, this.radius / .5);
+            }
+            this.image.onload = loadImg.bind(this);
+        } else {
+            this.ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius / .5, this.radius / .5);
+        }
     }
 
     isClicked(x,y){

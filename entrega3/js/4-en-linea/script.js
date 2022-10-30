@@ -111,8 +111,8 @@ function cargar(){
 
         function drawTokens(){
             for(let i=0;i<tokensPlayer1.length;i++){
-                tokensPlayer1[i].draw();
-                tokensPlayer2[i].draw();
+                tokensPlayer1[i].drawImg(imgPlayer1);
+                tokensPlayer2[i].drawImg(imgPlayer2);
             }
         }
 
