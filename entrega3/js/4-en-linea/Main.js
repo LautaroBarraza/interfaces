@@ -23,16 +23,15 @@ function load(){
     let canvasWidht= canvas.width;
     let canvasHeight= canvas.height;
 
-    let player1= new player("user1", 1);
-    let player2 = new player("user2", 2)
+    let player1= new Player("user1", 1);
+    let player2 = new Player("user2", 2)
     let tokensPlayer1=[];
     let tokensPlayer2=[];
     let amountTokens= numRow*numColumn;
-    let tokensPlayed=0;
+    let tokensPlayed = 0;
     let inLine=4;
 
     let playerTurn = player1;
-    let tokensPlayed=0;
 
     let locationBoardX= (canvasWidht/2)-(((numColumn)*SIZEPOSBOARD)/2);
     let locationBoardY= canvasHeight/2-(((SIZEPOSBOARD)*(numRow))/2);
@@ -60,72 +59,76 @@ function load(){
         canvas.onmousemove = mouseMove;
         canvas.onmouseup = mouseUp;
     }
+
     initEvents();
     initBoard();
 
-        function initBoard(){
-            tokensPlayed=0;
-            let locationTokenX= locationBoardX;
-            let locationTokenY = locationBoardY;
-            for(let f=0;f<numRow;f++){
-                let aux= [];
-                for (let c=0;c<numColumn;c++){
-                    if(c==0){
-                        locationTokenX= locationBoardX;
-                    } 
-                    let rect =addRectangulo(locationTokenX, locationTokenY); 
-                    locationTokenX += SIZEPOSBOARD;
-                    aux.push(rect)
-                }
-                locationTokenX -= (SIZEPOSBOARD)*numColumn+SIZEPOSBOARD;
-                locationTokenY += (SIZEPOSBOARD);
-                figures.push(aux);
+    function initBoard(){
+        tokensPlayed = 0;
+        let locationTokenX = locationBoardX;
+        let locationTokenY = locationBoardY;
+        for(let row = 0; row < numRow; row++){
+            let aux = [];
+            for (let col = 0; col < numColumn; col++){
+                if(col == 0){
+                    locationTokenX = locationBoardX;
+                } 
+                let rect = addRect(locationTokenX, locationTokenY); 
+                locationTokenX += SIZEPOSBOARD;
+                aux.push(rect)
             }
-            drawDropZone();
-            console.log(board);
-            initTokens();
-            console.log(tokensPlayer1);
-            console.log(tokensPlayer2);
-            console.log(figures)
+            locationTokenX -= (SIZEPOSBOARD) * numColumn + SIZEPOSBOARD;
+            locationTokenY += (SIZEPOSBOARD);
+            figures.push(aux);
         }
 
-        function drawDropZone(){
-            for(let c=0;c<numColumn;c++){
-                let x= locationBoardX+(c*SIZEPOSBOARD);
-                let y= locationBoardY-SIZEPOSBOARD;
-                let zone = new Zone(x, y, SIZEPOSBOARD, ctx);
-                zone.draw();
-                dropZone.push(zone);
-            }
+        drawDropZone();
+        console.log(board);
+        initTokens();
+        console.log(tokensPlayer1);
+        console.log(tokensPlayer2);
+        console.log(figures);
+    }
 
-        }
-        //inicia las fichas
-        function initTokens(){
-            for(let i=0;i<amountTokens/2;i++){
-                //fichas jugador 1
-                    let posx=Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
-                    let posy=canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                    let fichaJugador1= new Token(posx,posy,SIZETOKEN,ctx,player1);
-                    tokensPlayer1.push(fichaJugador1);
-                //fichas jugador 2
-                    posx=Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
-                    posy=canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                    let fichaJugador2= new Token(posx,posy,SIZETOKEN,ctx,player2);
-                    tokensPlayer2.push(fichaJugador2);
-            }
-            drawTokens();
+    function drawDropZone(){
+        for(let col = 0; col < numColumn; col++){
+            let x = locationBoardX + (col * SIZEPOSBOARD);
+            let y = locationBoardY - SIZEPOSBOARD;
+            let zone = new Zone(x, y, SIZEPOSBOARD, ctx);
+            zone.draw();
+            dropZone.push(zone);
         }
 
-        function drawTokens(){
-            for(let i=0;i<tokensPlayer1.length;i++){
-                tokensPlayer1[i].drawImg(imgPlayer1);
-                tokensPlayer2[i].drawImg(imgPlayer2);
-            }
-        }
+    }
 
-        function clearCanvas(){
-            ctx.clearRect(0,0, canvasWidht, canvasHeight);
+    //Crea las fichas y las coloca en ambos lados
+    function initTokens(){
+        for(let i = 0; i < amountTokens/2; i++){
+            //fichas jugador 1
+            let posx = Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
+            let posy = canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+            let tokenPlayer1 = new Token(posx, posy, SIZETOKEN, ctx, player1);
+            tokensPlayer1.push(tokenPlayer1);
+
+            //fichas jugador 2
+            posx = Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
+            posy = canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+            let tokenPlayer2 = new Token(posx, posy, SIZETOKEN, ctx, player2);
+            tokensPlayer2.push(tokenPlayer2);
         }
+        drawTokens();
+    }
+
+    function drawTokens(){
+        for(let i = 0; i < tokensPlayer1.length; i++){
+            tokensPlayer1[i].drawImg(imgPlayer1);
+            tokensPlayer2[i].drawImg(imgPlayer2);
+        }
+    }
+
+    function clearCanvas(){
+        ctx.clearRect(0,0, canvasWidht, canvasHeight);
+    }
 
     function drawBoard(){
         for(let i = 0; i < board.length; i++){
@@ -133,19 +136,17 @@ function load(){
         }
     }
 
-        //agrega fondo de board
-        function addRectangulo(locationTokenX, locationTokenY){
-            let rectangulo = new Zone(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
-            board.push(rectangulo);
-            drawBoard();
-            return rectangulo;
-        }
+    //agrega fondo de board
+    function addRect(locationTokenX, locationTokenY){
+        let rect = new Zone(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
+        board.push(rect);
+        drawBoard();
+        return rect;
+    }
 
-
-
-        //mouse events
-        let lastTokenSelected;
-        let isMouseDown = false;
+    //mouse events
+    let lastTokenSelected;
+    let isMouseDown = false;
 
     function mouseDown(event){
         isMouseDown = true;
@@ -198,88 +199,80 @@ function load(){
         console.log(figures)
     }
 
-        function moveTokenBack(){
-            if(lastTokenSelected!=null){
-                if(lastTokenSelected.getPlayer()==player1){
-                    let posx=Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
-                    let posy=canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                    lastTokenSelected.move(posx,posy);
-                }else{
-                    let posx=Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
-                    let posy=canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                    lastTokenSelected.move(posx,posy);
-                }
-            }
-            redraw();
-            }
-
-
-
-        
-
-        function findClickedToken(x,y){
-            if(playerTurn==player1){
-                for(let i=0;i<tokensPlayer1.length;i++){
-                    if(tokensPlayer1[i].isClicked(x,y)){
-                        return tokensPlayer1[i];
-                    }
-                }
+    function moveTokenBack(){
+        if(lastTokenSelected != null){
+            if(lastTokenSelected.getPlayer() == player1){
+                let posx = Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
+                let posy = canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+                lastTokenSelected.move(posx, posy);
             }else{
-                for(let i=0;i<tokensPlayer2.length;i++){
-                    if(tokensPlayer2[i].isClicked(x,y)){
-                        return tokensPlayer2[i];
-                    }
+                let posx = Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
+                let posy = canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+                lastTokenSelected.move(posx, posy);
+            }
+        }
+        redraw();
+    }
+   
+    function findClickedToken(x, y){
+        if(playerTurn == player1){
+            for(let i = 0; i < tokensPlayer1.length; i++){
+                if(tokensPlayer1[i].isClicked(x, y)){
+                    return tokensPlayer1[i];
                 }
             }
-
+        }else{
+            for(let i = 0; i < tokensPlayer2.length; i++){
+                if(tokensPlayer2[i].isClicked(x, y)){
+                    return tokensPlayer2[i];
+                }
+            }
         }
+    }
 
+    //zone drop
+    function checkDropZone(){
+        for(let i = 0; i < dropZone.length; i++){
+            if(dropZone[i].isDroppedInside(lastTokenSelected.getX(),lastTokenSelected.getY())){
+                console.log(i)
+                return i;
+            }
+        }
+    }
 
-        //zone drop
-
-        function checkDropZone(){
-            for(let i=0;i<dropZone.length;i++){
-                if(dropZone[i].isDroppedInside(lastTokenSelected.getX(),lastTokenSelected.getY())){
-                    console.log(i)
+    //colocar ficha
+    function putToken(column){
+        if(column != undefined){
+            for(let i = 0; i < numRow; i++){
+                let x = locationBoardX + SIZETOKEN + (SIZEPOSBOARD * column);
+                let y = locationBoardY + SIZETOKEN + (SIZEPOSBOARD * i);
+                if(i == numRow-1 && !figures[i][column].getIsTokenInside()){
+                    figures[i][column].setIsTokenInside(true);
+                    figures[i][column].setToken(lastTokenSelected);
+                    lastTokenSelected.move(x+5, y+5);
+                    lastTokenSelected.setCanMove(false);
+                    tokensPlayed++;
+                    redraw();
                     return i;
-                }
-            }
-        }
-
-
-        //colocar ficha
-        function putToken(column){
-            if(column!=undefined){
-                for(let i=0;i<numRow;i++){
-                    let x= locationBoardX+SIZETOKEN+ (SIZEPOSBOARD*column);
-                    let y= locationBoardY+SIZETOKEN + (SIZEPOSBOARD*i);
-                    if(i==numRow-1 && !figures[i][column].getIsTokenInside()){
-                        figures[i][column].setIsTokenInside(true);
-                        figures[i][column].setToken(lastTokenSelected);
-                        lastTokenSelected.move(x,y);
-                        lastTokenSelected.setCanMove(false);
-                        tokensPlayed++;
-                        redraw();
-                        return i;
-                    }else{
-                        if((!figures[i][column].getIsTokenInside())){
-                            if(figures[i+1][column].getIsTokenInside()){
-                                figures[i][column].setIsTokenInside(true);
-                                figures[i][column].setToken(lastTokenSelected);
-                                lastTokenSelected.move(x,y);
-                                lastTokenSelected.setCanMove(false);
-                                tokensPlayed++;
-                                redraw();
-                                return i;
-                            }
+                }else{
+                    if((!figures[i][column].getIsTokenInside())){
+                        if(figures[i+1][column].getIsTokenInside()){
+                            figures[i][column].setIsTokenInside(true);
+                            figures[i][column].setToken(lastTokenSelected);
+                            lastTokenSelected.move(x+5, y+5);
+                            lastTokenSelected.setCanMove(false);
+                            tokensPlayed++;
+                            redraw();
+                            return i;
                         }
                     }
                 }
-                return false;
-            }else{
-                return false;
             }
+            return false;
+        }else{
+            return false;
         }
+    }
 
     //cambiar turno de jugador
     function changeTurn(){
