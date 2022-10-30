@@ -7,40 +7,40 @@ function cargar(){
     /** @type {CanvasRenderingContext2D} */
     let ctx = canvas.getContext("2d");
 
-    let figuras= [];
-    let tablero= [];
-    let imgTablero= '../img/2.png';
+    let figures= [];
+    let board= [];
+    let imgBoard= '../img/2.png';
 
     let dropZone=[];
 
 
-    let columna = 7;
-    let fila =6;
-    const TAMPOSTABLERO= 50;
-    const TAMFICHA = 20;
+    let numColumn = 7;
+    let numRow =6;
+    const SIZEPOSBOARD= 50;
+    const SIZETOKEN = 20;
     let canvasWidht= canvas.width;
     let canvasHeight= canvas.height;
 
-    let jugador1= new player("user1", 1);
-    let jugador2 = new player("user2", 2)
-    let fichasJugador1=[];
-    let fichasJugador2=[];
-    let cantidadFichas= fila*columna;
-    let fichasJugadas=0;
+    let player1= new player("user1", 1);
+    let player2 = new player("user2", 2)
+    let tokensPlayer1=[];
+    let tokensPlayer2=[];
+    let amountTokens= numRow*numColumn;
+    let tokensPlayed=0;
     let inLine=4;
 
-    let turno = jugador1;
+    let playerTurn = player1;
 
-    let ubicacionTableroX= (canvasWidht/2)-(((columna)*TAMPOSTABLERO)/2);
-    let ubicacionTableroY= canvasHeight/2-(((TAMPOSTABLERO)*(fila))/2);
+    let locationBoardX= (canvasWidht/2)-(((numColumn)*SIZEPOSBOARD)/2);
+    let locationBoardY= canvasHeight/2-(((SIZEPOSBOARD)*(numRow))/2);
 
 
-    let largoTablero= (columna * (TAMPOSTABLERO));
-    let altoTablero= (fila * (TAMPOSTABLERO));
+    let widhtBoard= (numColumn * (SIZEPOSBOARD));
+    let heightBoard= (numRow * (SIZEPOSBOARD));
 
-    function inInit(){
+    function redraw(){
         clearCanvas();
-        drawTablero();
+        drawBoard();
         drawTokens();
         drawDropZone()
         setInterval(drawTokens, 20)
@@ -52,65 +52,65 @@ function cargar(){
         canvas.onmouseup = mouseUp;
     }
     initEvents();
-    inicializarTablero();
+    initBoard();
 
-        function inicializarTablero(){
-            fichasJugadas=0;
-            let ubicacionFichaX= ubicacionTableroX;
-            let ubicacionFichaY = ubicacionTableroY;
-            for(let f=0;f<fila;f++){
+        function initBoard(){
+            tokensPlayed=0;
+            let locationTokenX= locationBoardX;
+            let locationTokenY = locationBoardY;
+            for(let f=0;f<numRow;f++){
                 let aux= [];
-                for (let c=0;c<columna;c++){
+                for (let c=0;c<numColumn;c++){
                     if(c==0){
-                        ubicacionFichaX= ubicacionTableroX;
+                        locationTokenX= locationBoardX;
                     } 
-                    let rect =addRectangulo(ubicacionFichaX, ubicacionFichaY); 
-                    ubicacionFichaX += TAMPOSTABLERO;
+                    let rect =addRectangulo(locationTokenX, locationTokenY); 
+                    locationTokenX += SIZEPOSBOARD;
                     aux.push(rect)
                 }
-                ubicacionFichaX -= (TAMPOSTABLERO)*columna+TAMPOSTABLERO;
-                ubicacionFichaY += (TAMPOSTABLERO);
-                figuras.push(aux);
+                locationTokenX -= (SIZEPOSBOARD)*numColumn+SIZEPOSBOARD;
+                locationTokenY += (SIZEPOSBOARD);
+                figures.push(aux);
             }
             drawDropZone();
-            console.log(tablero);
+            console.log(board);
             initTokens();
-            console.log(fichasJugador1);
-            console.log(fichasJugador2);
-            console.log(figuras)
+            console.log(tokensPlayer1);
+            console.log(tokensPlayer2);
+            console.log(figures)
         }
 
         function drawDropZone(){
-            for(let c=0;c<columna;c++){
-                let x= ubicacionTableroX+(c*TAMPOSTABLERO);
-                let y= ubicacionTableroY-TAMPOSTABLERO;
-                let zona = new Rectangulo(x, y, TAMPOSTABLERO, ctx);
-                zona.draw();
-                dropZone.push(zona);
+            for(let c=0;c<numColumn;c++){
+                let x= locationBoardX+(c*SIZEPOSBOARD);
+                let y= locationBoardY-SIZEPOSBOARD;
+                let zone = new Rectangulo(x, y, SIZEPOSBOARD, ctx);
+                zone.draw();
+                dropZone.push(zone);
             }
 
         }
         //inicia las fichas
         function initTokens(){
-            for(let i=0;i<cantidadFichas/2;i++){
+            for(let i=0;i<amountTokens/2;i++){
                 //fichas jugador 1
-                    let posx=Math.round(Math.random() * (ubicacionTableroX - TAMPOSTABLERO*2) + TAMPOSTABLERO);
-                    let posy=canvasHeight- Math.round(Math.random() * altoTablero) - TAMPOSTABLERO;
-                    let fichaJugador1= new Circulo(posx,posy,TAMFICHA,ctx,jugador1);
-                    fichasJugador1.push(fichaJugador1);
+                    let posx=Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
+                    let posy=canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+                    let fichaJugador1= new Circulo(posx,posy,SIZETOKEN,ctx,player1);
+                    tokensPlayer1.push(fichaJugador1);
                 //fichas jugador 2
-                    posx=Math.round(Math.random() * ((canvasWidht-TAMPOSTABLERO*2) - (ubicacionTableroX+largoTablero+TAMPOSTABLERO)) + (ubicacionTableroX+largoTablero+TAMPOSTABLERO));
-                    posy=canvasHeight - Math.round(Math.random() * altoTablero) - TAMPOSTABLERO;
-                    let fichaJugador2= new Circulo(posx,posy,TAMFICHA,ctx,jugador2);
-                    fichasJugador2.push(fichaJugador2);
+                    posx=Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
+                    posy=canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+                    let fichaJugador2= new Circulo(posx,posy,SIZETOKEN,ctx,player2);
+                    tokensPlayer2.push(fichaJugador2);
             }
             drawTokens();
         }
 
         function drawTokens(){
-            for(let i=0;i<fichasJugador1.length;i++){
-                fichasJugador1[i].draw();
-                fichasJugador2[i].draw();
+            for(let i=0;i<tokensPlayer1.length;i++){
+                tokensPlayer1[i].draw();
+                tokensPlayer2[i].draw();
             }
         }
 
@@ -118,18 +118,18 @@ function cargar(){
             ctx.clearRect(0,0, canvasWidht, canvasHeight);
         }
 
-        function drawTablero(){
-            for(let i=0;i<tablero.length;i++){
-                tablero[i].drawImg(imgTablero);
+        function drawBoard(){
+            for(let i=0;i<board.length;i++){
+                board[i].drawImg(imgBoard);
             }
 
         }
 
-        //agrega fondo de tablero
-        function addRectangulo(ubicacionFichaX, ubicacionFichaY){
-            let rectangulo = new Rectangulo(ubicacionFichaX, ubicacionFichaY, TAMPOSTABLERO, ctx);
-            tablero.push(rectangulo);
-            drawTablero();
+        //agrega fondo de board
+        function addRectangulo(locationTokenX, locationTokenY){
+            let rectangulo = new Rectangulo(locationTokenX, locationTokenY, SIZEPOSBOARD, ctx);
+            board.push(rectangulo);
+            drawBoard();
             return rectangulo;
         }
 
@@ -151,7 +151,7 @@ function cargar(){
             }
 
             let tokenSelected= findClickedToken(x,y);
-            if(tokenSelected!=null && tokenSelected.getJugador()==turno){
+            if(tokenSelected!=null && tokenSelected.getPlayer()==playerTurn){
                 tokenSelected.setIsSelected(true);
                 lastTokenSelected=tokenSelected;
             } 
@@ -168,7 +168,7 @@ function cargar(){
             }
             if(isMouseDown && lastTokenSelected!=null){
                 lastTokenSelected.move(x,y);
-                inInit();
+                redraw();
             }
         }
 
@@ -188,22 +188,22 @@ function cargar(){
             if(lastTokenSelected!=null){
                 lastTokenSelected.setIsSelected(false);
             }
-            console.log(figuras)
+            console.log(figures)
         }
 
         function moveTokenBack(){
             if(lastTokenSelected!=null){
-                if(lastTokenSelected.getJugador()==jugador1){
-                    let posx=Math.round(Math.random() * (ubicacionTableroX - TAMPOSTABLERO*2) + TAMPOSTABLERO);
-                    let posy=canvasHeight- Math.round(Math.random() * altoTablero) - TAMPOSTABLERO;
+                if(lastTokenSelected.getPlayer()==player1){
+                    let posx=Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
+                    let posy=canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
                     lastTokenSelected.move(posx,posy);
                 }else{
-                    let posx=Math.round(Math.random() * ((canvasWidht-TAMPOSTABLERO*2) - (ubicacionTableroX+largoTablero+TAMPOSTABLERO)) + (ubicacionTableroX+largoTablero+TAMPOSTABLERO));
-                    let posy=canvasHeight - Math.round(Math.random() * altoTablero) - TAMPOSTABLERO;
+                    let posx=Math.round(Math.random() * ((canvasWidht-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
+                    let posy=canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
                     lastTokenSelected.move(posx,posy);
                 }
             }
-            inInit();
+            redraw();
             }
 
 
@@ -211,16 +211,16 @@ function cargar(){
         
 
         function findClickedToken(x,y){
-            if(turno==jugador1){
-                for(let i=0;i<fichasJugador1.length;i++){
-                    if(fichasJugador1[i].isClicked(x,y)){
-                        return fichasJugador1[i];
+            if(playerTurn==player1){
+                for(let i=0;i<tokensPlayer1.length;i++){
+                    if(tokensPlayer1[i].isClicked(x,y)){
+                        return tokensPlayer1[i];
                     }
                 }
             }else{
-                for(let i=0;i<fichasJugador2.length;i++){
-                    if(fichasJugador2[i].isClicked(x,y)){
-                        return fichasJugador2[i];
+                for(let i=0;i<tokensPlayer2.length;i++){
+                    if(tokensPlayer2[i].isClicked(x,y)){
+                        return tokensPlayer2[i];
                     }
                 }
             }
@@ -228,7 +228,7 @@ function cargar(){
         }
 
 
-        //zona drop
+        //zone drop
 
         function checkDropZone(){
             for(let i=0;i<dropZone.length;i++){
@@ -241,28 +241,28 @@ function cargar(){
 
 
         //colocar ficha
-        function putToken(columna){
-            if(columna!=undefined){
-                for(let i=0;i<fila;i++){
-                    let x= ubicacionTableroX+TAMFICHA+ (TAMPOSTABLERO*columna);
-                    let y= ubicacionTableroY+TAMFICHA + (TAMPOSTABLERO*i);
-                    if(i==fila-1 && !figuras[i][columna].getIsTokenInside()){
-                        figuras[i][columna].setIsTokenInside(true);
-                        figuras[i][columna].setToken(lastTokenSelected);
+        function putToken(column){
+            if(column!=undefined){
+                for(let i=0;i<numRow;i++){
+                    let x= locationBoardX+SIZETOKEN+ (SIZEPOSBOARD*column);
+                    let y= locationBoardY+SIZETOKEN + (SIZEPOSBOARD*i);
+                    if(i==numRow-1 && !figures[i][column].getIsTokenInside()){
+                        figures[i][column].setIsTokenInside(true);
+                        figures[i][column].setToken(lastTokenSelected);
                         lastTokenSelected.move(x,y);
                         lastTokenSelected.setCanMove(false);
-                        fichasJugadas++;
-                        inInit();
+                        tokensPlayed++;
+                        redraw();
                         return i;
                     }else{
-                        if((!figuras[i][columna].getIsTokenInside())){
-                            if(figuras[i+1][columna].getIsTokenInside()){
-                                figuras[i][columna].setIsTokenInside(true);
-                                figuras[i][columna].setToken(lastTokenSelected);
+                        if((!figures[i][column].getIsTokenInside())){
+                            if(figures[i+1][column].getIsTokenInside()){
+                                figures[i][column].setIsTokenInside(true);
+                                figures[i][column].setToken(lastTokenSelected);
                                 lastTokenSelected.move(x,y);
                                 lastTokenSelected.setCanMove(false);
-                                fichasJugadas++;
-                                inInit();
+                                tokensPlayed++;
+                                redraw();
                                 return i;
                             }
                         }
@@ -275,23 +275,32 @@ function cargar(){
         }
 
 
-        //cambiar turno
+        //cambiar playerTurn
 
         function changeTurn(){
-            if(turno==jugador1){
-                turno=jugador2;
+            if(playerTurn==player1){
+                playerTurn=player2;
             }else{
-                turno=jugador1;
+                playerTurn=player1;
             }
         }
 
         //********** LOGICA WIN *************//
         function checkWin(row,column){
-            if(cantidadFichas==fichasJugadas){
+            if(amountTokens==tokensPlayed){
                 alert("empate")
+                finishGame();
             }
             if(winRow(row,column) || winColumn(row,column) || winDiag(row,column)){
                 alert("ganaste");
+                finishGame();
+            }
+        }
+
+        function finishGame(){
+            for(let i=0;i<tokensPlayer1.length;i++){
+                tokensPlayer1[i].setCanMove(false);
+                tokensPlayer2[i].setCanMove(false);
             }
         }
 
@@ -308,105 +317,97 @@ function cargar(){
         }
 
         function inLineLeftDown(row,column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
-                if(row+i<fila && column-i>-1){
-                    let token=figuras[row+i][column-i].getToken();
-                    console.log(token)
+            let count=0;
+            while(found!=true){
+                if(row+i<numRow && column-i>-1){
+                    let token=figures[row+i][column-i].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
         function inLineLefttUp(row,column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
+            let count=0;
+            while(found!=true){
                 if(row-i>-1 && column-i>-1){
-                    let token=figuras[row-i][column-i].getToken();
-                    console.log(token)
+                    let token=figures[row-i][column-i].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
 
         function inLineRightDown(row,column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
-                if(row+i<fila && column+i<columna){
-                    let token=figuras[row+i][column+i].getToken();
-                    console.log(token)
+            let count=0;
+            while(found!=true){
+                if(row+i<numRow && column+i<numColumn){
+                    let token=figures[row+i][column+i].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
         function inLineRightUp(row,column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
-                if(row-i>-1 && column+i<columna){
-                    let token=figuras[row-i][column+i].getToken();
-                    console.log(token)
+            let count=0;
+            while(found!=true){
+                if(row-i>-1 && column+i<numColumn){
+                    let token=figures[row-i][column+i].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
 
 
@@ -421,55 +422,51 @@ function cargar(){
         }
 
         function winColumnDown(row,column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
+            let count=0;
+            while(found!=true){
                 if(row-i>-1){
-                    let token=figuras[row-i][column].getToken();
-                    console.log(token)
+                    let token=figures[row-i][column].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
 
         function winColumnUp(row,column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
-                if(row+i<fila){
-                    let token=figuras[row+i][column].getToken();
-                    console.log(token)
+            let count=0;
+            while(found!=true){
+                if(row+i<numRow){
+                    let token=figures[row+i][column].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
 
         //win fila//
@@ -483,84 +480,80 @@ function cargar(){
         }
 
         function winRowLeft(row, column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
+            let count=0;
+            while(found!=true){
                 if(column-i>-1){
-                    let token=figuras[row][column-i].getToken();
-                    console.log(token)
+                    let token=figures[row][column-i].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
         function winRowRight(row, column){
-            let encontro=false;
+            let found=false;
             let i=1;
-            let cantidad=0;
-            while(encontro!=true){
-                if(column+i<columna){
-                    let token=figuras[row][column+i].getToken();
-                    console.log(token)
+            let count=0;
+            while(found!=true){
+                if(column+i<numColumn){
+                    let token=figures[row][column+i].getToken();
                     if(token!=null){
-                        if (token.getJugador()==lastTokenSelected.getJugador()){
-                            cantidad++;
+                        if (token.getPlayer()==lastTokenSelected.getPlayer()){
+                            count++;
                         }else{
-                            encontro=true;
+                            found=true;
                         }
                     }else{
-                        encontro=true;;
+                        found=true;;
                     }
                 }else{
-                    encontro=true;
+                    found=true;
                 }
                 i++;
             }
-            console.log(cantidad);
-            return cantidad;
+            return count;
         }
 
     }
     /*
     function draw(){
-        for(let cantidad=0;cantidad<10;cantidad++){
+        for(let count=0;count<10;count++){
             let x= Math.floor(Math.random()*900);
             let y= Math.floor(Math.random()*1000);
             if(Math.floor(Math.random()*2)==1){
                     let circulo = new Circulo(x, y, 100, canvas);
                     circulo.draw();
-                    figuras.push(circulo);
+                    figures.push(circulo);
 
             }else{
                 let rectangulo = new Rectangulo(x, y, 300, 200, canvas);
                 rectangulo.draw();
-                figuras.push(rectangulo);
+                figures.push(rectangulo);
             }
         }
-        console.log(figuras);
+        console.log(figures);
     }
 
 
     function buscarClick(e){
         let x= e.clientX;
         let y = e.clientY;
-        for(let i=0;i<figuras.length;i++){
-            if(figuras[i].isClick(x, y)){
-                console.log(figuras[i].isClick(x, y))
-                figuras[i].setColorVerde();
+        for(let i=0;i<figures.length;i++){
+            if(figures[i].isClick(x, y)){
+                console.log(figures[i].isClick(x, y))
+                figures[i].setColorVerde();
             }
         }
 

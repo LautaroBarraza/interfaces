@@ -1,17 +1,17 @@
 class Circulo{
 
-    constructor(x, y, radio, ctx, jugador){
+    constructor(x, y, radius, ctx, player){
         this.x = x;
         this.y = y;
-        this.radio = radio;
+        this.radius = radius;
         this.ctx = ctx;
-        this.jugador=jugador;
-        this.Selected=false;
+        this.player=player;
+        this.selected=false;
         this.canMove=true;
     }
 
-    getJugador(){
-        return this.jugador;
+    getPlayer(){
+        return this.player;
     }
 
     setCanMove(boolean){
@@ -23,7 +23,7 @@ class Circulo{
     }
 
     setIsSelected(boolean){
-        this.Selected=boolean;
+        this.selected=boolean;
     }
 
     getX(){
@@ -40,15 +40,15 @@ class Circulo{
     setY(y){
         this.y=y;
     }
-    getRadio(){
-        return this.radio;
+    getRadius(){
+        return this.radius;
     }
-    setRadio(radio){
-        this.radio=radio;
+    setRadius(radius){
+        this.radius=radius;
     }
     draw(){
         this.ctx.beginPath();
-        this.ctx.arc(this.x , this.y , this.radio , 0, 2 * Math.PI);
+        this.ctx.arc(this.x , this.y , this.radius , 0, 2 * Math.PI);
         this.ctx.fillStyle = "blue";
         this.ctx.fill();
         this.ctx.stroke();
@@ -58,7 +58,7 @@ class Circulo{
     isClicked(x,y){
         if(this.canMove){
             let distancia = Math.sqrt(Math.pow(x-this.x, 2)+ Math.pow(y-this.y, 2));
-            if(distancia>this.radio){
+            if(distancia>this.radius){
                 return false;
             }else{
                 return true;
