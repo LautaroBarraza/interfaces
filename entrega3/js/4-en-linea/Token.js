@@ -63,11 +63,11 @@ class Token{
         if (this.image.src === "") {
             this.image.src = img;
             let loadImg = function () {
-                this.ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius / .5, this.radius / .5);
+                this.ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius / .6, this.radius / .6);
             }
             this.image.onload = loadImg.bind(this);
         } else {
-            this.ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius / .5, this.radius / .5);
+            this.ctx.drawImage(this.image, this.x - this.radius, this.y - this.radius, this.radius / .6, this.radius / .6);
         }
     }
 
