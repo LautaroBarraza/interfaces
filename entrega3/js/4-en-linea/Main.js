@@ -46,11 +46,11 @@ function load(){
     let inline5X = SIZETOKEN;
     let inline5Y = SIZETOKEN;
 
-    /*let inline6X = ;
-    let inline6Y = ;
+    let inline6X = SIZETOKEN;
+    let inline6Y = inline5Y + 30;
 
-    let inline7X = ;
-    let inline7Y = ;*/
+    let inline7X = SIZETOKEN;
+    let inline7Y = inline6Y + 30;
 
     //initEvents();
     initBoard();
@@ -92,24 +92,50 @@ function load(){
             locationTokenY += (SIZEPOSBOARD);
             figures.push(aux);
         }
-        initEvents();
+
+        for(let col = 0; col < numColumn; col++){
+            let x = locationBoardX + (col * SIZEPOSBOARD);
+            let y = locationBoardY - SIZEPOSBOARD;
+            let zone = new Zone(x, y, SIZEPOSBOARD, ctx);
+            dropZone.push(zone);
+        }
+
+        for(let i = 0; i < amountTokens/2; i++){
+            //fichas jugador 1
+            let posx = Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
+            let posy = canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+            let tokenPlayer1 = new Token(posx, posy, SIZETOKEN, ctx, player1);
+            tokensPlayer1.push(tokenPlayer1);
+
+            //fichas jugador 2
+            posx = Math.round(Math.random() * ((canvasWidth-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
+            posy = canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
+            let tokenPlayer2 = new Token(posx, posy, SIZETOKEN, ctx, player2);
+            tokensPlayer2.push(tokenPlayer2);
+        }
+
+       
+        //initEvents();
         
         
         //console.log(board);
-        initTokens();
-        drawTokens();
+        //initTokens();
+        drawFigures();
+        canvas.addEventListener("mousedown", mouseDown, false);
+        canvas.addEventListener("mousemove", mouseMove, false);
+        canvas.addEventListener("mouseup", mouseUp, false);
         //console.log(tokensPlayer1);
         //console.log(tokensPlayer2);
         //console.log(figures);
     }
 
-    function initEvents(){
+    /*function initEvents(){
         canvas.onmousedown = mouseDown;
         canvas.onmousemove = mouseMove;
         canvas.onmouseup = mouseUp;
-    }
+    }*/
 
-    function drawDropZone(){
+  /*  function drawDropZone(){
         for(let col = 0; col < numColumn; col++){
             let x = locationBoardX + (col * SIZEPOSBOARD);
             let y = locationBoardY - SIZEPOSBOARD;
@@ -148,17 +174,32 @@ function load(){
             tokensPlayer2[i].drawImg(imgPlayer2);
         }
         
+    }*/
+
+    function drawFigures(){
+        clearCanvas();
+        addTextsButtons();
+        for(let i = 0; i < board.length; i++){
+            board[i].drawImg(imgBoard);
+        }
+        for(let col = 0; col < numColumn; col++){
+            dropZone[col].draw();
+        }
+        for(let i = 0; i < tokensPlayer1.length; i++){
+            tokensPlayer1[i].drawImg(imgPlayer1);
+            tokensPlayer2[i].drawImg(imgPlayer2);
+        }   
     }
 
     function clearCanvas(){
         ctx.clearRect(0,0, canvasWidth, canvasHeight);
     }
 
-    function drawBoard(){
+    /*function drawBoard(){
         for(let i = 0; i < board.length; i++){
             board[i].drawImg(imgBoard);
         }
-    }
+    }*/
 
     //agrega fondo de board
     function addRect(locationTokenX, locationTokenY){
@@ -188,7 +229,7 @@ function load(){
             lastTokenSelected = tokenSelected;
         } 
 
-        if ((x >= restartBtnX) && (y <= restartBtnY)) {
+        if ((x >= 932) && (x <= 1043) && (y >= 7) && (y <= 27)) {
             figures = [];
             board = [];
             dropZone = [];
@@ -196,9 +237,10 @@ function load(){
             tokensPlayer2 = [];
             playerTurn = player1;
             initBoard();
+            console.log(tokensPlayer1.length);
         }
 
-        if ((x >= inline5X) && (y <= inline5Y)) {
+        if ((x >= 20) && (x <= 72) && (y >= 3) && (y <= 19)) {
             numColumn = 8;
             numRow = 7;
             inLine = 5;
@@ -210,6 +252,34 @@ function load(){
             playerTurn = player1;
             initBoard();
         }
+
+        if ((x >= 20) && (x <= 72) && (y >= 33) && (y <= 48)) {
+            numColumn = 9;
+            numRow = 8;
+            inLine = 6;
+            figures = [];
+            board = [];
+            dropZone = [];
+            tokensPlayer1 = [];
+            tokensPlayer2 = [];
+            playerTurn = player1;
+            initBoard();
+        }
+
+        if ((x >= 20) && (x <= 72) && (y >= 62) && (y <= 79)) {
+            numColumn = 10;
+            numRow = 9;
+            inLine = 7;
+            figures = [];
+            board = [];
+            dropZone = [];
+            tokensPlayer1 = [];
+            tokensPlayer2 = [];
+            playerTurn = player1;
+            initBoard();
+        }
+        //console.log(x, y);
+        drawFigures();
     }
 
     function mouseMove(event){
@@ -223,7 +293,7 @@ function load(){
         }
         if(isMouseDown && lastTokenSelected != null){
             lastTokenSelected.move(x, y);
-            drawTokens();
+            drawFigures();
         }
     }
 
@@ -244,6 +314,7 @@ function load(){
             lastTokenSelected.setIsSelected(false);
         }
         //console.log(figures)
+        drawFigures();
     }
 
     function moveTokenBack(){
@@ -258,7 +329,7 @@ function load(){
                 lastTokenSelected.move(posx, posy);
             }
         }
-        drawTokens();
+        drawFigures();
     }
    
     function findClickedToken(x, y){
@@ -303,7 +374,7 @@ function load(){
                     lastTokenSelected.move(x+3, y+3);
                     lastTokenSelected.setCanMove(false);
                     tokensPlayed++;
-                    drawTokens();
+                    drawFigures();
                     return i;
                 }else{
                     if((!figures[i][column].getIsTokenInside())){
@@ -313,7 +384,7 @@ function load(){
                             lastTokenSelected.move(x+3, y+3);
                             lastTokenSelected.setCanMove(false);
                             tokensPlayed++;
-                            drawTokens();
+                            drawFigures();
                             return i;
                         }
                     }
@@ -342,6 +413,14 @@ function load(){
         ctx.font = '25px Arial';
         ctx.fillStyle = 'Black'
         ctx.fillText('8 x 7', inline5X, inline5Y);
+
+        ctx.font = '25px Arial';
+        ctx.fillStyle = 'Black'
+        ctx.fillText('9 x 8', inline6X, inline6Y);
+
+        ctx.font = '25px Arial';
+        ctx.fillStyle = 'Black'
+        ctx.fillText('10 x 9', inline7X, inline7Y);
     }
 
     //********** LOGICA WIN *************//
