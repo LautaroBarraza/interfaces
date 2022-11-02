@@ -247,48 +247,35 @@ function load(){
             initBoard();  
         }
 
-        //5 en linea
+        //4 en linea
         if ((x >= 10) && (x <= 145) && (y >= 3) && (y <= 19)) {
-            numColumn = 7;
-            numRow = 6;
-            inLine = 4;
-            figures = [];
-            board = [];
-            dropZone = [];
-            tokensPlayer1 = [];
-            tokensPlayer2 = [];
-            playerTurn = player1;
-            initBoard();
+            initGame(7,6,4);
         }
 
         //6 en linea
         if ((x >= 10) && (x <= 145) && (y >= 33) && (y <= 48)) {
-            numColumn = 8;
-            numRow = 7;
-            inLine = 5;
-            figures = [];
-            board = [];
-            dropZone = [];
-            tokensPlayer1 = [];
-            tokensPlayer2 = [];
-            playerTurn = player1;
-            initBoard();
+            initGame(8,7,5);
         }
 
         if ((x >= 10) && (x <= 145) && (y >= 62) && (y <= 79)) {
-            numColumn = 9;
-            numRow = 8;
-            inLine = 6;
-            figures = [];
-            board = [];
-            dropZone = [];
-            tokensPlayer1 = [];
-            tokensPlayer2 = [];
-            playerTurn = player1;
-            initBoard();
+            initGame(9,8,6);
         }
         //console.log(x, y);
         drawFigures();
+    }
+
+    function initGame(col,row,inLine){
+        numColumn = col;
+        numRow = row;
+        inLine = inLine;
+        figures = [];
+        board = [];
+        dropZone = [];
+        tokensPlayer1 = [];
+        tokensPlayer2 = [];
+        playerTurn = player1;
+        initBoard();
+        initTime();
     }
 
     function mouseMove(event){
