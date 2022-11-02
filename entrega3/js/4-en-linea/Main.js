@@ -54,6 +54,7 @@ function load(){
 
     //initEvents();
     initBoard();
+    showPlayerOptions();
 
 
     //redibujar el canvas
@@ -287,7 +288,6 @@ function load(){
         let x = Math.round(event.clientX - coordsCanvas.left);
         
         let y = Math.round(event.clientY - coordsCanvas.top);
-        console.log(x,y, canvasHeight)
         if(x <2 || x > canvasWidth-4 || y<2 || y >canvasHeight-4){
             console.log("afuera");
             isMouseDown = false;
@@ -426,6 +426,12 @@ function load(){
         ctx.fillText('6 en Linea', inline7X, inline7Y);
     }
 
+    function showPlayerOptions(){
+        document.querySelector("#name-player-1").value=player1.getName();
+        document.querySelector("#name-player-2").value=player2.getName();
+
+    }
+
     //********** LOGICA WIN *************//
     function checkWin(row, column){
         if(amountTokens == tokensPlayed){
@@ -433,7 +439,7 @@ function load(){
             finishGame();
         }
         if(winRow(row, column) || winColumn(row, column) || winDiag(row, column)){
-            alert("Gana: " + playerTurn.getNombre());
+            alert("Gana: " + playerTurn.getName());
             finishGame();
         }
     }

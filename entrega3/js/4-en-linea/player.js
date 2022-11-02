@@ -1,15 +1,15 @@
 class Player{
 
-    constructor(nombre, id){
-        this.nombre = nombre;
+    constructor(name, id){
+        this.name = name;
         this.id = id;
     }
 
-    getNombre(){
-        return this.nombre;
+    getName(){
+        return this.name;
     }
-    setNombre(){
-        this.nombre=this.nombre;
+    setName(){
+        this.name=this.name;
     }
 
 }
