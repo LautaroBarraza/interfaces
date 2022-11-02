@@ -1,4 +1,5 @@
 'use strict'
+
 document.addEventListener("DOMContentLoaded", function (){
 
     //Preloader//
@@ -76,39 +77,5 @@ document.addEventListener("DOMContentLoaded", function (){
 
     modal.onclick = function(){
         modal.classList.remove('modal-flex');
-    }  
-    
-    //jugar 4 en linea
-    document.querySelector('#play-canvasGame').addEventListener('click', ()=>{
-        document.querySelector('.canvasGame').style.display = "flex";
-        document.querySelector('.section-image').style.display = "none";
-        
-        initTime();
-    })
-
-    function initTime() {
-        let startMinutes = 1;
-        let time = startMinutes * 60;
-        let element = document.getElementById('test');
-
-        setInterval(()=>{
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            seconds = seconds < startMinutes ? '0' + seconds : seconds;
-            element.innerHTML = `${minutes}:${seconds}`;
-
-            if(seconds == 10){
-                element.style.color = "red";
-            }
-            if(minutes == 0 && seconds == 0){
-                clearInterval();
-                alert("Se termino el tiempo");
-                finishGame();
-
-            }else{
-                time--;
-            }
-        }, 1000);
-    }
-    
+    }   
 });

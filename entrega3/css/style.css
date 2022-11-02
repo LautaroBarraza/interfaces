@@ -1378,7 +1378,7 @@ height: 380%;
   }
 
   .game-container section{
-    width: 100%;
+   
     position: relative;
     overflow: hidden;
   }
@@ -1391,7 +1391,10 @@ height: 380%;
   .players-name{
     width: 100px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    
   }
   
   .players-name input{  
@@ -1401,10 +1404,12 @@ height: 380%;
     font-size: 15px;
     border: 1px solid rgb(68, 68, 68);
     border-radius: 10px;
-    
+    margin-bottom: 20px;
   }
 
   .canvasGame{
+    width: 90%;
+    margin: 0 5%;
     display: none;
     justify-content: center;
   }
