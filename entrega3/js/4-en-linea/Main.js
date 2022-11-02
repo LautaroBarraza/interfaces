@@ -240,7 +240,20 @@ function load(){
             console.log(tokensPlayer1.length);
         }
 
-        if ((x >= 20) && (x <= 72) && (y >= 3) && (y <= 19)) {
+        if ((x >= 10) && (x <= 145) && (y >= 3) && (y <= 19)) {
+            numColumn = 7;
+            numRow = 6;
+            inLine = 4;
+            figures = [];
+            board = [];
+            dropZone = [];
+            tokensPlayer1 = [];
+            tokensPlayer2 = [];
+            playerTurn = player1;
+            initBoard();
+        }
+
+        if ((x >= 10) && (x <= 145) && (y >= 33) && (y <= 48)) {
             numColumn = 8;
             numRow = 7;
             inLine = 5;
@@ -253,23 +266,10 @@ function load(){
             initBoard();
         }
 
-        if ((x >= 20) && (x <= 72) && (y >= 33) && (y <= 48)) {
+        if ((x >= 10) && (x <= 145) && (y >= 62) && (y <= 79)) {
             numColumn = 9;
             numRow = 8;
             inLine = 6;
-            figures = [];
-            board = [];
-            dropZone = [];
-            tokensPlayer1 = [];
-            tokensPlayer2 = [];
-            playerTurn = player1;
-            initBoard();
-        }
-
-        if ((x >= 20) && (x <= 72) && (y >= 62) && (y <= 79)) {
-            numColumn = 10;
-            numRow = 9;
-            inLine = 7;
             figures = [];
             board = [];
             dropZone = [];
@@ -285,11 +285,14 @@ function load(){
     function mouseMove(event){
         let coordsCanvas = canvas.getBoundingClientRect();
         let x = Math.round(event.clientX - coordsCanvas.left);
+        
         let y = Math.round(event.clientY - coordsCanvas.top);
-        if(event.clientX < coordsCanvas.left || event.clientX > coordsCanvas.right || event.clientY < coordsCanvas.top || event.clientY > coordsCanvas.bottom){
+        console.log(x,y, canvasHeight)
+        if(x <2 || x > canvasWidth-4 || y<2 || y >canvasHeight-4){
             console.log("afuera");
             isMouseDown = false;
             moveTokenBack();
+            lastTokenSelected=null;
         }
         if(isMouseDown && lastTokenSelected != null){
             lastTokenSelected.move(x, y);
@@ -412,15 +415,15 @@ function load(){
 
         ctx.font = '25px Arial';
         ctx.fillStyle = 'Black'
-        ctx.fillText('8 x 7', inline5X, inline5Y);
+        ctx.fillText('4 en Linea', inline5X, inline5Y);
 
         ctx.font = '25px Arial';
         ctx.fillStyle = 'Black'
-        ctx.fillText('9 x 8', inline6X, inline6Y);
+        ctx.fillText('5 en Linea', inline6X, inline6Y);
 
         ctx.font = '25px Arial';
         ctx.fillStyle = 'Black'
-        ctx.fillText('10 x 9', inline7X, inline7Y);
+        ctx.fillText('6 en Linea', inline7X, inline7Y);
     }
 
     //********** LOGICA WIN *************//
