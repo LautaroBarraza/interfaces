@@ -1364,9 +1364,9 @@ height: 380%;
 
   /*4 en linea*/ 
   .game-container{
-    width: 80%;
+    width: 100%;
     height: auto;
-    margin: 10px 10%;
+    margin: 10px 0px;
     padding: 16px 0;
   }
 
@@ -1374,21 +1374,34 @@ height: 380%;
     font-weight: 500;
     font-size: 20px;
     margin-bottom: 16px;
+    margin-left: 5%;
   }
 
   .game-container section{
     width: 100%;
     position: relative;
     overflow: hidden;
-    
+  }
+
+  #test{
+    font-size: 20px;
+    text-align: center;
   }
 
   .players-name{
-    display: none;
+    width: 100px;
+    display: flex;
     justify-content: center;
   }
-  .players-name input{
+  
+  .players-name input{  
+    width: 100%;
+    height: 22px;
     text-align: center;
+    font-size: 15px;
+    border: 1px solid rgb(68, 68, 68);
+    border-radius: 10px;
+    
   }
 
   .canvasGame{
@@ -1401,6 +1414,8 @@ height: 380%;
     flex-direction: column;
     align-items: center;
     justify-content: center; 
+    width: 90%;
+    margin: 0 5%;
   }
   
   .game-container section .section-image .bk-game-image{
@@ -1447,8 +1462,9 @@ height: 380%;
   }
 
   .game-container section .game-info{
-    width: 100%;
+    width: 90%;
     height: 100px;
+    margin: 0 5%;
     background-color:#ECECEC;
     border-radius: 0 0 10px 10px;
     display: flex;
@@ -1636,20 +1652,14 @@ height: 380%;
     transform: scale(1.2);
   }
 
-  .game-container h2{
-    font-weight: 500;
-    font-size: 26px;
-    margin: 10px 0;
-  }
-
   /*instrucciones 4en linea*/
   .game-container .game-instructions{
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-between;
     gap: 1em;
     padding: 10px 10px 10px 0;
-    margin-bottom: 20px;
+    margin:0 5%;
   }
 
   .game-container .game-instructions img{
@@ -1657,6 +1667,17 @@ height: 380%;
     height: 295px;
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.51);
+  }
+  
+  .game-container h2{
+    font-weight: 500;
+    font-size: 26px;
+    margin: 10px 0;
+  }
+
+  .game-container .comment-tittle{
+    margin-top: 20px;
+    margin-left: 5%;
   }
 
   .game-container h3{

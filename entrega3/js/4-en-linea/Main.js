@@ -275,7 +275,6 @@ function load(){
         tokensPlayer2 = [];
         playerTurn = player1;
         initBoard();
-        initTime();
     }
 
     function mouseMove(event){
@@ -667,26 +666,6 @@ function load(){
         return count;
     }
 
-    function initTime() {
-        let startMinutes = 1;
-        let time = startMinutes * 60;
-        let element = document.getElementById('test');
-
-        setInterval(()=>{
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            seconds = seconds < startMinutes ? '0' + seconds : seconds;
-            element.innerHTML = `${minutes}:${seconds}`;
-
-            if(minutes == 0 && seconds == 0){
-                clearInterval();
-                alert("Se termino el tiempo");
-                finishGame();
-
-            }else{
-                time--;
-            }
-        }, 1000);
-    }
+    
 
 }
