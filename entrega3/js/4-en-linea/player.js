@@ -8,5 +8,8 @@ class Player{
     getNombre(){
         return this.nombre;
     }
+    setNombre(){
+        this.nombre=this.nombre;
+    }
 
 }

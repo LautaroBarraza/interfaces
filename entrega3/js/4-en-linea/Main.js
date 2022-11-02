@@ -334,13 +334,13 @@ function load(){
    
     function findClickedToken(x, y){
         if(playerTurn == player1){
-            for(let i = 0; i < tokensPlayer1.length; i++){
+            for(let i = tokensPlayer1.length-1; i >= 0; i--){
                 if(tokensPlayer1[i].isClicked(x, y)){
                     return tokensPlayer1[i];
                 }
             }
         }else{
-            for(let i = 0; i < tokensPlayer2.length; i++){
+            for(let i = tokensPlayer2.length-1; i >= 0; i--){
                 if(tokensPlayer2[i].isClicked(x, y)){
                     return tokensPlayer2[i];
                 }
