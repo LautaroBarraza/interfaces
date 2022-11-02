@@ -14,9 +14,6 @@ function load(){
     let imgPlayer2 = '../img/4-in-line/fichaseiya.png';
 
     let dropZone = [];
-
-    
-    
     let numColumn = 7;
     let numRow = 6;
     const SIZEPOSBOARD = 40;
@@ -239,17 +236,18 @@ function load(){
             lastTokenSelected = tokenSelected;
         } 
 
+        //Reinicia el juego
         if ((x >= 932) && (x <= 1043) && (y >= 7) && (y <= 27)) {
             figures = [];
             board = [];
             dropZone = [];
             tokensPlayer1 = [];
             tokensPlayer2 = [];
-            playerTurn = player1;
-            initBoard();
-            console.log(tokensPlayer1.length);
+            playerTurn = player1;  
+            initBoard();  
         }
 
+        //5 en linea
         if ((x >= 10) && (x <= 145) && (y >= 3) && (y <= 19)) {
             numColumn = 7;
             numRow = 6;
@@ -263,6 +261,7 @@ function load(){
             initBoard();
         }
 
+        //6 en linea
         if ((x >= 10) && (x <= 145) && (y >= 33) && (y <= 48)) {
             numColumn = 8;
             numRow = 7;
@@ -681,4 +680,26 @@ function load(){
         return count;
     }
 
+    function initTime() {
+        let startMinutes = 1;
+        let time = startMinutes * 60;
+        let element = document.getElementById('test');
+
+        setInterval(()=>{
+            let minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+            seconds = seconds < startMinutes ? '0' + seconds : seconds;
+            element.innerHTML = `${minutes}:${seconds}`;
+
+            if(minutes == 0 && seconds == 0){
+                clearInterval();
+                alert("Se termino el tiempo");
+                finishGame();
+
+            }else{
+                time--;
+            }
+        }, 1000);
     }
+
+}
