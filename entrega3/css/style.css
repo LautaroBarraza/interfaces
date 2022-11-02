@@ -1380,6 +1380,15 @@ height: 380%;
     width: 100%;
     position: relative;
     overflow: hidden;
+    
+  }
+
+  .players-name{
+    display: none;
+    justify-content: center;
+  }
+  .players-name input{
+    text-align: center;
   }
 
   .canvasGame{

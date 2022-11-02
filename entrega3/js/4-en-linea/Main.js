@@ -15,7 +15,8 @@ function load(){
 
     let dropZone = [];
 
-
+    
+    
     let numColumn = 7;
     let numRow = 6;
     const SIZEPOSBOARD = 40;
@@ -24,7 +25,15 @@ function load(){
     let canvasHeight = canvas.height;
 
     let player1 = new Player("Jugador1", 1);
-    let player2 = new Player("Jugador2", 2)
+    let player2 = new Player("Jugador2", 2);
+
+    document.querySelector('#name-player-1').addEventListener('keyup', ()=>{
+        player1.setName(document.querySelector('#name-player-1').value);
+    });
+    document.querySelector('#name-player-2').addEventListener('keyup', ()=>{
+        player2.setName(document.querySelector('#name-player-2').value);
+    });
+    
     let tokensPlayer1 = [];
     let tokensPlayer2 = [];
     let amountTokens = numRow * numColumn;

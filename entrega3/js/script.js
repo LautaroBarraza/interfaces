@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function (){
     document.querySelector('#play-canvasGame').addEventListener('click', ()=>{
         document.querySelector('.canvasGame').style.display = "flex";
         document.querySelector('.section-image').style.display = "none";
+        document.querySelector('.players-name').style.display = "flex";
     })
     
 });

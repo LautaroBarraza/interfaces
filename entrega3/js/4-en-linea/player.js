@@ -8,8 +8,8 @@ class Player{
     getName(){
         return this.name;
     }
-    setName(){
-        this.name=this.name;
+    setName(name){
+        this.name=name;
     }
 
 }
