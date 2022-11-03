@@ -71,6 +71,10 @@ class Token{
         }
     }
 
+    setImage(img){
+        this.image.src = img;
+    }
+
     isClicked(x,y){
         if(this.canMove){
             let distancia = Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2));

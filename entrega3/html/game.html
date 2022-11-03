@@ -126,23 +126,33 @@
     
     <main class="game-container">
         <p class="breadcrums"><a href="../index.html">Juegos</a> / Solo para ti / <a href="../html/game.html">Saint Seiya: 4 En Linea</a> </p>
-        <section>
-            <p id="test"></p>
-            <section class="canvasGame">       
-                <div class="players-name"> 
-                    <input type="text" value="" id="name-player-1" placeholder="Jugador1">   
-                    <a href="#"><img src="../img/4-in-line/fichaseiya.png" alt="ficha-leo" width="80px"></a> 
-                    <a href="#"><img src="../img/4-in-line/leo.png" alt="ficha-leo" width="80px"></a>
-                    <a href="#"><img src="../img/4-in-line/marin.png" alt="ficha-leo" width="80px"></a>
-                </div>   
-                <canvas id="canvas" width="1060px" height="500px"></canvas>    
-                <div class="players-name"> 
-                    <input type="text" value="" id="name-player-2" placeholder="Jugador2">    
-                    <a href="#"><img src="../img/4-in-line/fichahades.png" alt="ficha-leo" width="80px"></a> 
-                    <a href="#"><img src="../img/4-in-line/espectro.png" alt="ficha-leo" width="80px"></a>
-                    <a href="#"><img src="../img/4-in-line/shina.png" alt="ficha-leo" width="80px"></a>     
-                </div>      
-            </section>    
+        <section>     
+            <div class="play-canvasGame">
+                <div class="buttons-canvas-game">
+                    <section class="boardSize">
+                        <a id="btn-x4-inLine" href="#"><img src="../img/4-in-line/botonx4.png" alt="4-en-linea" ></a>
+                        <a id="btn-x5-inLine" href="#"><img src="../img/4-in-line/botonx5.png" alt="5-en-linea"></a>
+                        <a id="btn-x6-inLine" href="#"><img src="../img/4-in-line/botonx6.png" alt="6-en-linea" ></a>
+                    </section>
+                    <p id="test"></p>
+                    <a id="restartGame" href="#">Reiniciar</a>
+                </div> 
+                <div class="canvasGame">
+                    <div class="players-name"> 
+                        <input type="text" value="" id="name-player-1" placeholder="Jugador1">   
+                        <a id="tokenSeiya" href="#"><img src="../img/4-in-line/fichaseiya.png" alt="ficha-leo" width="80px"></a> 
+                        <a id="tokenLeo" href="#"><img src="../img/4-in-line/leo.png" alt="ficha-leo" width="80px"></a>
+                        <a id="tokenMarin" href="#"><img src="../img/4-in-line/marin.png" alt="ficha-leo" width="80px"></a>
+                    </div>   
+                    <canvas id="canvas" width="1060px" height="500px"></canvas>    
+                    <div class="players-name"> 
+                        <input type="text" value="" id="name-player-2" placeholder="Jugador2">    
+                        <a id="tokenHades" href="#"><img src="../img/4-in-line/fichahades.png" alt="ficha-leo" width="80px"></a> 
+                        <a id="tokenEspectro" href="#"><img src="../img/4-in-line/espectro.png" alt="ficha-leo" width="80px"></a>
+                        <a id="tokenShina" href="#"><img src="../img/4-in-line/shina.png" alt="ficha-leo" width="80px"></a>     
+                    </div>   
+                </div>                      
+            </div>    
             
             <div class="section-image">
                 <img class="bk-game-image" src="../img/game/sainhades.jpg" alt="game-background">

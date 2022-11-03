@@ -11,8 +11,12 @@ function load(){
     let figures = [];
     let board = [];
     let imgBoard = '../img/4-in-line/space.png';
-    let imgPlayer1 = '../img/4-in-line/fichaseiya.png';
-    let imgPlayer2 = '../img/4-in-line/fichahades.png';
+    let tokenSeiya = '../img/4-in-line/fichaseiya.png';
+    let tokenHades = '../img/4-in-line/fichahades.png';
+    let tokenLeo = '../img/4-in-line/leo.png';
+    let tokenMarin = '../img/4-in-line/marin.png';
+    let tokenEspectro = '../img/4-in-line/espectro.png';
+    let tokenShina = '../img/4-in-line/shina.png';
 
     let dropZone = [];
     let numColumn = 7;
@@ -46,18 +50,6 @@ function load(){
 
     let widhtBoard = (numColumn * (SIZEPOSBOARD));
     let heightBoard = (numRow * (SIZEPOSBOARD));
-
-    let restartBtnX = canvasWidth - 130;
-    let restartBtnY = 30;
-
-    let inline5X = SIZETOKEN;
-    let inline5Y = SIZETOKEN;
-
-    let inline6X = SIZETOKEN;
-    let inline6Y = inline5Y + 30;
-
-    let inline7X = SIZETOKEN;
-    let inline7Y = inline6Y + 30;
 
     //initEvents();
     initBoard();
@@ -186,7 +178,6 @@ function load(){
 
     function drawFigures(){
         clearCanvas();
-        addTextsButtons();
         for(let i = 0; i < board.length; i++){
             board[i].drawImg(imgBoard);
         }
@@ -194,8 +185,8 @@ function load(){
             dropZone[col].draw();
         }
         for(let i = 0; i < tokensPlayer1.length; i++){
-            tokensPlayer1[i].drawImg(imgPlayer1);
-            tokensPlayer2[i].drawImg(imgPlayer2);
+            tokensPlayer1[i].drawImg(tokenSeiya);
+            tokensPlayer2[i].drawImg(tokenHades);
         }   
     }
 
@@ -236,45 +227,22 @@ function load(){
             tokenSelected.setIsSelected(true);
             lastTokenSelected = tokenSelected;
         } 
-
-        //Reinicia el juego
-        if ((x >= 932) && (x <= 1043) && (y >= 7) && (y <= 27)) {
-            figures = [];
-            board = [];
-            dropZone = [];
-            tokensPlayer1 = [];
-            tokensPlayer2 = [];
-            playerTurn = player1;  
-            initBoard();  
-        }
-
-        //4 en linea
-        if ((x >= 10) && (x <= 145) && (y >= 3) && (y <= 19)) {
-            initGame(7,6,4);
-        }
-
-        //6 en linea
-        if ((x >= 10) && (x <= 145) && (y >= 33) && (y <= 48)) {
-            initGame(8,7,5);
-        }
-
-        if ((x >= 10) && (x <= 145) && (y >= 62) && (y <= 79)) {
-            initGame(9,8,6);
-        }
-        //console.log(x, y);
+        
         drawFigures();
     }
 
-    function initGame(col,row,inLine){
+    function initGame(col, row, line){
         numColumn = col;
         numRow = row;
-        inLine = inLine;
+        inLine = line;
         figures = [];
         board = [];
         dropZone = [];
         tokensPlayer1 = [];
         tokensPlayer2 = [];
         playerTurn = player1;
+        initTime(false);
+        initTime(true);
         initBoard();
     }
 
@@ -403,24 +371,6 @@ function load(){
         }
     }
 
-    function addTextsButtons() {
-        ctx.font = '30px Arial';
-        ctx.fillStyle = 'Black';
-        ctx.fillText("Reiniciar", restartBtnX, restartBtnY);
-
-        ctx.font = '25px Arial';
-        ctx.fillStyle = 'Black'
-        ctx.fillText('4 en Linea', inline5X, inline5Y);
-
-        ctx.font = '25px Arial';
-        ctx.fillStyle = 'Black'
-        ctx.fillText('5 en Linea', inline6X, inline6Y);
-
-        ctx.font = '25px Arial';
-        ctx.fillStyle = 'Black'
-        ctx.fillText('6 en Linea', inline7X, inline7Y);
-    }
-
     /*function showPlayerOptions(){
         document.querySelector("#name-player-1").value=player1.getName();
         document.querySelector("#name-player-2").value=player2.getName();
@@ -435,6 +385,7 @@ function load(){
         }
         if(winRow(row, column) || winColumn(row, column) || winDiag(row, column)){
             alert("Gana: " + playerTurn.getName());
+            console.log("gana" + playerTurn.getName());
             finishGame();
         }
     }
@@ -670,36 +621,102 @@ function load(){
     
     //jugar 4 en linea
     document.querySelector('#play-canvasGame').addEventListener('click', ()=>{
-        document.querySelector('.canvasGame').style.display = "flex";
+        document.querySelector('.play-canvasGame').style.display = "flex";
         document.querySelector('.section-image').style.display = "none";
-        
-        initTime();
+        initTime(true);
     })
 
-    function initTime() {
-        let startMinutes = 1;
-        let time = startMinutes * 60;
+    let timer = 0;
+    function initTime(bool) {
         let element = document.getElementById('test');
-
-        setInterval(()=>{
-            let minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            seconds = seconds < startMinutes ? '0' + seconds : seconds;
-            element.innerHTML = `${minutes}:${seconds}`;
-
-            if(seconds == 10){
-                element.style.color = "red";
-            }
-            if(minutes == 0 && seconds == 0){
-                clearInterval();
-                alert("Se termino el tiempo");
-                finishGame();
-
-            }else{
-                time--;
-            }
-        }, 1000);
+        let startMinutes = 3;
+        let time = startMinutes * 60;
+        
+        if(bool){
+            timer = setInterval(()=>{
+                let minutes = Math.floor(time / 60);
+                let seconds = time % 60;
+                seconds = seconds < startMinutes ? '0' + seconds : seconds;
+                element.innerHTML = `${minutes}:${seconds}`;
+    
+                if(seconds == 10){
+                    element.style.color = "red";
+                }
+                if(minutes == 0 && seconds == 0){
+                    clearInterval();
+                    alert("Se termino el tiempo");
+                    finishGame();
+    
+                }else{
+                    time--;
+                }     
+            }, 1000);
+        }else{
+            clearInterval(timer);
+        }
     }  
+
+    document.querySelector('#btn-x4-inLine').addEventListener('click', ()=>{
+        initGame(7, 6, 4);
+    })
+
+    document.querySelector('#btn-x5-inLine').addEventListener('click', ()=>{
+        initGame(8, 7, 5);
+    })
+
+    document.querySelector('#btn-x6-inLine').addEventListener('click', ()=>{
+        initGame(9, 8, 6);
+    })
+
+    document.querySelector('#restartGame').addEventListener('click', ()=>{
+        figures = [];
+        board = [];
+        dropZone = [];
+        tokensPlayer1 = [];
+        tokensPlayer2 = [];
+        playerTurn = player1;  
+        initBoard();  
+        initTime(false);
+        initTime(true);
+    })
+
+    //Player 1
+    document.querySelector('#tokenSeiya').addEventListener('click', ()=>{
+        for(let i = 0; i < tokensPlayer1.length; i++){
+            tokensPlayer1[i].setImage(tokenSeiya);
+        }  
+    })
+
+    document.querySelector('#tokenLeo').addEventListener('click', ()=>{
+        for(let i = 0; i < tokensPlayer1.length; i++){
+            tokensPlayer1[i].setImage(tokenLeo);
+        }  
+    })
+
+    document.querySelector('#tokenMarin').addEventListener('click', ()=>{
+        for(let i = 0; i < tokensPlayer1.length; i++){
+            tokensPlayer1[i].setImage(tokenMarin);
+        }  
+    })
+
+    //Player 2
+    document.querySelector('#tokenHades').addEventListener('click', ()=>{
+        for(let i = 0; i < tokensPlayer2.length; i++){
+            tokensPlayer2[i].setImage(tokenHades);
+        }  
+    })
+
+    document.querySelector('#tokenEspectro').addEventListener('click', ()=>{
+        for(let i = 0; i < tokensPlayer2.length; i++){
+            tokensPlayer2[i].setImage(tokenEspectro);
+        }  
+    })
+
+    document.querySelector('#tokenShina').addEventListener('click', ()=>{
+        for(let i = 0; i < tokensPlayer2.length; i++){
+            tokensPlayer2[i].setImage(tokenShina);
+        }  
+    })
 }
 
 
