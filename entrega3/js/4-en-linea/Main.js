@@ -636,10 +636,10 @@ function load(){
             timer = setInterval(()=>{
                 let minutes = Math.floor(time / 60);
                 let seconds = time % 60;
-                seconds = seconds < startMinutes ? '0' + seconds : seconds;
+                seconds = seconds < 10 ? '0' + seconds : seconds;
                 element.innerHTML = `${minutes}:${seconds}`;
     
-                if(seconds == 10){
+                if(minutes == 0 && seconds == 10){
                     element.style.color = "red";
                 }
                 if(minutes == 0 && seconds == 0){
