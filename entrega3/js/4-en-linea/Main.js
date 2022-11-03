@@ -626,6 +626,7 @@ function load(){
         initTime(true);
     })
 
+    //Timer de juego
     let timer = 0;
     function initTime(bool) {
         let element = document.getElementById('test');
@@ -656,6 +657,7 @@ function load(){
         }
     }  
 
+    //Botones de tamaño de tablero
     document.querySelector('#btn-x4-inLine').addEventListener('click', ()=>{
         initGame(7, 6, 4);
     })
@@ -668,6 +670,7 @@ function load(){
         initGame(9, 8, 6);
     })
 
+    //Boton reiniciar
     document.querySelector('#restartGame').addEventListener('click', ()=>{
         figures = [];
         board = [];
@@ -680,6 +683,7 @@ function load(){
         initTime(true);
     })
 
+    //Fichas
     //Player 1
     document.querySelector('#tokenSeiya').addEventListener('click', ()=>{
         for(let i = 0; i < tokensPlayer1.length; i++){
