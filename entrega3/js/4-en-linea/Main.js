@@ -380,17 +380,19 @@ function load(){
     //********** LOGICA WIN *************//
     function checkWin(row, column){
         if(amountTokens == tokensPlayed){
-            alert("empate")
+           
+            openModal("Empate");
             finishGame();
         }
         if(winRow(row, column) || winColumn(row, column) || winDiag(row, column)){
-            alert("Gana: " + playerTurn.getName());
-            console.log("gana" + playerTurn.getName());
+          
+            openModal("El ganador es: " + playerTurn.getName());
             finishGame();
         }
     }
 
     function finishGame(){
+        initTime(false);
         for(let i = 0; i < tokensPlayer1.length; i++){
             tokensPlayer1[i].setCanMove(false);
             tokensPlayer2[i].setCanMove(false);
@@ -721,6 +723,22 @@ function load(){
             tokensPlayer2[i].setImage(tokenShina);
         }  
     })
+
+    function openModal(string){
+        let modal = document.querySelector('#modalWinner');
+        let closeModal = document.querySelector('#closeModal');
+        let text = document.querySelector('#string');
+        modal.classList.add('modal-flex');
+        text.innerHTML = string;
+    
+        closeModal.onclick = function(){
+            modal.classList.remove('modal-flex');
+        }
+    
+        modal.onclick = function(){
+            modal.classList.remove('modal-flex');
+        }   
+    }
 }
 
 
