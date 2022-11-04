@@ -26,8 +26,8 @@ function load(){
     let canvasWidth = canvas.width;
     let canvasHeight = canvas.height;
 
-    let player1 = new Player("Jugador1", 1);
-    let player2 = new Player("Jugador2", 2);
+    let player1 = new Player("Jugador 1", 1);
+    let player2 = new Player("Jugador 2", 2);
 
     document.querySelector('#name-player-1').addEventListener('keyup', ()=>{
         player1.setName(document.querySelector('#name-player-1').value);
