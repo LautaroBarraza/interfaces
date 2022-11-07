@@ -211,7 +211,8 @@ function load(){
     //mouse events
     let lastTokenSelected;
     let isMouseDown = false;
-
+    let xInit= 0;
+    let Yinit= 0;
     function mouseDown(event){
         isMouseDown = true;
         let coordsCanvas = canvas.getBoundingClientRect();
@@ -226,6 +227,8 @@ function load(){
         if(tokenSelected != null && tokenSelected.getPlayer() == playerTurn){
             tokenSelected.setIsSelected(true);
             lastTokenSelected = tokenSelected;
+            xInit= lastTokenSelected.getX();
+            Yinit= lastTokenSelected.getY();
         } 
         
         drawFigures();
@@ -247,11 +250,11 @@ function load(){
     }
 
     function mouseMove(event){
+
         let coordsCanvas = canvas.getBoundingClientRect();
         let x = Math.round(event.clientX - coordsCanvas.left);
-        
         let y = Math.round(event.clientY - coordsCanvas.top);
-        if(x <2 || x > canvasWidth-4 || y<2 || y >canvasHeight-4){
+        if(x <10 || x > canvasWidth-10 || y<10 || y >canvasHeight-10){
             console.log("afuera");
             isMouseDown = false;
             moveTokenBack();
@@ -286,13 +289,9 @@ function load(){
     function moveTokenBack(){
         if(lastTokenSelected != null){
             if(lastTokenSelected.getPlayer() == player1){
-                let posx = Math.round(Math.random() * (locationBoardX - SIZEPOSBOARD*2) + SIZEPOSBOARD);
-                let posy = canvasHeight- Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                lastTokenSelected.move(posx, posy);
+             lastTokenSelected.move(xInit, Yinit);
             }else{
-                let posx = Math.round(Math.random() * ((canvasWidth-SIZEPOSBOARD*2) - (locationBoardX+widhtBoard+SIZEPOSBOARD)) + (locationBoardX+widhtBoard+SIZEPOSBOARD));
-                let posy = canvasHeight - Math.round(Math.random() * heightBoard) - SIZEPOSBOARD;
-                lastTokenSelected.move(posx, posy);
+             lastTokenSelected.move(xInit, Yinit);
             }
         }
         drawFigures();
