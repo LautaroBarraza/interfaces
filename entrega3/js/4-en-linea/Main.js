@@ -247,6 +247,7 @@ function load(){
         initTime(false);
         initTime(true);
         initBoard();
+        turn.innerHTML = 'Turno de: ' + playerTurn.getName();
     }
 
     function mouseMove(event){
@@ -362,12 +363,15 @@ function load(){
     }
 
     //cambiar turno de jugador
+    let turn = document.querySelector('#playerTurn');
+    turn.innerHTML = 'Turno de: ' + playerTurn.getName();
     function changeTurn(){
         if(playerTurn == player1){
             playerTurn = player2;
         }else{
             playerTurn = player1;
         }
+        turn.innerHTML = 'Turno de: ' + playerTurn.getName();
     }
 
     /*function showPlayerOptions(){
@@ -646,7 +650,6 @@ function load(){
                 }
                 if(minutes == 0 && seconds == 0){
                     clearInterval();
-                    alert("Se termino el tiempo");
                     finishGame();
     
                 }else{
@@ -670,6 +673,7 @@ function load(){
     document.querySelector('#btn-x6-inLine').addEventListener('click', ()=>{
         initGame(9, 8, 6);
     })
+
     document.querySelector('#btn-x7-inLine').addEventListener('click', ()=>{
         initGame(10, 9, 7);
     })
@@ -685,6 +689,7 @@ function load(){
         initBoard();  
         initTime(false);
         initTime(true);
+        turn.innerHTML = 'Turno de: ' + playerTurn.getName();
     })
 
     //Fichas
@@ -741,6 +746,8 @@ function load(){
             modal.classList.remove('modal-flex');
         }   
     }
+
+    
 }
 
 

@@ -1398,7 +1398,7 @@ height: 380%;
   }
 
   .boardSize{
-    width: 160px;
+    width: 200px;
   }
 
   .boardSize a img{
@@ -1432,6 +1432,11 @@ height: 380%;
   #restartGame:active{
     background-color: #af8d06;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.44);
+  }
+  
+  #playerTurn{
+    text-align: left;
+    font-size: 20px;
   }
 
   .canvasGame{
