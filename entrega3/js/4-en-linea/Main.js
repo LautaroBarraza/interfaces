@@ -671,6 +671,9 @@ function load(){
     document.querySelector('#btn-x6-inLine').addEventListener('click', ()=>{
         initGame(9, 8, 6);
     })
+    document.querySelector('#btn-x7-inLine').addEventListener('click', ()=>{
+        initGame(10, 9, 7);
+    })
 
     //Boton reiniciar
     document.querySelector('#restartGame').addEventListener('click', ()=>{
