@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", load);
 
 function load(){
     const carruseles = [...document.querySelectorAll(".slide")];
-    console.log(carruseles);
+    //console.log(carruseles);
     const nxtBtn = [...document.querySelectorAll(".button-right")];
     const preBtn = [...document.querySelectorAll(".button-left")];
     const NAV_CARRUSEL = [...document.querySelectorAll(".pag-slide")];
@@ -12,9 +12,9 @@ function load(){
     carruseles.forEach((item,i)=> {
         let dimensionContenedor = item.getBoundingClientRect();
         let contenedorWidth = dimensionContenedor.width;
-        console.log(item.scrollWidth);
-        console.log(contenedorWidth);
-        console.log(item.scrollWidth/contenedorWidth)
+        //console.log(item.scrollWidth);
+        //console.log(contenedorWidth);
+        //console.log(item.scrollWidth/contenedorWidth)
 
         nxtBtn[i].addEventListener("click", () => {
             

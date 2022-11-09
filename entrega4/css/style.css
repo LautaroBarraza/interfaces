@@ -123,6 +123,7 @@ header .left-header{
   justify-content: start;
   align-items: center;
   gap: .6em;
+  margin-left: 10px;
 }
 
 header .search-header{
@@ -162,6 +163,10 @@ header .right-header{
   margin-right: 10px;
 }
 
+header .right-header i{
+  color: black;
+}
+
 header .image{
   width: 50px;
   height:50px;
@@ -175,10 +180,34 @@ header .image:hover, .footer-logo:hover{
   box-shadow: 1px 2px 1px 1px rgb(168, 167, 167);
 } 
 
-header .icon-main{
-    margin-left: 10px;
+/********** Menu hamburguesa animado ********/
+.bars-menu{
+  cursor: pointer;
 }
 
+.bars-menu span {
+  display: flex;
+  width: 26px;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(28, 28, 40, 1);
+  margin: 5px 0;
+  transition: all 600ms;
+  transform-origin: 0px 100%;
+}
+
+.activeline1__bars-menu {
+  transform: rotate(45deg) translate(-3px, 3px);
+}
+
+.activeline2__bars-menu {
+  opacity: 0;
+  margin-left: -30px;
+}
+
+.activeline3__bars-menu {
+  transform: rotate(-45deg) translate(-1px, -0.5px);
+}
 
 header .icon-user img {
   display: block;
@@ -696,6 +725,7 @@ height: 380%;
 
   header .left-header{
     gap: 1em;
+    margin-left: 20px;
   }
   
   header .search-header{
@@ -727,10 +757,6 @@ height: 380%;
   header .image{
     width: 70px;
     height: 70px; 
-  }
-
-  header .icon-main{
-    margin-left: 20px;
   }
 
   header .icon-user img {
@@ -856,12 +882,16 @@ height: 380%;
     box-shadow: 1px 2px 1px 1px rgb(27, 28, 39);
   }
 
-  .header-hero i{
-    color: #ECECEC;
+  .header-hero .bars-menu span{
+    background-color: #ECECEC;
   }
 
   .header-hero .search-header{
     display: none;
+  }
+
+.header-hero .right-header i{
+    color: white;
   }
 
   /*seccion hero*/   

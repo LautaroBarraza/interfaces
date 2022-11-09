@@ -23,58 +23,62 @@ document.addEventListener("DOMContentLoaded", function (){
     let user = document.querySelector(".user-nav");
     let icon_user =document.querySelector(".arrow-user")
     let background = document.querySelector(".dark-background");
-    let hamburger = document.querySelector('#hamburger');
+    
+    let line1 = document.querySelector(".line1-bars-menu");
+    let line2 = document.querySelector(".line2-bars-menu");
+    let line3 = document.querySelector(".line3-bars-menu");
 
     document.querySelector('.icon-main').addEventListener('click', () =>{
+        line1.classList.toggle("activeline1__bars-menu");
+        line2.classList.toggle("activeline2__bars-menu");
+        line3.classList.toggle("activeline3__bars-menu");
         if(user.classList.contains('showUser')){
             user.classList.remove('showUser');
-            icon_user.classList.toggle("drop-down")
+            icon_user.classList.toggle("drop-down");
+            
         }
         main.classList.toggle("show");
         background.classList.add("on");
-        hamburger.classList.add('fa-xmark', 'fa-2xl');    
         check();
     });
 
     document.querySelector('.icon-user').addEventListener('click', () =>{
         if(main.classList.contains('show')){
-            main.classList.remove('show');
-            hamburger.classList.remove('fa-xmark', 'fa-2xl');
+            main.classList.remove('show');   
+            line1.classList.toggle("activeline1__bars-menu");
+            line2.classList.toggle("activeline2__bars-menu");
+            line3.classList.toggle("activeline3__bars-menu");     
         }
         user.classList.toggle("showUser");
-        icon_user.classList.toggle("drop-down")
-        background.classList.add("on");
-          
+        icon_user.classList.toggle("drop-down");
+        
+        background.classList.add("on");        
         check();
     });
 
     function check(){
-        if(!main.classList.contains('show') && !user.classList.contains('showUser')){
-            hamburger.classList.remove('fa-xmark', 'fa-2xl');
-            
+        if(!main.classList.contains('show') && !user.classList.contains('showUser')){         
             background.classList.remove("on");
         }
     }
 
     background.onclick = function(){
         user.classList.remove('showUser');
-        main.classList.remove('show');
-        hamburger.classList.remove('fa-xmark', 'fa-2xl');
-        
+        main.classList.remove('show'); 
         background.classList.remove("on");
+        line1.classList.remove("activeline1__bars-menu");
+        line2.classList.remove("activeline2__bars-menu");
+        line3.classList.remove("activeline3__bars-menu");   
+        icon_user.classList.remove("drop-down");
     }
     //Ventana modal
-    let openModal = document.querySelector('#openModal');
-    let closeModal = document.querySelector('#closeModal');
     let modal = document.querySelector('#modal');
-    openModal.onclick = function(){
+    document.querySelector('#openModal').addEventListener('click', ()=>{
         modal.classList.add('modal-flex');
-    }
-
-    closeModal.onclick = function(){
+    });
+    document.querySelector('#closeModal').addEventListener('click', ()=>{
         modal.classList.remove('modal-flex');
-    }
-
+    });
     modal.onclick = function(){
         modal.classList.remove('modal-flex');
     }   
