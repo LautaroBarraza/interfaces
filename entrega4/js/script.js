@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function (){
     let user = document.querySelector(".user-nav");
     let icon_user =document.querySelector(".arrow-user")
     let background = document.querySelector(".dark-background");
+    let navList= document.querySelectorAll(".list-item");
+    let socialNav= document.querySelector(".main-social");
     
     let line1 = document.querySelector(".line1-bars-menu");
     let line2 = document.querySelector(".line2-bars-menu");
@@ -39,6 +41,19 @@ document.addEventListener("DOMContentLoaded", function (){
         }
         main.classList.toggle("show");
         background.classList.add("on");
+        let i=0;
+        if(i<navList.length){
+            setInterval(()=>{
+                navList[i].classList.toggle("moveRight");
+                i++
+                if(i==navList.length){
+                    socialNav.classList.toggle("moveRight");
+                }
+            },100)
+            
+        }
+        
+
         check();
     });
 
