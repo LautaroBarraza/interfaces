@@ -868,6 +868,10 @@ height: 380%;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   } 
+
+  .info-game-coming .left-section .hero-card-image img{
+    height: 380px;
+  }
 }
 
 
@@ -1109,26 +1113,39 @@ height: 380%;
 
   /*seccion info juego proximamente*/
   /*seccion info historia*/
-  section.info-game-coming article{
+  .info-game-coming .background-dark{
     position: relative;
-    display: grid;
-    grid-template-columns: 3fr 3fr 1fr 3fr 3fr;
-    align-items: center;
-    height: 550px;
+    display: flex;
+    
+    height: 900px;
     background: url("../img/starfield/starry-night-sky.jpg") center/cover;
   }
 
-  section.info-game-coming article.left{
-    grid-template-areas: ". img . info .";
+  .info-game-coming{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
   }
 
-  section.info-game-coming article.right{
-    grid-template-areas: ". info . img .";
+  .info-game-coming .left-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
-  section.info-game-coming article div:first-child {
+  .info-game-coming .right-section{
+    display: flex;
+    flex-direction: column;
+    width: 28%;
     position: absolute;
-    top: 20%;
+    right: 0;
+    margin-right: 14%;
+  }
+
+
+  .info-game-coming .left-section .hero-card-tittle {
+    position: absolute;
+    top: 12%;
     left: 40%;
     width: auto;
     background: #5F80F5;
@@ -1136,7 +1153,7 @@ height: 380%;
     z-index: 2;
   }
 
-  section.info-game-coming div:first-child p{
+  .info-game-coming .left-section .hero-card-tittle p{
     color: #ECECEC;
     display: flex;
     justify-content: center;
@@ -1149,34 +1166,55 @@ height: 380%;
     text-transform: capitalize;
   }
 
-  section.info-game-coming div:nth-child(2){
-    grid-area: img;
+  .info-game-coming .left-section .hero-card-image{
+    margin-top: 60px;
     display: flex;
     justify-content: center;
-    width: 560px;
-    height: 430px;
-    overflow: hidden;
+    width:38%;
     z-index: 1;
+    left: 0;
+    margin-left: 14%;
   }
 
-  section.info-game-coming div:nth-child(2) img {
+  .from-left{
+    width: 100%;
     object-fit: cover;
+    transform: translateX(-50%);
   }
 
-  section.info-game-coming div:last-child{
+  .info-game-coming .right-section .hero-text-content{
     display: flex;
     justify-content: center;
-    grid-area: info;
-    width: 420px;
+    width: auto;
+    height: 900px;
     z-index: 1;
   }
 
-  section.info-game-coming div:last-child p{
+  .from-right{
     color: #ECECEC;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
+    margin-top: 200px;
+    transform: translateX(50%);
+  }
+
+  .from-left, .from-right{
+    transition: transform 400ms ease-in;
+  }
+
+  .from-left.appear, .from-right.appear{
+    transform: translateX(0);
+  }
+
+  .fade-in{
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+
+  .fade-in.appear{
+    opacity: 1;
   }
 
   /* seccion personajes y multimedia*/
@@ -2016,6 +2054,12 @@ height: 380%;
   .card-button a{
     font-size: 26px;
   }
+
+  .info-game-coming .left-section .hero-card-image img{ 
+    height: 450px;
+  }
+
+ 
 }
 
 
