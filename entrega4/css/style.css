@@ -914,6 +914,7 @@ height: 380%;
   section.hero .call-to-action{
     position: absolute;
     top: 75%;
+    z-index: 2;
   }
 
   section.hero .call-to-action button{
@@ -1084,6 +1085,7 @@ height: 380%;
     top: 0%;
     width: 140%;
     height: 80%;
+    z-index: 1;
   }
 
   section.hero .prof2{
@@ -1091,6 +1093,7 @@ height: 380%;
     bottom: 0%;
     height: 500px;
     width: 100%;
+    z-index: 1;
   }
 
   section.hero .prof3 {
