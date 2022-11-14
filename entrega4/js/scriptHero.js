@@ -4,21 +4,7 @@ document.addEventListener("DOMContentLoaded", load);
 
 function load(){
 
-    //seccion hero parallax//
 
-    let prof1= document.querySelector(".prof1");
-    let prof2= document.querySelector(".prof2");
-    let prof3= document.querySelector(".prof3");
-
-    window.addEventListener("scroll", moveHero);
-
-    function moveHero(){
-        let value= window.scrollY;
-        prof1.style.top= value*0.5+"px";
-        prof2.style.bottom=-1+"px";
-        prof3.style.top=value+50*0.8+"px";
-        console.log(value);
-    }
 
     /*header hero*/
     let header = document.querySelector("header");
@@ -30,6 +16,22 @@ function load(){
                 header.classList.add("header-hero");
             }
         })
+
+            //seccion hero parallax//
+    let prof1= document.querySelector(".prof1");
+    let prof2= document.querySelector(".prof2");
+    let prof3= document.querySelector(".prof3");
+    window.addEventListener("scroll", moveHero);
+
+    function moveHero(){
+        let value= window.scrollY;
+        let coeficiente = (100 / hero_tamanio)/100;
+        prof1.style.top= value*0.5+"px";
+        prof2.style.bottom=-1+"px";
+        prof3.style.top=value+50*0.8+"px";
+        prof3.style.opacity = 1-value * coeficiente
+        console.log(value);
+    }
 
     /* flecha hero*/
     document.querySelector(".arrow-hero").addEventListener("click", () => {
