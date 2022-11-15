@@ -43,12 +43,15 @@ function load(){
     //Scroll cards hero
     let faders = document.querySelectorAll('.fade-in');
     let sliders = document.querySelectorAll('.slide-in');
+
     let herotext1 = document.querySelector('#hero-text-1');
     let herotext2 = document.querySelector('#hero-text-2');
     let herotext3 = document.querySelector('#hero-text-3');
+
     let heroCard1 = document.querySelector('#hero-card-1');
     let heroCard2 = document.querySelector('#hero-card-2');
     let heroCard3 = document.querySelector('#hero-card-3');
+    
 
     window.addEventListener('scroll', scrollAppear);  
   
@@ -60,7 +63,32 @@ function load(){
                 fader.classList.add('appear')    
             }
         })
-    
+
+        let position = window.innerHeight/2;
+        let topPosition = herotext1.getBoundingClientRect().top;
+        let topPosition1 = herotext2.getBoundingClientRect().top;
+        let topPosition2 = herotext3.getBoundingClientRect().top;
+
+        if(topPosition < position){
+            heroCard1.classList.add('mostrar');
+            if(heroCard2.classList.contains('mostrar')){
+                heroCard2.classList.remove('mostrar');
+            }
+        }
+
+        if(topPosition1 < position){ 
+            heroCard1.classList.remove('mostrar');
+            heroCard2.classList.add('mostrar');
+            if(heroCard3.classList.contains('mostrar')){
+                heroCard3.classList.remove('mostrar');
+            }
+        }
+        
+        if(topPosition2 < position){
+            heroCard2.classList.remove('mostrar');
+            heroCard3.classList.add('mostrar');
+        }
+
         sliders.forEach(slider =>{
             let intoPosition = slider.getBoundingClientRect().top;
             let screenPosition = window.innerHeight;
@@ -68,26 +96,5 @@ function load(){
                 slider.classList.add('appear')
             }
         })    
-
-        let position = window.innerHeight;
-        let topPosition = herotext1.getBoundingClientRect().top;
-        let topPosition1 = herotext2.getBoundingClientRect().top;
-        let topPosition2 = herotext3.getBoundingClientRect().top;
-        if(topPosition < position ){
-            heroCard1.classList.remove('no-mostrar');
-        }
-
-        if(topPosition1 < position  && !heroCard1.classList.contains('no-mostrar')){ 
-            heroCard1.classList.add('no-mostrar');
-            heroCard2.classList.remove('no-mostrar');
-            if(!heroCard3.classList.contains('no-mostrar')){
-                heroCard3.classList.add('no-mostrar');
-            }
-        }
-        
-        if(topPosition2 < position  && !heroCard2.classList.contains('no-mostrar')){
-            heroCard2.classList.add('no-mostrar');
-            heroCard3.classList.remove('no-mostrar');
-        }
     }
 }
