@@ -738,6 +738,10 @@ height: 380%;
     height: 50px;
     border-radius: 10px;
   }
+
+  header .search-header .search-input-content.reduceSize{
+    height: 40px;
+  }
   
   header .search-header .search-input-content .search-input{
     padding-left:24px;
@@ -753,16 +757,26 @@ height: 380%;
     column-gap: 5px;
     margin-right: 20px;
   }
-  
+
   header .image{
     width: 70px;
     height: 70px; 
+  }
+
+  .image.reduceSize{
+    width: 60px;
+    height: 60px; 
   }
 
   header .icon-user img {
     width: 56px;  
     height: 56px;
     object-fit: cover;  
+  }
+
+  header .icon-user img.reduceSize {
+    width: 46px;  
+    height: 46px;
   }
 
   /*fondo oscuro menu plegable*/
@@ -785,7 +799,7 @@ height: 380%;
 
   /*menu hamburguesa*/
   .nav{
-    top: 90px;
+    top: calc(header - 90px);
     width: 380px;
     left: -100%; 
     position: fixed;
@@ -793,10 +807,10 @@ height: 380%;
     height: calc(100vh - 90px);
   }
 
-  .list-item, .main-social{
+  .list-item-main, .main-social{
     transform: translateX(-100%);
   }
-  .list-item.moveRight, .main-social.moveRight{
+  .list-item-main.moveRight, .main-social.moveRight{
     transform: translateX(0);
     transition: all ease-in 0.5s;
   }

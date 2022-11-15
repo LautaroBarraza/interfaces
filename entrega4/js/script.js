@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function (){
     let user = document.querySelector(".user-nav");
     let icon_user =document.querySelector(".arrow-user")
     let background = document.querySelector(".dark-background");
-    let navList= document.querySelectorAll(".list-item");
+    let navList= document.querySelectorAll(".list-item-main");
     let socialNav= document.querySelector(".main-social");
     
     let line1 = document.querySelector(".line1-bars-menu");
@@ -86,6 +86,27 @@ document.addEventListener("DOMContentLoaded", function (){
         line3.classList.remove("activeline3__bars-menu");   
         icon_user.classList.remove("drop-down");
     }
+
+    let header = document.querySelector('header');
+    let logoImg = document.querySelector('.image');
+    let userImg = document.querySelector('.nav-user-image')
+    let search = document.querySelector('.search-input-content');
+
+    window.addEventListener("scroll", function(){
+        if(window.scrollY > 300){
+            console.log('asd')
+            header.style.height = "70px";
+            logoImg.classList.add('reduceSize');
+            userImg.classList.add('reduceSize');
+            search.classList.add('reduceSize');
+        }else{
+            header.style.height = "90px";
+            logoImg.classList.remove('reduceSize');
+            userImg.classList.remove('reduceSize');
+            search.classList.remove('reduceSize');
+        }
+    })
+    
     //Ventana modal
     let modal = document.querySelector('#modal');
     document.querySelector('#openModal').addEventListener('click', ()=>{
@@ -97,4 +118,6 @@ document.addEventListener("DOMContentLoaded", function (){
     modal.onclick = function(){
         modal.classList.remove('modal-flex');
     }   
+
+    
 });
