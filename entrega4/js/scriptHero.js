@@ -43,21 +43,17 @@ function load(){
     //Scroll cards hero
     let faders = document.querySelectorAll('.fade-in');
     let sliders = document.querySelectorAll('.slide-in');
+    let herotext1 = document.querySelector('#hero-text-1');
+    let herotext2 = document.querySelector('#hero-text-2');
+    let herotext3 = document.querySelector('#hero-text-3');
+    let heroCard1 = document.querySelector('#hero-card-1');
+    let heroCard2 = document.querySelector('#hero-card-2');
+    let heroCard3 = document.querySelector('#hero-card-3');
 
-    /*const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-        entries.forEach(entry => {
-            if(!entry.isIntersecting){
-                return;
-            }else{
-                entry.target.classList.add('appear');
-                appearOnScroll.unobserve(entry.target);
-            }
-        })
-    });*/
-    window.addEventListener('scroll', scrollAppear);
-
+    window.addEventListener('scroll', scrollAppear);  
+  
     function scrollAppear(){      
-       faders.forEach(fader =>{
+        faders.forEach(fader =>{
             let intoPosition = fader.getBoundingClientRect().top;
             let screenPosition = window.innerHeight;
             if(intoPosition < screenPosition){   
@@ -71,7 +67,27 @@ function load(){
             if(intoPosition < screenPosition){
                 slider.classList.add('appear')
             }
-        })
-    
+        })    
+
+        let position = window.innerHeight;
+        let topPosition = herotext1.getBoundingClientRect().top;
+        let topPosition1 = herotext2.getBoundingClientRect().top;
+        let topPosition2 = herotext3.getBoundingClientRect().top;
+        if(topPosition < position ){
+            heroCard1.classList.remove('no-mostrar');
+        }
+
+        if(topPosition1 < position  && !heroCard1.classList.contains('no-mostrar')){ 
+            heroCard1.classList.add('no-mostrar');
+            heroCard2.classList.remove('no-mostrar');
+            if(!heroCard3.classList.contains('no-mostrar')){
+                heroCard3.classList.add('no-mostrar');
+            }
+        }
+        
+        if(topPosition2 < position  && !heroCard2.classList.contains('no-mostrar')){
+            heroCard2.classList.add('no-mostrar');
+            heroCard3.classList.remove('no-mostrar');
+        }
     }
 }

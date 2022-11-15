@@ -1109,14 +1109,16 @@ height: 380%;
 
   /*seccion info juego proximamente*/
   /*seccion info historia*/
-  
-
- 
 
   .info-game-coming{
     display: flex;
     flex-direction: row;
     width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../img/starfield/starry-night-sky.jpg') center/cover;
+  }
+
+  .no-mostrar{
+    display: none;
   }
 
   .info-game-coming .left-section{
@@ -1163,6 +1165,7 @@ height: 380%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
   }
 
   .from-left{
