@@ -1126,7 +1126,7 @@ height: 380%;
     background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../img/starfield/starry-night-sky.jpg') center/cover;
   }
 
-  .hero-card-content.mostrar{
+  .hero-card-content.showContent{
     display: block;
   }
 

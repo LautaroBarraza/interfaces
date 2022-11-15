@@ -72,23 +72,23 @@ function load(){
         let topPosition2 = herotext3.getBoundingClientRect().top;
 
         if(topPosition < position){
-            heroCard1.classList.add('mostrar');
-            if(heroCard2.classList.contains('mostrar')){
-                heroCard2.classList.remove('mostrar');
+            heroCard1.classList.add('showContent');
+            if(heroCard2.classList.contains('showContent')){
+                heroCard2.classList.remove('showContent');
             }
         }
 
         if(topPosition1 < position){ 
-            heroCard1.classList.remove('mostrar');
-            heroCard2.classList.add('mostrar');
-            if(heroCard3.classList.contains('mostrar')){
-                heroCard3.classList.remove('mostrar');
+            heroCard1.classList.remove('showContent');
+            heroCard2.classList.add('showContent');
+            if(heroCard3.classList.contains('showContent')){
+                heroCard3.classList.remove('showContent');
             }
         }
         
         if(topPosition2 < position){
-            heroCard2.classList.remove('mostrar');
-            heroCard3.classList.add('mostrar');
+            heroCard2.classList.remove('showContent');
+            heroCard3.classList.add('showContent');
         }
 
         sliders.forEach(slider =>{
