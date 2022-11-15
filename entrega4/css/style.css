@@ -792,6 +792,14 @@ height: 380%;
     z-index: 1001; 
     height: calc(100vh - 90px);
   }
+
+  .list-item, .main-social{
+    transform: translateX(-100%);
+  }
+  .list-item.moveRight, .main-social.moveRight{
+    transform: translateX(0);
+    transition: all ease-in 0.5s;
+  }
   
   .nav.show{
     position: fixed;
@@ -914,7 +922,7 @@ height: 380%;
   section.hero .call-to-action{
     position: absolute;
     top: 75%;
-    z-index: 2;
+    z-index: 3;
   }
 
   section.hero .call-to-action button{
@@ -1093,7 +1101,7 @@ height: 380%;
     bottom: 0%;
     height: 500px;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
   }
 
   section.hero .prof3 {
@@ -1101,6 +1109,7 @@ height: 380%;
     display: flex;
     justify-content: center;
     object-fit: cover;
+    z-index: 2;
   }
 
   section.hero .prof3 img{
