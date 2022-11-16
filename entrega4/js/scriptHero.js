@@ -30,7 +30,7 @@ function load(){
         prof2.style.bottom=-1+"px";
         prof3.style.top=value+50*0.8+"px";
         prof3.style.opacity = 1-value * coeficiente
-        console.log(value);
+        //console.log(value);
     }
 
     /* flecha hero*/
@@ -53,50 +53,72 @@ function load(){
     let heroCard1 = document.querySelector('#hero-card-1');
     let heroCard2 = document.querySelector('#hero-card-2');
     let heroCard3 = document.querySelector('#hero-card-3');
+
+    let heroTittle = document.querySelectorAll('.tittle');
     
 
     window.addEventListener('scroll', scrollAppear);  
   
     function scrollAppear(){      
         faders.forEach(fader =>{
-            let intoPosition = fader.getBoundingClientRect().top;
-            let screenPosition = window.innerHeight;
-            if(intoPosition < screenPosition){   
-                fader.classList.add('appear')    
+            let top = fader.getBoundingClientRect().top;
+            let bottom = fader.getBoundingClientRect().bottom;  
+            let scroll = window.innerHeight;
+            if(top >= 0 && bottom <= scroll){
+                fader.classList.add('appear')
             }
         })
 
-        let position = window.innerHeight/2;
+        sliders.forEach(slider =>{
+            let top = slider.getBoundingClientRect().top;
+            let bottom = slider.getBoundingClientRect().bottom;  
+            let scroll = window.innerHeight;
+            if(top >= 0 && bottom <= scroll){
+                slider.classList.add('appear')
+            }
+        })    
+
+        let position = window.innerHeight - window.innerHeight/3.2;
         let topPosition = herotext1.getBoundingClientRect().top;
         let topPosition1 = herotext2.getBoundingClientRect().top;
         let topPosition2 = herotext3.getBoundingClientRect().top;
 
         if(topPosition < position){
             heroCard1.classList.add('showContent');
+            herotext1.classList.remove('fade-in')
             if(heroCard2.classList.contains('showContent')){
                 heroCard2.classList.remove('showContent');
+                herotext2.classList.add('fade-in')
             }
         }
 
         if(topPosition1 < position){ 
             heroCard1.classList.remove('showContent');
+            herotext1.classList.add('fade-in')
             heroCard2.classList.add('showContent');
+            herotext2.classList.remove('fade-in')
             if(heroCard3.classList.contains('showContent')){
                 heroCard3.classList.remove('showContent');
+                herotext3.classList.add('fade-in')
             }
         }
         
         if(topPosition2 < position){
             heroCard2.classList.remove('showContent');
+            herotext2.classList.add('fade-in')
             heroCard3.classList.add('showContent');
+            herotext3.classList.remove('fade-in')
         }
 
-        sliders.forEach(slider =>{
-            let intoPosition = slider.getBoundingClientRect().top;
-            let screenPosition = window.innerHeight;
-            if(intoPosition < screenPosition){
-                slider.classList.add('appear')
+        heroTittle.forEach(tittle =>{
+            let top = tittle.getBoundingClientRect().top;
+            let bottom = tittle.getBoundingClientRect().bottom;   
+            let scroll = window.innerHeight;
+            if(top >= 0 && bottom <= scroll){
+                tittle.classList.add('appear')
+            }else{
+                tittle.classList.remove('appear')
             }
-        })    
+        })  
     }
 }
