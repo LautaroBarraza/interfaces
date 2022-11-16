@@ -21,19 +21,16 @@ document.addEventListener("DOMContentLoaded", function (){
     //desplegables//
     let main = document.querySelector(".nav");
     let user = document.querySelector(".user-nav");
-    let icon_user =document.querySelector(".arrow-user")
+    let iconMain =  document.querySelector(".icon-main");
+    let icon_user = document.querySelector(".arrow-user")
     let background = document.querySelector(".dark-background");
-    let navList= document.querySelectorAll(".list-item-main");
-    let socialNav= document.querySelector(".main-social");
+    let navList = [...document.querySelectorAll(".list-item-main")];
+    let socialNav = document.querySelector(".main-social");
     
-    let line1 = document.querySelector(".line1-bars-menu");
-    let line2 = document.querySelector(".line2-bars-menu");
-    let line3 = document.querySelector(".line3-bars-menu");
-
-    document.querySelector('.icon-main').addEventListener('click', () =>{
-        line1.classList.toggle("activeline1__bars-menu");
-        line2.classList.toggle("activeline2__bars-menu");
-        line3.classList.toggle("activeline3__bars-menu");
+    //boton menu hamburguesa
+    iconMain.addEventListener('click', () =>{
+        iconMain.classList.toggle('active-menu');
+        iconMain.classList.toggle('not-active');
         if(user.classList.contains('showUser')){
             user.classList.remove('showUser');
             icon_user.classList.toggle("drop-down");
@@ -41,28 +38,29 @@ document.addEventListener("DOMContentLoaded", function (){
         }
         main.classList.toggle("show");
         background.classList.add("on");
-        let i=0;
-        if(i<navList.length){
+
+        //muestra los items de a uno
+        let i = 0;
+        if(i < navList.length){  
             setInterval(()=>{
                 navList[i].classList.toggle("moveRight");
-                i++
-                if(i==navList.length){
+                i++;
+                if(i == navList.length){
                     socialNav.classList.toggle("moveRight");
                 }
-            },100)
+                console.log(i)  
+            },100)   
             
         }
-        
-
         check();
     });
 
+    //boton imagen usuario
     document.querySelector('.icon-user').addEventListener('click', () =>{
         if(main.classList.contains('show')){
             main.classList.remove('show');   
-            line1.classList.toggle("activeline1__bars-menu");
-            line2.classList.toggle("activeline2__bars-menu");
-            line3.classList.toggle("activeline3__bars-menu");     
+            iconMain.classList.remove('active-menu');
+            iconMain.classList.add('not-active');
         }
         user.classList.toggle("showUser");
         icon_user.classList.toggle("drop-down");
@@ -81,12 +79,12 @@ document.addEventListener("DOMContentLoaded", function (){
         user.classList.remove('showUser');
         main.classList.remove('show'); 
         background.classList.remove("on");
-        line1.classList.remove("activeline1__bars-menu");
-        line2.classList.remove("activeline2__bars-menu");
-        line3.classList.remove("activeline3__bars-menu");   
+        iconMain.classList.remove('active-menu');
+        iconMain.classList.add('not-active');
         icon_user.classList.remove("drop-down");
     }
 
+    //Reduce el height del header
     let header = document.querySelector('header');
     let logoImg = document.querySelector('.image');
     let userImg = document.querySelector('.nav-user-image')
@@ -94,13 +92,12 @@ document.addEventListener("DOMContentLoaded", function (){
 
     window.addEventListener("scroll", function(){
         if(window.scrollY > 300){
-            console.log('asd')
-            header.style.height = "70px";
+            header.classList.add('reduceSize');
             logoImg.classList.add('reduceSize');
             userImg.classList.add('reduceSize');
             search.classList.add('reduceSize');
         }else{
-            header.style.height = "90px";
+            header.classList.remove('reduceSize');
             logoImg.classList.remove('reduceSize');
             userImg.classList.remove('reduceSize');
             search.classList.remove('reduceSize');
