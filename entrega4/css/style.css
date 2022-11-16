@@ -1322,6 +1322,8 @@ height: 380%;
     margin-top: 100px;
     transform: translateX(150%);
     text-align: center;
+    opacity: 1;
+    transition: opacity 0.9s ease-in;
   }
 
   .from-left, .from-right{
@@ -1362,7 +1364,7 @@ height: 380%;
     line-height: 82px;
     letter-spacing: 0.01em;
     text-transform: capitalize;
-    animation: ease .9s fadeDown forwards 
+    animation: ease .9s fadeDown forwards;
   }
 
   .tittle.appear{
