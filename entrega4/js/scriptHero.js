@@ -54,9 +54,11 @@ function load(){
     let heroCard2 = document.querySelector('#hero-card-2');
     let heroCard3 = document.querySelector('#hero-card-3');
 
-    let heroTittle = document.querySelectorAll('.tittle');
+    let galery = document.querySelector('#positionGalery');
+    let heroImg3 = document.querySelector('#hero-img-3');
+    let heroParagraph3 = document.querySelector('#hero-paragraph-3');
+    let heroTitle3 = document.querySelector('#hero-title-3');
     
-
     window.addEventListener('scroll', scrollAppear);  
   
     function scrollAppear(){      
@@ -78,11 +80,12 @@ function load(){
             }
         })    
 
-        let position = window.innerHeight - window.innerHeight/3.2;
+        let position = window.innerHeight - window.innerHeight/2;
         let topPosition = herotext1.getBoundingClientRect().top;
         let topPosition1 = herotext2.getBoundingClientRect().top;
         let topPosition2 = herotext3.getBoundingClientRect().top;
-
+        let topGalery = galery.getBoundingClientRect().top;
+        
         if(topPosition < position){
             heroCard1.classList.add('showContent');
             herotext1.classList.remove('fade-in')
@@ -110,15 +113,10 @@ function load(){
             herotext3.classList.remove('fade-in')
         }
 
-        heroTittle.forEach(tittle =>{
-            let top = tittle.getBoundingClientRect().top;
-            let bottom = tittle.getBoundingClientRect().bottom;   
-            let scroll = window.innerHeight;
-            if(top >= 0 && bottom <= scroll){
-                tittle.classList.add('appear')
-            }else{
-                tittle.classList.remove('appear')
-            }
-        })  
+        if(topGalery < position){
+            heroImg3.classList.remove('appear');
+            heroParagraph3.classList.remove('appear');
+            heroTitle3.classList.remove('appear');
+        }
     }
 }

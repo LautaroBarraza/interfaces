@@ -990,7 +990,6 @@ height: 380%;
   }  
 }
 
-
 @media only screen and (min-width: 1024px){
   /*juego-proximamente*/
   /*header hero*/
@@ -1235,6 +1234,8 @@ height: 380%;
     display: flex;
     flex-direction: row;
     width: 100%;
+    top: -90px;
+    position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../img/starfield/starry-night-sky.jpg') center/cover;
   }
 
@@ -1242,13 +1243,13 @@ height: 380%;
     display: flex;
     flex-direction: column;
     width: 40%;
-    margin-left: 10%;
+    margin: 0 5%;
     z-index: 3;
   }
 
   .hero-card-content{
     width: 100%;
-    height: 500px;  
+    height: 400px;  
     top: 160px;
     position: sticky;
     display: none;
@@ -1258,7 +1259,7 @@ height: 380%;
     display: block;
   }
 
-  .info-game-coming .left-section .hero-card-content .hero-card-tittle {
+  .info-game-coming .left-section .hero-card-content .hero-card-title {
     position: relative;
     top: 100px;
     left: 40%;
@@ -1268,7 +1269,7 @@ height: 380%;
     z-index: 100;
   }
 
-  .info-game-coming .left-section .hero-card-content .hero-card-tittle p{
+  .info-game-coming .left-section .hero-card-content .hero-card-title p{
     color: #ECECEC;
     text-align: center;
     padding: 5px 5px;
@@ -1281,8 +1282,8 @@ height: 380%;
   }
 
   .info-game-coming .left-section .hero-card-content .hero-card-image{
-    width:520px;
-    height: 400px;
+    width: 500px;
+    height: 320px; 
     z-index: 3;
     display: flex;
     justify-content: center;
@@ -1302,15 +1303,14 @@ height: 380%;
     flex-direction: column;
     z-index: 2;
     width: 40%;
-    margin-right: 10%;
+    margin: 0 5%;
   }
 
   .info-game-coming .right-section .hero-text-content{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 300px;
-    margin: 100px 0;
+    height: 400px;
   }
 
   .from-right{
@@ -1319,7 +1319,7 @@ height: 380%;
     font-weight: 400;
     font-size: 16px;
     line-height: 150%;
-    margin-top: 100px;
+    margin-top: 180px;
     transform: translateX(150%);
     text-align: center;
     opacity: 1;
@@ -1352,7 +1352,7 @@ height: 380%;
     background-color: #030513;
   }
   
-  .tittle{
+  .title{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1364,41 +1364,6 @@ height: 380%;
     line-height: 82px;
     letter-spacing: 0.01em;
     text-transform: capitalize;
-    animation: ease .9s fadeDown forwards;
-  }
-
-  .tittle.appear{
-    animation: ease .9s fadeUp forwards;  
-  }
-
-  @keyframes fadeDown {
-    0%{
-      opacity: 1;
-      transform: translateY(0);
-    }
-    50%{
-      opacity: 1;
-      transform: translateY(25%);
-    }
-    100%{
-      opacity: 0;
-      transform: translateY(50%);
-    }
-  }
-
-  @keyframes fadeUp {
-    0%{
-      opacity: 0;
-      transform: translateY(50%);
-    }
-    50%{
-      opacity: 1;
-      transform: translateY(25%);
-    }
-    100%{
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
   /*personajes */
@@ -1414,6 +1379,21 @@ height: 380%;
     scroll-behavior: smooth;
     column-gap: 60px;
     padding-left: 40px;
+  }
+
+  .slide-hero-name{
+    color: #ECECEC;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    text-transform: capitalize;
+    animation: ease .9s fadeDown forwards;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .slide-hero-name.appear{
+    animation: ease .9s fadeUp forwards;  
   }
 
   article.characters ul.slide li img {
@@ -2220,25 +2200,39 @@ height: 380%;
     font-size: 26px;
   }
 
+  /*cambio de tamaño cards hero*/
   .info-game-coming .left-section{
-    width: 34%;
-    margin-left: 16%;
+    width: 36%;
+    margin-left: 14%;
   }
 
-  .info-game-coming .right-section{
-    width: 34%;
-    margin-right: 16%;
+  .hero-card-content{
+    height: 440px;  
+    top: 160px;
   }
 
-  .info-game-coming .left-section .hero-card-image{
-    width:640px;
-    height: 420px;
+  .info-game-coming .left-section .hero-card-content .hero-card-title {
+    top: 100px;
+    left: 40%;
   }
 
   .info-game-coming .left-section .hero-card-content .hero-card-image{
-    width:600px;
+    width: 580px;
+    height: 360px;   
   }
- 
+
+  .info-game-coming .right-section .hero-text-content{
+    height: 440px;
+  }
+
+  .info-game-coming .right-section{
+    width: 36%;
+    margin-right: 14%;
+  }
+
+  .from-right{
+    margin-top: 180px;
+  }
 }
 
 
