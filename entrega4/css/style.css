@@ -1015,7 +1015,7 @@ height: 380%;
 
   /*seccion hero*/   
   main.game-coming{
-    background: #030513;
+    background: #050818;
   }
 
   section.hero{
@@ -1348,10 +1348,6 @@ height: 380%;
   }
 
   /* seccion personajes y multimedia*/
-  section.characters-galery{
-    background-color: #030513;
-  }
-  
   .title{
     display: flex;
     justify-content: center;
@@ -1469,10 +1465,41 @@ height: 380%;
 
 
   /*separacion*/
-  section.characters-galery .end-section{
-    background: #030513 url("../img/starfield/separacion.png") center/cover;
-    width: 100%;
+  .spriteSheet-background{
     height: 400px;
+    width: 1920px;
+    position: relative;
+    background: url(../img/starfield/background.jpg);
+    animation: animate-background 20s linear infinite;
+   
+  }
+  .astronaut{
+      width: 150px;
+      height: 136px;
+      background: url(../img/starfield/astronaut.png);
+      bottom: 36px;
+      left: 40%;
+      position: absolute;
+
+      animation: run-astronaut .7s steps(8) infinite;
+  }
+
+  @keyframes run-astronaut {
+      0%{
+          background-position: 0px;
+      }
+      100%{
+          background-position: -1200px;
+      }
+  }
+
+  @keyframes animate-background {
+      0%{
+          background-position: 0px;
+      }
+      100%{
+          background-position: -1920px;
+      }
   }
 
   /*features*/
