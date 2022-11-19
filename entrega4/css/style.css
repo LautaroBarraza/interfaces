@@ -1437,11 +1437,11 @@ height: 380%;
     height: 300px;
     object-fit: cover;
   }
-  article.galery ul.slide li.moveRightLi{
-    animation: moveLeftLi 2s;
+  li.moveRightLi{
+    animation: moveLeftLi 1.5s;
   }
-  article.galery ul.slide li.moveRLeftLi{
-    animation: moveRightLi 2s;
+  li.moveLeftLi{
+    animation: moveRightLi 1.5s;
   }
 
   @keyframes moveRightLi {

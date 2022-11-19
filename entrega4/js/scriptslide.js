@@ -10,6 +10,7 @@ function load(){
     const NAV_CARRUSEL = [...document.querySelectorAll(".pag-slide")];
 
     carruseles.forEach((item,i)=> {
+        let liSlide= [...item.querySelectorAll("ul.slide li")];
         let dimensionContenedor = item.getBoundingClientRect();
         let contenedorWidth = dimensionContenedor.width;
         //console.log(item.scrollWidth);
@@ -25,10 +26,27 @@ function load(){
                 item.scrollLeft += contenedorWidth;
                 activo.nextSibling.classList.add("active");
                 activo.classList.remove("active");
+                //animacion slide
+                liSlide.forEach(li => {
+                    li.classList.add("moveRightLi");
+                    setTimeout(()=> {
+                        li.classList.remove("moveRightLi");
+                    },2000)
+                    
+                    console.log(li)
+                })
             }else{
                 item.scrollLeft = 0;
                 NAV_CARRUSEL[i].firstElementChild.classList.add("active");
                 NAV_CARRUSEL[i].lastElementChild.classList.remove("active")
+                liSlide.forEach(li => {
+                    li.classList.add("moveLeftLi");
+                    setTimeout(()=> {
+                        li.classList.remove("moveLeftLi");
+                    },2000)
+                    
+                    console.log(li)
+                })
             }
         })
         /*paginacion slide hacia atras*/
@@ -38,10 +56,26 @@ function load(){
             if(activo.previousSibling){
                 activo.previousSibling.classList.add("active");
                 activo.classList.remove("active");
+                liSlide.forEach(li => {
+                    li.classList.add("moveLeftLi");
+                    setTimeout(()=> {
+                        li.classList.remove("moveLeftLi");
+                    },2000)
+                    
+                    console.log(li)
+                })
             }else{
                 item.scrollLeft = item.scrollWidth;
                 NAV_CARRUSEL[i].lastElementChild.classList.add("active");
                 NAV_CARRUSEL[i].firstElementChild.classList.remove("active") 
+                liSlide.forEach(li => {
+                    li.classList.add("moveRightLi");
+                    setTimeout(()=> {
+                        li.classList.remove("moveRightLi");
+                    },2000)
+                    
+                    console.log(li)
+                })
             }
         })
 

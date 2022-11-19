@@ -3,24 +3,6 @@
 document.addEventListener("DOMContentLoaded", load);
 
 function load(){
-    //galery
-
-    let galery= document.querySelector("#galery");
-    let buttonLeft= document.querySelector("#button-galery-left");
-    let buttonRight= document.querySelector("#button-galery-right");
-    let liGalery= [...document.querySelectorAll(".li-galery")];
-
-    buttonRight.addEventListener("click", ()=> {
-        liGalery.forEach(li => {
-            li.classList.add("moveRightLi");
-            setTimeout(()=> {
-                li.classList.remove("moveRightLi");
-            },2000)
-            
-            console.log(li)
-        })
- 
-    });
 
 
     /*header hero*/
@@ -46,18 +28,9 @@ function load(){
         prof1.style.top= value*0.5+"px";
         prof2.style.bottom=-1+"px";
         prof3.style.top=value+50*0.8+"px";
-        prof3.style.opacity = 1-value * coeficiente
+        prof3.style.opacity = 1-value * (coeficiente*1.7)
         //console.log(value);
     }
-
-    /* flecha hero*/
-    document.querySelector(".arrow-hero").addEventListener("click", () => {
-        window.scroll({
-            top: hero_tamanio,
-            left: 0,
-            behavior: 'smooth'
-          });
-    })
     
     //Scroll cards hero
     let faders = document.querySelectorAll('.fade-in');
