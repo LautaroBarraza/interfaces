@@ -3,7 +3,24 @@
 document.addEventListener("DOMContentLoaded", load);
 
 function load(){
+    //galery
 
+    let galery= document.querySelector("#galery");
+    let buttonLeft= document.querySelector("#button-galery-left");
+    let buttonRight= document.querySelector("#button-galery-right");
+    let liGalery= [...document.querySelectorAll(".li-galery")];
+
+    buttonRight.addEventListener("click", ()=> {
+        liGalery.forEach(li => {
+            li.classList.add("moveRightLi");
+            setTimeout(()=> {
+                li.classList.remove("moveRightLi");
+            },2000)
+            
+            console.log(li)
+        })
+ 
+    });
 
 
     /*header hero*/

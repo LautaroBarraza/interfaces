@@ -1457,6 +1457,36 @@ height: 380%;
     height: 300px;
     object-fit: cover;
   }
+  article.galery ul.slide li.moveRightLi{
+    animation: moveLeftLi 2s;
+  }
+  article.galery ul.slide li.moveRLeftLi{
+    animation: moveRightLi 2s;
+  }
+
+  @keyframes moveRightLi {
+    0%{
+      transform: translateX(0);
+    }
+    50%{
+      transform: translateX(100px);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+  @keyframes moveLeftLi {
+    0%{
+      transform: translateX(0);
+    }
+    50%{
+      transform: translateX(-100px);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+
 
   /*separacion*/
   section.characters-galery .end-section{
