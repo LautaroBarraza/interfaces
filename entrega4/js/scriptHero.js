@@ -35,6 +35,7 @@ function load(){
     //Scroll cards hero
     let faders = document.querySelectorAll('.fade-in');
     let sliders = document.querySelectorAll('.slide-in');
+    let slidersUp = document.querySelectorAll('.slide-up');
 
     let herotext1 = document.querySelector('#hero-text-1');
     let herotext2 = document.querySelector('#hero-text-2');
@@ -48,6 +49,7 @@ function load(){
     let heroImg3 = document.querySelector('#hero-img-3');
     let heroParagraph3 = document.querySelector('#hero-paragraph-3');
     let heroTitle3 = document.querySelector('#hero-title-3');
+    let titles = document.querySelectorAll('.title');
     
     window.addEventListener('scroll', scrollAppear);  
   
@@ -108,5 +110,23 @@ function load(){
             heroParagraph3.classList.remove('appear');
             heroTitle3.classList.remove('appear');
         }
+
+        titles.forEach(title =>{
+            let top = title.getBoundingClientRect().top;
+            let scroll = window.innerHeight;
+            if(top < scroll){
+                title.classList.add('appear')
+            }else{
+                title.classList.remove('appear')
+            }
+        })  
+
+        slidersUp.forEach(slider =>{
+            let top = slider.getBoundingClientRect().top;
+            let scroll = window.innerHeight;
+            if(top < scroll){
+                slider.classList.add('appear')
+            }
+        })
     }
 }

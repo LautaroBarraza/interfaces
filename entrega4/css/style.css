@@ -1335,16 +1335,43 @@ height: 380%;
   }
 
   .fade-in{
-    opacity: 0;
-    transition: opacity 0.9s ease-in;
+    animation: ease 0.9s fadeOut-content forwards;
   }
 
   .fade-in.appear{
-    opacity: 1;
+    animation: ease 0.9s fadeIn-content forwards;
   }
 
   .showCard{
     display: block;
+  }
+
+  @keyframes fadeIn-content {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut-content {
+    0%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
+  }
+
+  .slide-up{
+    transform: translateY(150px);
+    transition: transform 0.5s ease-in;
+  }
+
+  .slide-up.appear{
+    transform: translateY(0);
+    transition: transform 0.5s ease-in;
   }
 
   /* seccion personajes y multimedia*/
@@ -1360,6 +1387,7 @@ height: 380%;
     line-height: 82px;
     letter-spacing: 0.01em;
     text-transform: capitalize;
+    transition: opacity 0.9s ease-in;
   }
 
   /*personajes */
