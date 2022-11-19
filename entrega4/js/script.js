@@ -48,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function (){
                 if(i == navList.length){
                     socialNav.classList.toggle("moveRight");
                 }
-                console.log(i)  
             },100)   
             
         }
