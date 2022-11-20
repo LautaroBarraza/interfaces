@@ -1387,7 +1387,9 @@ height: 380%;
     line-height: 82px;
     letter-spacing: 0.01em;
     text-transform: capitalize;
-    transition: opacity 0.9s ease-in;
+    transition: 0.6s ;
+    transform: translateY(100px);
+    opacity: 0;
   }
 
   /*personajes */

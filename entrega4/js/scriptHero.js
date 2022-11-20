@@ -111,21 +111,27 @@ function load(){
             heroTitle3.classList.remove('appear');
         }
 
-        titles.forEach(title =>{
-            let top = title.getBoundingClientRect().top;
-            let scroll = window.innerHeight;
-            if(top < scroll){
-                title.classList.add('appear')
-            }else{
-                title.classList.remove('appear')
-            }
-        })  
-
         slidersUp.forEach(slider =>{
             let top = slider.getBoundingClientRect().top;
             let scroll = window.innerHeight;
             if(top < scroll){
                 slider.classList.add('appear')
+            }
+        })
+       
+        titles.forEach(title =>{
+            let bottom = title.getBoundingClientRect().bottom;  
+            let scroll = window.innerHeight;
+            let scrollY = window.scrollY;
+            let elementHeight = title.clientHeight;
+            let opacity = ((1 - (elementHeight - scrollY) / 5) * 0.008) + 0.04;
+            let translate = (-160 + (scrollY * 0.08));
+            let num = opacity.toFixed(1)
+            title.style.opacity = `${num/3.6}`;
+            title.style.transform = `translateY(${20 - translate}px)`;  
+            if(bottom > scroll){     
+                title.style.opacity = '0';
+                title.style.transform = 'translateY(100px)';       
             }
         })
     }
