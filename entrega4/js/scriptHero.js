@@ -51,10 +51,9 @@ function load(){
     let heroParagraph1 = document.querySelector('#hero-paragraph-1');
     let heroParagraph3 = document.querySelector('#hero-paragraph-3');
     let heroTitle3 = document.querySelector('#hero-title-3');
-    let titles = document.querySelectorAll('.title');
 
-    let characters=document.querySelector("article.characters ul.slide");
-    let containerCharacters= document.querySelector("article.characters .container-characters")
+    let characters = document.querySelector("article.characters ul.slide");
+    let containerCharacters = document.querySelector("article.characters .container-characters");
     
     window.addEventListener('scroll', scrollAppear);  
   
@@ -133,15 +132,12 @@ function load(){
         let scrollY = window.scrollY;
         let op = scrollY * 0.00034;
         containerCharacters.style.opacity = `${op/1.1}`;
-        let top=containerCharacters.getBoundingClientRect().top-window.innerHeight;
-        if(top>-301){
-            characters.style.transform=`translateY(${300+top}px)`;
+        let top = containerCharacters.getBoundingClientRect().top - window.innerHeight;
+        if(top > -301){
+            characters.style.transform=`translateY(${300 + top}px)`;
         }
-        
-        
-        console.log()
-        console.log(window.innerHeight)
-
-
+     
+        //console.log()
+        //console.log(window.innerHeight)
     }
 }
