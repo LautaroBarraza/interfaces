@@ -46,10 +46,12 @@ function load(){
     let heroCard3 = document.querySelector('#hero-card-3');
 
     let galery = document.querySelector('#positionGalery');
+    let heroImg1 = document.querySelector('#hero-img-1');
     let heroImg3 = document.querySelector('#hero-img-3');
+    let heroParagraph1 = document.querySelector('#hero-paragraph-1');
     let heroParagraph3 = document.querySelector('#hero-paragraph-3');
     let heroTitle3 = document.querySelector('#hero-title-3');
-    let titles = document.querySelectorAll('.title');
+    //let characterItems = document.querySelectorAll('.characters-item');
     
     window.addEventListener('scroll', scrollAppear);  
   
@@ -57,9 +59,11 @@ function load(){
         faders.forEach(fader =>{
             let top = fader.getBoundingClientRect().top;
             let bottom = fader.getBoundingClientRect().bottom;  
-            let scroll = window.innerHeight;
+            let scroll = window.innerHeight - window.innerHeight/2;
             if(top >= 0 && bottom <= scroll){
                 fader.classList.add('appear')
+            }else{
+                fader.classList.remove('appear')
             }
         })
 
@@ -85,6 +89,9 @@ function load(){
                 heroCard2.classList.remove('showContent');
                 herotext2.classList.add('fade-in')
             }
+        }else{
+            heroImg1.classList.remove('appear');
+            heroParagraph1.classList.remove('appear');    
         }
 
         if(topPosition1 < position){ 
@@ -118,21 +125,18 @@ function load(){
                 slider.classList.add('appear')
             }
         })
-       
-        titles.forEach(title =>{
-            let bottom = title.getBoundingClientRect().bottom;  
+        
+        /*characterItems.forEach(item =>{
             let scroll = window.innerHeight;
             let scrollY = window.scrollY;
-            let elementHeight = title.clientHeight;
+            let elementHeight = item.clientHeight;
             let opacity = ((1 - (elementHeight - scrollY) / 5) * 0.008) + 0.04;
+            let op = scrollY * 0.00034;
             let translate = (-160 + (scrollY * 0.08));
             let num = opacity.toFixed(1)
-            title.style.opacity = `${num/3.6}`;
-            title.style.transform = `translateY(${20 - translate}px)`;  
-            if(bottom > scroll){     
-                title.style.opacity = '0';
-                title.style.transform = 'translateY(100px)';       
-            }
-        })
+            item.style.opacity = `${0.2+op}`;
+            item.style.transform = `translateY(${4 - translate}px)`;  
+            
+        })*/
     }
 }
