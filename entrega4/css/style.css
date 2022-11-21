@@ -1266,7 +1266,6 @@ height: 380%;
     top: -90px;
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url('../img/starfield/starry-night-sky.jpg') center/cover;
-    
   }
 
   .info-game-coming .left-section{
@@ -1331,15 +1330,17 @@ height: 380%;
     display: flex;
     flex-direction: column;
     z-index: 2;
-    width: 40%;
-    margin: 0 5%;
+    width: 50%;
+    overflow: hidden;
   }
 
   .info-game-coming .right-section .hero-text-content{
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
+    margin: 0 10%;
     height: 400px;
+    
   }
 
   .from-right{
@@ -2361,6 +2362,7 @@ height: 380%;
   .info-game-coming .left-section{
     width: 36%;
     margin-left: 14%;
+    margin-right: 0;
   }
 
   .hero-card-content{
@@ -2379,12 +2381,10 @@ height: 380%;
   }
 
   .info-game-coming .right-section .hero-text-content{
+    width: 71%;
+    margin-right: 29%;
     height: 440px;
-  }
-
-  .info-game-coming .right-section{
-    width: 36%;
-    margin-right: 14%;
+    margin-left: 0;
   }
 
   .from-right{
