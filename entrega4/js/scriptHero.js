@@ -122,7 +122,7 @@ function load(){
             let top = slider.getBoundingClientRect().top;
             let scroll = window.innerHeight;
             if(top < scroll){
-                slider.classList.add('appear')
+                slider.classList.add('appear');
             }
         })
         

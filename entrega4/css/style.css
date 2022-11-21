@@ -1410,11 +1410,6 @@ height: 380%;
     height: 250px;
   }
 
-  .characters-item{
-    transition: .5s;
-    opacity: 0;
-  }
-
   article.characters ul.slide li div.card{
     position: relative;
     width: 250px;
