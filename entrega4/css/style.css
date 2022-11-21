@@ -531,6 +531,7 @@ section.category h2.game-category span i{
   display: flex;
   justify-content: center;
   align-items: center; 
+  margin-top: 25px;
 }
 
 .pag-slide button{
@@ -1060,7 +1061,7 @@ height: 380%;
 
   section.hero .call-to-action button:hover{
     transform: scale(1.2) translate(0px, -20px);
-    box-shadow: -4px 10px 142px 89px rgba(0,0,0,0.57);
+  
     transition-delay: 0.8s;
   }
 
@@ -1123,6 +1124,7 @@ height: 380%;
     transform: scaleY(0);
     transform-origin: bottom;
     transition: transform 0.2s;
+    transition-delay: 0.9s
   }
 
   section.hero .call-to-action button:hover span:nth-child(1){
@@ -1139,7 +1141,7 @@ height: 380%;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.2s;
-    transition-delay: 0.3s
+    transition-delay: 0.6s
   } 
 
   section.hero .call-to-action button:hover span:nth-child(2){
@@ -1157,7 +1159,7 @@ height: 380%;
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.2s;
-    transition-delay: 0.6s
+    transition-delay: 0.3s
   }
 
   section.hero .call-to-action button:hover span:nth-child(3){
@@ -1175,7 +1177,6 @@ height: 380%;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.2s;
-    transition-delay: 0.7s
   }
 
   section.hero .call-to-action button:hover span:nth-child(4){
@@ -1226,6 +1227,33 @@ height: 380%;
 
   section.hero .prof3 img{
     width: 400px;
+  }
+
+  section.hero div.mouse-scroll{
+    position: absolute;
+    z-index: 3;
+    border: 1px solid white;
+    width: 18px;
+    height: 30px;
+    bottom: 8%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  section.hero div.mouse-scroll::before{
+    content: "";
+    width: 0.5px;
+    height: 10px;
+    border-left: 1px solid white;
+    animation: upMouse 2s infinite ease;
+  }
+
+  @keyframes upMouse {
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-15px);
+        height: 15px;}
+    100% {transform: translateY(0);
+          height: 10px;}    
   }
 
   /*seccion info juego proximamente*/
@@ -1396,12 +1424,17 @@ height: 380%;
     position: relative;
   }
 
+  article.characters ul.slide{
+    transform: translateY(300px);
+    transition: all .4s ease;
+  }
   article.characters ul.slide, article.galery ul.slide{
     display: flex;
     align-items: center;
     overflow: hidden;
     scroll-behavior: smooth;
     padding-left: 40px;
+
   }
 
   article.characters ul.slide li{
@@ -1430,14 +1463,34 @@ height: 380%;
 
   article.characters ul.slide li div.card div.card-back{
     transform: rotateY(180deg);
-    background: #004884;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    position: relative;
+  }
+
+  article.characters ul.slide li div.card div.card-back h3{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 41px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: white;
+    position: absolute;
+    z-index: 2;
+
   }
 
 
 
 
   /*img card personajes*/
-  article.characters ul.slide li div.card div.card-front img {
+
+  article.characters ul.slide li div.card div.card-back img{
+    filter: blur(2px) brightness(60%);
+  }
+  article.characters ul.slide li div.card div.card-front img, article.characters ul.slide li div.card div.card-back img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -1511,10 +1564,12 @@ height: 380%;
   /*separacion*/
   .spriteSheet-background{
     height: 400px;
-    width: 1903px;
+    width: 100%;
     position: relative;
     background: url(../img/starfield/background.jpg);
     animation: animate-background 20s linear infinite;
+    overflow: hidden;
+    object-fit: cover;
    
   }
   .astronaut{
@@ -1524,6 +1579,7 @@ height: 380%;
       bottom: 36px;
       left: 40%;
       position: absolute;
+      overflow: hidden;
 
       animation: run-astronaut .7s steps(8) infinite;
   }
@@ -1542,7 +1598,7 @@ height: 380%;
           background-position: 0px;
       }
       100%{
-          background-position: -1903px;
+          background-position: -1920px;
       }
   }
 

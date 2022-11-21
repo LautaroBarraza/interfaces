@@ -51,7 +51,10 @@ function load(){
     let heroParagraph1 = document.querySelector('#hero-paragraph-1');
     let heroParagraph3 = document.querySelector('#hero-paragraph-3');
     let heroTitle3 = document.querySelector('#hero-title-3');
-    //let characterItems = document.querySelectorAll('.characters-item');
+    let titles = document.querySelectorAll('.title');
+
+    let characters=document.querySelector("article.characters ul.slide");
+    let containerCharacters= document.querySelector("article.characters .container-characters")
     
     window.addEventListener('scroll', scrollAppear);  
   
@@ -125,18 +128,20 @@ function load(){
                 slider.classList.add('appear');
             }
         })
+
+        /** animacion de acercar carrusel al titulo de personajes a medida que se hace scroll*/
+        let scrollY = window.scrollY;
+        let op = scrollY * 0.00034;
+        containerCharacters.style.opacity = `${op/1.1}`;
+        let top=containerCharacters.getBoundingClientRect().top-window.innerHeight;
+        if(top>-301){
+            characters.style.transform=`translateY(${300+top}px)`;
+        }
         
-        /*characterItems.forEach(item =>{
-            let scroll = window.innerHeight;
-            let scrollY = window.scrollY;
-            let elementHeight = item.clientHeight;
-            let opacity = ((1 - (elementHeight - scrollY) / 5) * 0.008) + 0.04;
-            let op = scrollY * 0.00034;
-            let translate = (-160 + (scrollY * 0.08));
-            let num = opacity.toFixed(1)
-            item.style.opacity = `${0.2+op}`;
-            item.style.transform = `translateY(${4 - translate}px)`;  
-            
-        })*/
+        
+        console.log()
+        console.log(window.innerHeight)
+
+
     }
 }
