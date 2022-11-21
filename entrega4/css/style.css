@@ -1398,12 +1398,16 @@ height: 380%;
     position: relative;
   }
 
+  article.characters .container-characters{
+    transform: translateY(200px);
+  }
   article.characters ul.slide, article.galery ul.slide{
     display: flex;
     align-items: center;
     overflow: hidden;
     scroll-behavior: smooth;
     padding-left: 40px;
+
   }
 
   .slide-hero-name{

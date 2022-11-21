@@ -50,6 +50,9 @@ function load(){
     let heroParagraph3 = document.querySelector('#hero-paragraph-3');
     let heroTitle3 = document.querySelector('#hero-title-3');
     let titles = document.querySelectorAll('.title');
+
+    let characters=document.querySelector("article.characters ul.slide");
+    let containerCharacters= document.querySelector("article.characters .container-characters")
     
     window.addEventListener('scroll', scrollAppear);  
   
@@ -134,5 +137,16 @@ function load(){
                 title.style.transform = 'translateY(100px)';       
             }
         })
+
+        let top=containerCharacters.getBoundingClientRect().top-window.innerHeight;
+        if(top*1.4>-201){
+            characters.style.transform=`translateY(${top*1.4}px)`;
+        }
+        
+        
+        console.log()
+        console.log(window.innerHeight)
+
+
     }
 }
