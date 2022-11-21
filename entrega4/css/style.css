@@ -1398,8 +1398,9 @@ height: 380%;
     position: relative;
   }
 
-  article.characters .container-characters{
-    transform: translateY(200px);
+  article.characters ul.slide{
+    transform: translateY(300px);
+    transition: all .4s ease;
   }
   article.characters ul.slide, article.galery ul.slide{
     display: flex;

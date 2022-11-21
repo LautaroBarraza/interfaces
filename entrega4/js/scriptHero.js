@@ -139,8 +139,8 @@ function load(){
         })
 
         let top=containerCharacters.getBoundingClientRect().top-window.innerHeight;
-        if(top*1.4>-201){
-            characters.style.transform=`translateY(${top*1.4}px)`;
+        if(top>-301){
+            characters.style.transform=`translateY(${300+top}px)`;
         }
         
         
