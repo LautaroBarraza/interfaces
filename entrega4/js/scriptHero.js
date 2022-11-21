@@ -119,6 +119,8 @@ function load(){
             let scroll = window.innerHeight;
             if(top < scroll){
                 slider.classList.add('appear')
+            }else{
+                slider.classList.remove('appear')
             }
         })
        
@@ -138,6 +140,7 @@ function load(){
             }
         })
 
+        /** animacion de acercar carrusel al titulo de personajes a medida que se hace scroll*/
         let top=containerCharacters.getBoundingClientRect().top-window.innerHeight;
         if(top>-301){
             characters.style.transform=`translateY(${300+top}px)`;

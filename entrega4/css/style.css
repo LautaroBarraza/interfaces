@@ -1452,14 +1452,34 @@ height: 380%;
 
   article.characters ul.slide li div.card div.card-back{
     transform: rotateY(180deg);
-    background: #004884;
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    position: relative;
+  }
+
+  article.characters ul.slide li div.card div.card-back h3{
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 41px;
+    letter-spacing: 0.01em;
+    text-transform: capitalize;
+    color: white;
+    position: absolute;
+    z-index: 2;
+
   }
 
 
 
 
   /*img card personajes*/
-  article.characters ul.slide li div.card div.card-front img {
+
+  article.characters ul.slide li div.card div.card-back img{
+    filter: blur(2px) brightness(60%);
+  }
+  article.characters ul.slide li div.card div.card-front img, article.characters ul.slide li div.card div.card-back img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -1533,10 +1553,12 @@ height: 380%;
   /*separacion*/
   .spriteSheet-background{
     height: 400px;
-    width: 1920px;
+    width: 100%;
     position: relative;
     background: url(../img/starfield/background.jpg);
     animation: animate-background 20s linear infinite;
+    overflow: hidden;
+    object-fit: cover;
    
   }
   .astronaut{
@@ -1546,6 +1568,7 @@ height: 380%;
       bottom: 36px;
       left: 40%;
       position: absolute;
+      overflow: hidden;
 
       animation: run-astronaut .7s steps(8) infinite;
   }
