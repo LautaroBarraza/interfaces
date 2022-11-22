@@ -62,7 +62,7 @@ function load(){
             let top = fader.getBoundingClientRect().top;
             let bottom = fader.getBoundingClientRect().bottom;  
             let scroll = window.innerHeight - window.innerHeight/2;
-            if(top >= 0 && bottom <= scroll){
+            if(top < scroll){
                 fader.classList.add('appear')
             }else{
                 fader.classList.remove('appear')
@@ -130,8 +130,8 @@ function load(){
 
         /** animacion de acercar carrusel al titulo de personajes a medida que se hace scroll*/
         let scrollY = window.scrollY;
-        let op = scrollY * 0.00034;
-        containerCharacters.style.opacity = `${op/1.1}`;
+        let opacity = scrollY * 0.00034;
+        containerCharacters.style.opacity = `${opacity/0.7}`;
         let top = containerCharacters.getBoundingClientRect().top - window.innerHeight;
         if(top > -301){
             characters.style.transform=`translateY(${300 + top}px)`;

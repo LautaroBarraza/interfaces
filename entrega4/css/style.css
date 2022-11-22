@@ -339,7 +339,7 @@ header .right-header i.drop-down{
 }
 
 .nav.show{
-  height: 705px;
+  height: 525px;
   /*left: 0;*/
 }
 
@@ -352,7 +352,7 @@ header .right-header i.drop-down{
 
 .list .list-item{
   width: 100%;
-  height: 70px;
+  height: 50px;
 }
 
 .list .list-item .list-button{
@@ -366,7 +366,7 @@ header .right-header i.drop-down{
 .list .list-item .list-button .nav-link{
   color: #000000;
   display: block;
-  line-height: 70px;
+  line-height: 50px;
   height: 100%;
   width: 100%;
   margin-left: 35px;
@@ -407,7 +407,7 @@ header .right-header i.drop-down{
 }
 
 .user-nav.showUser{
-  height: 450px;
+  height: 350px;
   position: relative;
 }
 
@@ -899,16 +899,17 @@ height: 380%;
   /*menu hamburguesa*/
   .nav{
     top: calc(header - 90px);
-    width: 380px;
+    width: 340px;
     left: -100%; 
+    height: 525px;
     position: fixed;
     z-index: 1001; 
-    height: calc(100vh - 90px);
   }
 
   .list-item-main, .main-social{
     transform: translateX(-100%);
   }
+
   .list-item-main.moveRight, .main-social.moveRight{
     transform: translateX(0);
     transition: all ease-in 0.9s;
@@ -917,13 +918,12 @@ height: 380%;
   .nav.show{
     position: fixed;
     left: 0;  
-    height: calc(100vh - 90px);
     overflow: auto;
   }
 
   .user-nav{
     top: 90px;
-    width: 380px;
+    width: 340px;
     right:-100%; 
     position: fixed;
     height: auto;
@@ -1291,8 +1291,8 @@ height: 380%;
   .info-game-coming .left-section .hero-card-content .hero-card-title {
     position: relative;
     top: 100px;
-    left: 40%;
-    width: auto;
+    left: 10%;
+    width: 525px;
     background: #5F80F5;
     border-radius: 15px;
     z-index: 100;
@@ -2389,6 +2389,11 @@ height: 380%;
 
   .from-right{
     margin-top: 180px;
+  }
+
+  .info-game-coming .left-section .hero-card-content .hero-card-title {
+    top: 100px;
+    left: 20%;
   }
 }
 
