@@ -52,8 +52,9 @@ function load(){
     let heroParagraph3 = document.querySelector('#hero-paragraph-3');
     let heroTitle3 = document.querySelector('#hero-title-3');
 
-    let characters = document.querySelector("article.characters ul.slide");
-    let containerCharacters = document.querySelector("article.characters .container-characters");
+    
+    let containerCharacters = document.querySelectorAll("article.characters .container-characters");
+    let characters = document.querySelectorAll("article.characters ul");
     
     window.addEventListener('scroll', scrollAppear);  
   
@@ -131,11 +132,13 @@ function load(){
         /** animacion de acercar carrusel al titulo de personajes a medida que se hace scroll*/
         let scrollY = window.scrollY;
         let op = scrollY * 0.00034;
-        containerCharacters.style.opacity = `${op/1.1}`;
-        let top = containerCharacters.getBoundingClientRect().top - window.innerHeight;
-        if(top > -301){
-            characters.style.transform=`translateY(${300 + top}px)`;
-        }
+        containerCharacters.forEach((container,i) => {
+            container.style.opacity = `${op/1.1}`;
+            let top = container.getBoundingClientRect().top - window.innerHeight;
+            if(top > -301){
+                characters[i].style.transform=`translateY(${300 + top}px)`;
+            }
+        }) 
      
         //console.log()
         //console.log(window.innerHeight)

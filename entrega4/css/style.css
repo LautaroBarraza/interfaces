@@ -1421,15 +1421,27 @@ height: 380%;
 
   /*personajes */
   article.characters{
-    height: 500px;
     position: relative;
   }
 
-  article.characters ul.slide{
+  article.characters div.box-all-characters{
+    display: grid;
+    grid-template-rows: 2fr 2fr;
+  }
+
+  article.characters div.box-all-characters div.container-characters{
+    margin-bottom: 40px;
+
+  }
+
+  article.characters ul{
     transform: translateY(300px);
     transition: all .4s ease;
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
   }
-  article.characters ul.slide, article.galery ul.slide{
+  article.characters ul, article.galery ul.slide{
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -1438,13 +1450,13 @@ height: 380%;
 
   }
 
-  article.characters ul.slide li{
+  article.characters ul li{
     background-color: transparent;
     width: 250px;
     height: 250px;
   }
 
-  article.characters ul.slide li div.card{
+  article.characters ul li div.card{
     position: relative;
     width: 250px;
     height: 250px;
@@ -1452,25 +1464,24 @@ height: 380%;
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
-  article.characters ul.slide li:hover div.card {
+  article.characters ul li:hover div.card {
     transform: rotateY(180deg);
   }
-  article.characters ul.slide li div.card div.card-front, article.characters ul.slide li div.card div.card-back{
+  article.characters ul li div.card div.card-front, article.characters ul li div.card div.card-back{
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
   }
 
-  article.characters ul.slide li div.card div.card-back{
+  article.characters ul li div.card div.card-back{
     transform: rotateY(180deg);
     display: flex;
     justify-content: center;
     align-items: center ;
-    position: relative;
   }
 
-  article.characters ul.slide li div.card div.card-back h3{
+  article.characters ul li div.card div.card-back h3{
     font-style: normal;
     font-weight: 800;
     font-size: 30px;
@@ -1488,10 +1499,10 @@ height: 380%;
 
   /*img card personajes*/
 
-  article.characters ul.slide li div.card div.card-back img{
+  article.characters ul li div.card div.card-back img{
     filter: blur(2px) brightness(60%);
   }
-  article.characters ul.slide li div.card div.card-front img, article.characters ul.slide li div.card div.card-back img {
+  article.characters ul li div.card div.card-front img, article.characters ul li div.card div.card-back img {
     object-fit: cover;
     width: 100%;
     height: 100%;
@@ -1582,7 +1593,7 @@ height: 380%;
       position: absolute;
       overflow: hidden;
 
-      animation: run-astronaut .7s steps(8) infinite;
+      animation: run-astronaut 0.7s steps(8) infinite;
   }
 
   @keyframes run-astronaut {
