@@ -89,6 +89,25 @@ function load(){
             }
             NAV_CARRUSEL[i].appendChild(button);
             button.addEventListener("click",(e) => {
+                if(item.scrollLeft>contenedorWidth * (j+1)){
+                    liSlide.forEach(li => {
+                        li.classList.add("moveLeftLi");
+                        setTimeout(()=> {
+                            li.classList.remove("moveLeftLi");
+                        },2000)
+                        
+                        console.log(li)
+                    })
+                }else{
+                    liSlide.forEach(li => {
+                        li.classList.add("moveRightLi");
+                        setTimeout(()=> {
+                            li.classList.remove("moveRightLi");
+                        },2000)
+                        
+                        console.log(li)
+                    })
+                }
                 item.scrollLeft = contenedorWidth * (j+1);
                 NAV_CARRUSEL[i].querySelector(".active").classList.remove("active");
                 e.target.classList.add("active");
