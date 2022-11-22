@@ -63,7 +63,7 @@ function load(){
             let top = fader.getBoundingClientRect().top;
             let bottom = fader.getBoundingClientRect().bottom;  
             let scroll = window.innerHeight - window.innerHeight/2;
-            if(top >= 0 && bottom <= scroll){
+            if(top < scroll){
                 fader.classList.add('appear')
             }else{
                 fader.classList.remove('appear')
